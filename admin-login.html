@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Login | FREAKSHOWTOPUP</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="apple-touch-icon" href="/assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: rgba(15, 20, 32, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(0, 242, 254, 0.5);
+      --brand-cyan: #00f2fe;
+      --brand-blue: #4facfe;
+      --brand-gold: #fbbf24;
+      --brand-red: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 20%, #111a2e 0%, #07090e 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 242, 254, 0.05);
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--brand-cyan), transparent);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .brand-logo-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.05));
+      border: 1.5px solid rgba(0, 242, 254, 0.3);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.8rem;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #fff 40%, var(--brand-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 16px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--brand-cyan);
+      background: rgba(0, 242, 254, 0.02);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+    }
+
+    .toggle-pwd {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      color: #050b14;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 242, 254, 0.5);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .alert-box {
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a {
+      color: var(--brand-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="brand-header">
+      <img src="/assets/logo.jpg" alt="Logo" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--brand-cyan); box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); margin-bottom: 12px; object-fit: cover;">
+      <h1 class="brand-title">FREAKSHOW ADMIN</h1>
+      <p class="brand-subtitle">Authorized Administrator Sign In</p>
+    </div>
+
+    <div id="alertBox" class="alert-box"></div>
+
+    <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="adminEmail">Admin Gmail / Username</label>
+        <div class="input-wrap">
+          <input type="text" id="adminEmail" class="form-input" placeholder="e.g. it.jibon05@gmail.com" required autofocus autocomplete="username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="adminPassword">Secret Password</label>
+        <div class="input-wrap">
+          <input type="password" id="adminPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+          <span class="toggle-pwd" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
+      </div>
+
+      <button type="submit" id="loginBtn" class="submit-btn">
+        <span>Authenticate & Sign In</span>
+        <span>→</span>
+      </button>
+    </form>
+
+    <div class="footer-links">
+      <p>Protected by Enterprise RBAC & Sliding-Window Firewall.</p>
+      <p style="margin-top: 8px;"><a href="/">← Return to Customer Website</a></p>
+    </div>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('adminPassword');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+      } else {
+        pwdInput.type = 'password';
+      }
+    }
+
+    function showAlert(msg, isError = true) {
+      const alertBox = document.getElementById('alertBox');
+      alertBox.textContent = msg;
+      alertBox.className = `alert-box ${isError ? 'alert-error' : 'alert-success'}`;
+      alertBox.style.display = 'block';
+    }
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('adminEmail').value.trim();
+      const password = document.getElementById('adminPassword').value;
+      const btn = document.getElementById('loginBtn');
+
+      if (!email || !password) {
+        showAlert('Please provide both administrator email and password.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Verifying Credentials...</span> <span>⏳</span>';
+
+      try {
+        const res = await fetch('/api/admin/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success && data.token) {
+          localStorage.setItem('fs_admin_token', data.token);
+          localStorage.setItem('fs_admin_user', JSON.stringify(data.user));
+          showAlert('Authentication Successful! Redirecting to Dashboard...', false);
+          setTimeout(() => {
+            window.location.href = '/admin/dashboard';
+          }, 800);
+        } else {
+          showAlert(data.message || 'Access Denied: Invalid credentials or insufficient permissions.');
+          btn.disabled = false;
+          btn.innerHTML = '<span>Authenticate & Sign In</span> <span>→</span>';
+        }
+      } catch (err) {
+        showAlert('Network or server connection error. Please try again.');
+        btn.disabled = false;
+        btn.innerHTML = '<span>Authenticate & Sign In</span> <span>→</span>';
+      }
+    }
+
+    // Auto redirect if already authenticated with valid admin token
+    (async function checkExistingAdminSession() {
+      const token = localStorage.getItem('fs_admin_token');
+      if (token) {
+        try {
+          const res = await fetch('/api/admin/auth/verify', {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          const data = await res.json();
+          if (res.ok && data.success && (data.user.role === 'SUPER_ADMIN' || data.user.role === 'ADMIN' || data.user.role === 'SUB_ADMIN')) {
+            window.location.href = '/admin/dashboard';
+          }
+        } catch (e) {}
+      }
+    })();
+
+    // Anti-Inspect Protection ("MAKE BY JRJ")
+    function showMakeByJrjPopup(x, y) {
+      if (!document.getElementById('jrjPopupStyleLogin')) {
+        const s = document.createElement('style');
+        s.id = 'jrjPopupStyleLogin';
+        s.textContent = `
+          @keyframes jrjFloatAnimLogin {
+            0% { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+            20% { opacity: 1; transform: translate(-50%, -100%) scale(1.05); }
+            80% { opacity: 1; transform: translate(-50%, -110%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -140%) scale(0.9); }
+          }
+        `;
+        document.head.appendChild(s);
+      }
+
+      const badge = document.createElement('div');
+      badge.innerHTML = '⚡ <b>MADE BY JRJ</b>';
+      badge.style.cssText = `
+        position: fixed;
+        left: ${x}px;
+        top: ${y}px;
+        transform: translate(-50%, -100%);
+        background: linear-gradient(135deg, #090e17 0%, #0f1c2e 100%);
+        border: 1.5px solid #00f2fe;
+        color: #00f2fe;
+        padding: 8px 18px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 900;
+        letter-spacing: 0.8px;
+        box-shadow: 0 8px 28px rgba(0, 242, 254, 0.45), 0 0 12px rgba(0, 242, 254, 0.25);
+        pointer-events: none;
+        z-index: 9999999;
+        white-space: nowrap;
+        animation: jrjFloatAnimLogin 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      `;
+      document.body.appendChild(badge);
+      setTimeout(() => badge.remove(), 1300);
+    }
+
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      showMakeByJrjPopup(e.clientX, e.clientY);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        showMakeByJrjPopup(window.innerWidth / 2, window.innerHeight / 2);
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+        e.preventDefault();
+        showMakeByJrjPopup(window.innerWidth / 2, window.innerHeight / 2);
+        return false;
+      }
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+        showMakeByJrjPopup(window.innerWidth / 2, window.innerHeight / 2);
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>

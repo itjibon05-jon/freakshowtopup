@@ -1,0 +1,48 @@
+[
+  {
+    "id": "wal_ed055746899c60b0",
+    "userId": "usr_39398b248d54d82f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T11:40:07.853Z",
+    "updatedAt": "2026-09-04T16:33:22.014Z"
+  },
+  {
+    "id": "wal_leadjibon_admin",
+    "userId": "usr_leadjibon_admin",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T16:45:00.000Z",
+    "updatedAt": "2026-09-04T16:45:00.000Z"
+  },
+  {
+    "id": "wal_93fb2f4930ec1786",
+    "userId": "usr_f44f39fc38a6e9a3",
+    "currency": "BDT",
+    "balance": 31,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-05T05:50:32.396Z",
+    "updatedAt": "2026-09-05T12:17:29.702Z"
+  },
+  {
+    "id": "wal_1788617118058",
+    "userId": "usr_tg_test_1788617118057",
+    "balance": 500,
+    "currency": "BDT",
+    "createdAt": "2026-09-05T14:05:18.058Z"
+  },
+  {
+    "id": "wal_poor_shopper_1788619670130",
+    "userId": "poor_shopper_1788619670130",
+    "balance": 5,
+    "currency": "BDT"
+  },
+  {
+    "id": "wal_poor_shopper_1788619969904",
+    "userId": "poor_shopper_1788619969904",
+    "balance": 5,
+    "currency": "BDT"
+  }
+]

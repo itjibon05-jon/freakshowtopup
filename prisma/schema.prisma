@@ -1,0 +1,274 @@
+// FREAKSHOWTOPUP - PRISMA PRODUCTION DATABASE SCHEMA
+// Supports PostgreSQL in Production and SQLite for Local Portable Dev
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // or "sqlite" for zero-dependency local dev
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String              @id @default(cuid())
+  email               String              @unique
+  username            String?             @unique
+  name                String
+  passwordHash        String?
+  role                Role                @default(USER) // SUPER_ADMIN, ADMIN, MODERATOR, USER
+  country             String              @default("BD") // BD, NP, GLOBAL
+  currency            Currency            @default(BDT)  // BDT, USD
+  currencyChangeUsed  Boolean             @default(false)
+  referralCode        String              @unique
+  referredById        String?
+  referredBy          User?               @relation("UserReferrals", fields: [referredById], references: [id])
+  referrals           User[]              @relation("UserReferrals")
+  status              AccountStatus       @default(ACTIVE)
+  
+  wallet              Wallet?
+  orders              Order[]
+  deposits            Deposit[]
+  commissionsEarned   ReferralCommission[] @relation("EarnedCommissions")
+  commissionsGiven    ReferralCommission[] @relation("OriginCommissions")
+  auditLogs           AdminActionLog[]     @relation("AdminActionLogs")
+  
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+  lastLoginAt         DateTime?
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  MODERATOR
+  USER
+}
+
+enum Currency {
+  BDT
+  USD
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  BANNED
+}
+
+// Financial Ledger & Wallet
+model Wallet {
+  id           String              @id @default(cuid())
+  userId       String              @unique
+  user         User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  currency     Currency            @default(BDT)
+  balance      Decimal             @default(0.00) @db.Decimal(12, 2)
+  lockedAmount Decimal             @default(0.00) @db.Decimal(12, 2)
+  
+  transactions WalletTransaction[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+}
+
+model WalletTransaction {
+  id              String            @id @default(cuid())
+  walletId        String
+  wallet          Wallet            @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  type            TransactionType   // DEPOSIT, PURCHASE, REFUND, REFERRAL_COMMISSION, BONUS, ADMIN_ADJUSTMENT
+  amount          Decimal           @db.Decimal(12, 2)
+  previousBalance Decimal           @db.Decimal(12, 2)
+  newBalance      Decimal           @db.Decimal(12, 2)
+  currency        Currency
+  status          TransactionStatus @default(COMPLETED)
+  referenceId     String            @unique
+  description     String
+  orderId         String?
+  depositId       String?
+  adminId         String?
+  createdAt       DateTime          @default(now())
+}
+
+enum TransactionType {
+  DEPOSIT
+  PURCHASE
+  REFUND
+  REFERRAL_COMMISSION
+  BONUS
+  ADMIN_ADJUSTMENT
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REVERSED
+}
+
+// Products, Categories & Pricing
+model Category {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  icon        String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  products    Product[]
+}
+
+model Product {
+  id               String          @id @default(cuid())
+  categoryId       String
+  category         Category        @relation(fields: [categoryId], references: [id])
+  name             String
+  slug             String          @unique
+  description      String?
+  icon             String?
+  bannerImage      String?
+  productType      ProductType     @default(FIXED)
+  country          String          @default("ALL")
+  currency         Currency        @default(BDT)
+  sellingPrice     Decimal         @db.Decimal(10, 2)
+  supplierCost     Decimal         @db.Decimal(10, 2)
+  minAmount        Decimal?        @db.Decimal(10, 2)
+  maxAmount        Decimal?        @db.Decimal(10, 2)
+  bonusTag         String?
+  sortOrder        Int             @default(0)
+  isActive         Boolean         @default(true)
+  requiredFields   String          @default("[]") 
+  
+  providerId       String?
+  provider         Provider?       @relation(fields: [providerId], references: [id])
+  providerCode     String?
+  
+  orders           Order[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+}
+
+enum ProductType {
+  FIXED
+  DYNAMIC
+}
+
+// Supplier Provider Engine
+model Provider {
+  id              String    @id @default(cuid())
+  name            String
+  slug            String    @unique
+  baseUrl         String
+  apiKeyEnc       String?
+  apiSecretEnc    String?
+  priority        Int       @default(1)
+  isActive        Boolean   @default(true)
+  balance         Decimal   @default(0.00) @db.Decimal(12, 2)
+  currency        String    @default("BDT")
+  lastHealthCheck DateTime?
+  healthStatus    String    @default("OK")
+  
+  products        Product[]
+  orders          Order[]
+}
+
+// Orders & Purchases
+model Order {
+  id              String       @id
+  userId          String
+  user            User         @relation(fields: [userId], references: [id])
+  productId       String
+  product         Product      @relation(fields: [productId], references: [id])
+  providerId      String?
+  provider        Provider?    @relation(fields: [providerId], references: [id])
+  
+  playerData      String
+  quantity        Int          @default(1)
+  sellingPrice    Decimal      @db.Decimal(10, 2)
+  supplierCost    Decimal      @db.Decimal(10, 2)
+  profit          Decimal      @db.Decimal(10, 2)
+  currency        Currency
+  status          OrderStatus  @default(PENDING)
+  
+  idempotencyKey  String       @unique
+  providerOrderId String?
+  providerResponse String?
+  errorMessage    String?
+  
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SUCCESS
+  FAILED
+  REFUND_PENDING
+  REFUNDED
+  CANCELLED
+  UNKNOWN
+}
+
+// Deposits & Manual Payment Requests
+model Deposit {
+  id                String        @id
+  userId            String
+  user              User          @relation(fields: [userId], references: [id])
+  paymentMethod     String
+  senderNumber      String
+  transactionId     String        @unique
+  amount            Decimal       @db.Decimal(10, 2)
+  currency          Currency
+  receiptUrl        String?
+  status            DepositStatus @default(PENDING)
+  adminNote         String?
+  reviewedByAdminId String?
+  
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+enum DepositStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+// Referral Commissions
+model ReferralCommission {
+  id             String           @id @default(cuid())
+  referrerId     String
+  referrer       User             @relation("EarnedCommissions", fields: [referrerId], references: [id])
+  originUserId   String
+  originUser     User             @relation("OriginCommissions", fields: [originUserId], references: [id])
+  orderId        String           @unique
+  amount         Decimal          @db.Decimal(10, 2)
+  currency       Currency
+  status         CommissionStatus @default(CREDITED)
+  createdAt      DateTime         @default(now())
+}
+
+enum CommissionStatus {
+  PENDING
+  CREDITED
+  REVERSED
+}
+
+// Audit Logs & Administrative Governance
+model AdminActionLog {
+  id          String   @id @default(cuid())
+  adminId     String
+  admin       User     @relation("AdminActionLogs", fields: [adminId], references: [id])
+  action      String
+  targetId    String?
+  details     String
+  ipAddress   String?
+  createdAt   DateTime @default(now())
+}
+
+// System Settings
+model SystemSetting {
+  key         String   @id
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}

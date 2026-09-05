@@ -1,0 +1,52 @@
+{
+  "name": "FREAKSHOW TOPUP - Digital Game Top-Up",
+  "short_name": "FREAKSHOW",
+  "description": "Instant Free Fire Diamonds, PUBG UC & Game Top-Up Platform. 100% automated delivery with bKash, Nagad & Wallet Payments.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06080d",
+  "theme_color": "#ff2d55",
+  "orientation": "portrait-primary",
+  "categories": ["games", "entertainment", "shopping"],
+  "icons": [
+    {
+      "src": "assets/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/ff_diamond.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/ff_diamond.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Top-Up Free Fire",
+      "short_name": "Free Fire",
+      "url": "/index.html#freefire-section",
+      "icons": [{ "src": "assets/ff_diamond.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Track Order",
+      "short_name": "Track Order",
+      "url": "/index.html?action=track",
+      "icons": [{ "src": "assets/logo.jpg", "sizes": "192x192" }]
+    }
+  ]
+}

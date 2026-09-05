@@ -1,0 +1,26 @@
+[
+  {
+    "id": "prov-ucapi",
+    "name": "UC Reseller API Gateway (KaiumUcBot)",
+    "slug": "ucapi-provider",
+    "baseUrl": "https://ucapi.ucbot.net",
+    "priority": 1,
+    "isActive": true,
+    "balance": 100,
+    "currency": "BDT",
+    "lastHealthCheck": "2026-08-28T17:46:50.000Z",
+    "healthStatus": "OK"
+  },
+  {
+    "id": "prov-mock",
+    "name": "FREAKSHOW Auto Mock Provider",
+    "slug": "mock-provider",
+    "baseUrl": "http://localhost:3000/api/mock-supplier",
+    "priority": 99,
+    "isActive": false,
+    "balance": 0,
+    "currency": "BDT",
+    "lastHealthCheck": null,
+    "healthStatus": "STANDBY"
+  }
+]
