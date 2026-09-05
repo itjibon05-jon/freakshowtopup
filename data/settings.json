@@ -65,7 +65,7 @@
     "directButtonLink": "#products",
     "directButtonActive": false
   },
-  "vipAccessCodeHash": "$2a$10$xx10FxFx92wNmBZMASD0nObP1kT7CNEgtJ1kRE25xJsNWy5qKReCu",
+  "vipAccessCodeHash": "$2a$12$Sm4zwQWWGkvOsLQ6fZZaiOSprFJ687U3nBoLh/p7aY26rB8D0qlrq",
   "maintenanceMode": false,
   "recentOrdersSectionEnabled": true,
   "referralSystemEnabled": true,
@@ -96,5 +96,6 @@
   "autoTopupDisabled": false,
   "registrationDisabled": false,
   "popupDisabled": false,
-  "newUserBonusEnabled": false
+  "newUserBonusEnabled": false,
+  "vipCodeVersion": 1788626212535
 }

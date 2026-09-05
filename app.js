@@ -1035,7 +1035,17 @@ const APP_SPECIAL_SERVICES = {
 };
 
 window.openVipAccess = function() {
-  const isUnlocked = sessionStorage.getItem('vip_unlocked') === 'true' || APP.isVipUnlocked;
+  const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
+  const storedVersion = sessionStorage.getItem('vip_code_version');
+  let isUnlocked = (sessionStorage.getItem('vip_unlocked') === 'true' || APP.isVipUnlocked === true);
+
+  if (storedVersion && storedVersion !== currentVersion) {
+    sessionStorage.removeItem('vip_unlocked');
+    sessionStorage.removeItem('vip_code_version');
+    APP.isVipUnlocked = false;
+    isUnlocked = false;
+  }
+
   if (isUnlocked) {
     openTopUpWizard('ff-vip-access');
   } else {
@@ -1072,7 +1082,9 @@ window.submitVipAccessCode = async function(e) {
     const data = await res.json();
     if (data.success) {
       APP.isVipUnlocked = true;
+      const vVer = String(data.vipCodeVersion || (APP.settings && APP.settings.vipCodeVersion) || '1');
       sessionStorage.setItem('vip_unlocked', 'true');
+      sessionStorage.setItem('vip_code_version', vVer);
       closeAllModals();
       showToast('👑 VIP Access Granted! Exclusive prices unlocked.');
       openTopUpWizard('ff-vip-access');
@@ -1096,6 +1108,20 @@ window.submitVipAccessCode = async function(e) {
 };
 
 function openTopUpWizard(identifier) {
+  if (identifier === 'ff-vip-access') {
+    const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
+    const storedVersion = sessionStorage.getItem('vip_code_version');
+    if (storedVersion && storedVersion !== currentVersion) {
+      sessionStorage.removeItem('vip_unlocked');
+      sessionStorage.removeItem('vip_code_version');
+      APP.isVipUnlocked = false;
+    }
+    if (!APP.isVipUnlocked && sessionStorage.getItem('vip_unlocked') !== 'true') {
+      window.openVipAccess();
+      return;
+    }
+  }
+
   let categoryGroup = null;
 
   // 1. Search in APP.categories subcategories

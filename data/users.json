@@ -15,7 +15,9 @@
     "status": "ACTIVE",
     "createdAt": "2026-08-28T11:40:07.853Z",
     "updatedAt": "2026-08-28T11:40:07.853Z",
-    "lastLoginAt": "2026-08-28T11:40:07.853Z"
+    "lastLoginAt": "2026-08-28T11:40:07.853Z",
+    "isVip": false,
+    "vipUnlocked": false
   },
   {
     "id": "usr_leadjibon_admin",

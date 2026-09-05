@@ -408,7 +408,11 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (isValid) {
-        return sendJson(res, 200, { success: true, message: 'VIP Access Granted!' }, req);
+        return sendJson(res, 200, {
+          success: true,
+          message: 'VIP Access Granted!',
+          vipCodeVersion: Number(db.settings.vipCodeVersion || 1)
+        }, req);
       }
       return sendJson(res, 400, { success: false, message: 'Invalid VIP Access Code. Contact admin for secret code.' }, req);
     }
@@ -686,6 +690,7 @@ const server = http.createServer(async (req, res) => {
           binance: true
         },
         recentOrdersSectionEnabled: db.settings.recentOrdersSectionEnabled !== false,
+        vipCodeVersion: Number(db.settings.vipCodeVersion || 1),
         announcement: db.settings.announcement || '',
         popupDisabled: db.settings.popupDisabled || false,
         popupOffer: db.settings.popupOffer || {
@@ -1539,23 +1544,79 @@ const server = http.createServer(async (req, res) => {
           return sendJson(res, 400, { success: false, message: 'Incorrect current VIP Access Code.' }, req);
         }
 
-        // 2. Hash New Code with bcrypt
+        // 2. Hash New Code with bcrypt & Update Version to immediately invalidate previous sessions
         const newHash = await bcrypt.hash(newCode, 12);
         db.settings.vipAccessCodeHash = newHash;
         delete db.settings.vipAccessCode;
+        db.settings.vipCodeVersion = Date.now();
+
+        // 3. Invalidate/revoke VIP status across all users in database
+        if (Array.isArray(db.users)) {
+          db.users.forEach(u => {
+            if (u.isVip) u.isVip = false;
+            if (u.vipUnlocked) u.vipUnlocked = false;
+            if (u.vipUnlockedAt) delete u.vipUnlockedAt;
+            if (u.vipCodeVersion) delete u.vipCodeVersion;
+          });
+        }
         db.saveAll();
 
-        // 3. Record Audit Log (CRITICAL: NEVER logging old or new secret code values)
+        // 4. Record Audit Log (CRITICAL: NEVER logging old or new secret code values)
         recordAuditLog({
           actorId: user.id,
           action: 'VIP_ACCESS_CODE_CHANGED',
           targetId: 'settings.vipAccessCode',
-          reason: `VIP Access Code changed by Admin: ${user.name || user.email}`
+          reason: `VIP Access Code changed by Admin: ${user.name || user.email}. All existing VIP customer sessions revoked.`
         });
 
         return sendJson(res, 200, {
           success: true,
-          message: 'VIP Access Code updated and securely hashed successfully!'
+          message: 'VIP Access Code updated and all existing VIP sessions revoked successfully!',
+          vipCodeVersion: db.settings.vipCodeVersion
+        }, req);
+      }
+
+      // 8.1 1-Click VIP Access Code Reset & Generation
+      if (pathname === '/api/admin/vip-code/reset' && method === 'POST') {
+        const body = await parseBody(req);
+        // Optional custom new code or generate random 8-character alphanumeric code
+        let newSecret = String(body.newCode || '').trim().toUpperCase();
+        if (!newSecret) {
+          const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+          let gen = 'FSVIP-';
+          for (let i = 0; i < 6; i++) {
+            gen += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+          newSecret = gen;
+        }
+
+        const newHash = await bcrypt.hash(newSecret, 12);
+        db.settings.vipAccessCodeHash = newHash;
+        delete db.settings.vipAccessCode;
+        db.settings.vipCodeVersion = Date.now();
+
+        if (Array.isArray(db.users)) {
+          db.users.forEach(u => {
+            if (u.isVip) u.isVip = false;
+            if (u.vipUnlocked) u.vipUnlocked = false;
+            if (u.vipUnlockedAt) delete u.vipUnlockedAt;
+            if (u.vipCodeVersion) delete u.vipCodeVersion;
+          });
+        }
+        db.saveAll();
+
+        recordAuditLog({
+          actorId: user.id,
+          action: 'VIP_ACCESS_CODE_RESET',
+          targetId: 'settings.vipAccessCode',
+          reason: `VIP Access Code reset by Admin: ${user.name || user.email}. All previous VIP accesses revoked.`
+        });
+
+        return sendJson(res, 200, {
+          success: true,
+          message: 'VIP Access Code has been reset and all previous VIP accesses revoked!',
+          newVipCode: newSecret,
+          vipCodeVersion: db.settings.vipCodeVersion
         }, req);
       }
 

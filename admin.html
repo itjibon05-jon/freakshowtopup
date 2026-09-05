@@ -4522,6 +4522,37 @@
       }
     };
 
+    window.handleResetVipCode = async function () {
+      if (!confirm('⚠️ Are you sure you want to generate a new VIP Access Code?\n\nThis will IMMEDIATELY REVOKE all previous VIP passes across all customer accounts. Customers will need to enter the new code to access VIP prices.')) {
+        return;
+      }
+      const alertEl = document.getElementById('vipCodeChangeAlert');
+      try {
+        const res = await fetch('/api/admin/vip-code/reset', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ADMIN_STATE.token}`
+          },
+          body: JSON.stringify({})
+        });
+        const data = await res.json();
+        if (data.success && data.newVipCode) {
+          if (alertEl) {
+            alertEl.style.display = 'block';
+            alertEl.style.background = 'rgba(52,211,153,0.15)';
+            alertEl.style.color = '#34d399';
+            alertEl.innerHTML = `✅ <b>NEW VIP CODE:</b> <code style="font-size:1.1rem;background:#000;padding:2px 8px;border-radius:4px;color:#00f2fe;">${data.newVipCode}</code><br><small>All previous user sessions have been revoked.</small>`;
+          }
+          showToast(`👑 New VIP Code: ${data.newVipCode}`);
+        } else {
+          alert(data.message || 'Failed to reset VIP code.');
+        }
+      } catch (err) {
+        alert('Server error resetting VIP code.');
+      }
+    };
+
     // ==========================================
     // 5.5 REFERRAL & EARN ADMIN MODULE
     // ==========================================

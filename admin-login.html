@@ -237,14 +237,37 @@
         <label class="form-label" for="adminPassword">Secret Password</label>
         <div class="input-wrap">
           <input type="password" id="adminPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
-          <span class="toggle-pwd" onclick="togglePasswordVisibility()">👁️</span>
-        </div>
+      <div style="display: flex; justify-content: flex-end; margin-top: -10px; margin-bottom: 16px;">
+        <a href="javascript:void(0)" onclick="handleForgotPassword()" style="font-size: 0.8rem; color: var(--brand-cyan); text-decoration: none; font-weight: 600;">Forgot Password?</a>
       </div>
 
       <button type="submit" id="loginBtn" class="submit-btn">
         <span>Authenticate & Sign In</span>
         <span>→</span>
       </button>
+
+      <div style="display: flex; align-items: center; margin: 20px 0 16px; gap: 12px;">
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">OR 1-CLICK AUTH</span>
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+      </div>
+
+      <div id="g_id_onload"
+           data-client_id="886185939600-otk4o6s21fa0f561nkbigkqu9aao0icl.apps.googleusercontent.com"
+           data-callback="handleGoogleAdminResponse"
+           data-auto_prompt="false">
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="filled_black"
+             data-text="continue_with"
+             data-shape="rectangular"
+             data-logo_alignment="left"
+             data-width="376">
+        </div>
+      </div>
     </form>
 
     <div class="footer-links">
@@ -252,6 +275,8 @@
       <p style="margin-top: 8px;"><a href="/">← Return to Customer Website</a></p>
     </div>
   </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <script>
     function togglePasswordVisibility() {
@@ -310,6 +335,43 @@
         btn.disabled = false;
         btn.innerHTML = '<span>Authenticate & Sign In</span> <span>→</span>';
       }
+    }
+
+    async function handleGoogleAdminResponse(response) {
+      if (!response || !response.credential) {
+        showAlert('Google sign-in failed. Please try again.');
+        return;
+      }
+      showAlert('Verifying Google Administrator Session...', false);
+      try {
+        const res = await fetch('/api/auth/google', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ idToken: response.credential })
+        });
+        const data = await res.json();
+        if (res.ok && data.success && data.token) {
+          const role = data.user && data.user.role;
+          if (role === 'SUPER_ADMIN' || role === 'ADMIN' || role === 'SUB_ADMIN') {
+            localStorage.setItem('fs_admin_token', data.token);
+            localStorage.setItem('fs_admin_user', JSON.stringify(data.user));
+            showAlert(`Welcome Super Admin, ${data.user.name || data.user.email}! Redirecting...`, false);
+            setTimeout(() => {
+              window.location.href = '/admin/dashboard';
+            }, 700);
+          } else {
+            showAlert('Access Denied: This Google Account is not configured with Administrator privileges.');
+          }
+        } else {
+          showAlert(data.message || 'Google Authentication verification failed.');
+        }
+      } catch (err) {
+        showAlert('Network error connecting to Google Auth service.');
+      }
+    }
+
+    function handleForgotPassword() {
+      alert('🔐 Password Recovery / Reset:\n\n1. You can log in instantly via 1-Click "Sign in with Google" using your Super Admin Gmail.\n2. Or send the /admin command to your Telegram Bot (@freakshowtopupbot) from your registered Admin Telegram account to manage/reset system security.');
     }
 
     // Auto redirect if already authenticated with valid admin token

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "aud_3f8c4c0a8ab9957d",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "VIP_CODE_ROTATED_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": null,
+    "after": null,
+    "reason": "VIP Access Code rotated via Telegram by JRJ JIBON. All existing user VIP sessions revoked.",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-05T16:36:52.592Z"
+  }
+]
