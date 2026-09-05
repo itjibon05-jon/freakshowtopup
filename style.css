@@ -488,7 +488,19 @@ select option:checked {
 @media (max-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    gap: 8px !important;
+  }
+  .product-img-wrap {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .product-card-body {
+    padding: 6px 6px 8px !important;
+  }
+  .product-name {
+    font-size: 0.82rem !important;
+  }
+  .product-price {
+    font-size: 0.8rem !important;
   }
 }
 

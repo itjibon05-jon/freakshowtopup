@@ -1,17 +1,65 @@
 [
   {
-    "id": "aud_3f8c4c0a8ab9957d",
+    "id": "aud_13369bcd5bc64418",
     "actorId": "tg_5339688506",
     "actorEmail": "system@freakshowtopup.shop",
     "role": "ADMIN",
     "action": "VIP_CODE_ROTATED_TELEGRAM",
     "targetId": null,
     "targetType": null,
-    "before": null,
-    "after": null,
+    "before": {
+      "vipCode": "CUSTOMVIP2026"
+    },
+    "after": {
+      "vipCode": "JOY100LVL",
+      "vipCodeVersion": 1788630686485,
+      "revokedSessions": 0
+    },
     "reason": "VIP Access Code rotated via Telegram by JRJ JIBON. All existing user VIP sessions revoked.",
     "ipAddress": "127.0.0.1",
     "userAgent": "Unknown",
-    "createdAt": "2026-09-05T16:36:52.592Z"
+    "createdAt": "2026-09-05T17:51:26.502Z"
+  },
+  {
+    "id": "aud_647e8faac946abdd",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "UPDATE_VIP_CODE_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": {
+      "vipCode": "VIP467816"
+    },
+    "after": {
+      "vipCode": "CUSTOMVIP2026",
+      "vipCodeVersion": 1788630685546,
+      "revokedSessions": 0
+    },
+    "reason": "VIP Access Code updated via Telegram Bot by JRJ JIBON",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-05T17:51:25.580Z"
+  },
+  {
+    "id": "aud_4b4a49e55b88ca20",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "VIP_CODE_AUTORESET_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": {
+      "vipCode": "VIP143551"
+    },
+    "after": {
+      "vipCode": "VIP467816",
+      "vipCodeVersion": 1788630683902,
+      "revokedSessions": 1
+    },
+    "reason": "VIP Access Code auto-reset via Telegram Bot by JRJ JIBON",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-05T17:51:23.928Z"
   }
 ]

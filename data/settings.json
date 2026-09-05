@@ -3,7 +3,8 @@
   "siteTagline": "FASTEST GAMING HUB",
   "siteLogo": "assets/logo.jpg",
   "domain": "freakshowtopup.shop",
-  "announcement": "⚡ Welcome to FREAKSHOWTOPUP! Instant Automated Free Fire Diamonds, PUBG UC & Game Top-Up in Bangladesh & Globally.",
+  "announcement": "⚡ Welcome to FREAKSHOW TOPUP",
+  "vipCodeVersion": 1788630686485,
   "minDepositBDT": 25,
   "minDepositUSD": 0.2,
   "usdToBdtRate": 120,
@@ -65,7 +66,8 @@
     "directButtonLink": "#products",
     "directButtonActive": false
   },
-  "vipAccessCodeHash": "$2a$12$Sm4zwQWWGkvOsLQ6fZZaiOSprFJ687U3nBoLh/p7aY26rB8D0qlrq",
+  "currentVipCode": "JOY100LVL",
+  "vipAccessCodeHash": "$2a$10$0tA3rGT0opTovTPe41sVheLvW0tXLMdOQ6RVZlpAeNIsbvvJD7pba",
   "maintenanceMode": false,
   "recentOrdersSectionEnabled": true,
   "referralSystemEnabled": true,
@@ -97,5 +99,5 @@
   "registrationDisabled": false,
   "popupDisabled": false,
   "newUserBonusEnabled": false,
-  "vipCodeVersion": 1788626212535
+  "vipAccessCode": "JOY100LVL"
 }

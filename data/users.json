@@ -93,5 +93,14 @@
     "status": "ACTIVE",
     "telegramChatId": "1122334455",
     "username": "poor_1788619969"
+  },
+  {
+    "id": "usr_vip_test",
+    "email": "viptest@example.com",
+    "name": "VIP Test User",
+    "walletBDT": 500,
+    "isVip": false,
+    "vipUnlocked": false,
+    "hasVipAccess": false
   }
 ]

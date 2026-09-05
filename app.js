@@ -1034,12 +1034,23 @@ const APP_SPECIAL_SERVICES = {
   }
 };
 
-window.openVipAccess = function() {
+window.openVipAccess = async function() {
+  try {
+    const res = await fetch('/api/settings');
+    if (res.ok) {
+      const freshSettings = await res.json();
+      if (freshSettings && freshSettings.vipCodeVersion !== undefined) {
+        if (!APP.settings) APP.settings = {};
+        APP.settings.vipCodeVersion = freshSettings.vipCodeVersion;
+      }
+    }
+  } catch (e) {}
+
   const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
   const storedVersion = sessionStorage.getItem('vip_code_version');
   let isUnlocked = (sessionStorage.getItem('vip_unlocked') === 'true' || APP.isVipUnlocked === true);
 
-  if (storedVersion && storedVersion !== currentVersion) {
+  if (!storedVersion || storedVersion !== currentVersion) {
     sessionStorage.removeItem('vip_unlocked');
     sessionStorage.removeItem('vip_code_version');
     APP.isVipUnlocked = false;

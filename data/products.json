@@ -14,7 +14,7 @@
     "isActive": true,
     "command": "Ktp uid 25",
     "icon": "assets/ff_diamond.jpg",
-    "inStock": false
+    "inStock": true
   },
   {
     "id": "p-ff-50",

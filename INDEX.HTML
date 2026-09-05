@@ -166,6 +166,85 @@
       #depositInstructionsContainer {
         grid-template-columns: 1fr !important;
       }
+
+      /* 1. Hide 4-Perks Strip Card on Mobile as requested */
+      .perks-strip {
+        display: none !important;
+      }
+
+      /* 2. Top Announcement Ticker Fit */
+      .top-ticker {
+        padding: 5px 10px !important;
+        font-size: 0.78rem !important;
+        min-height: 28px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        justify-content: center !important;
+      }
+
+      /* 3. Brand Logo & Tag 1-Line Neat Alignment */
+      .brand-logo-wrap {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+      }
+      .brand-logo-img {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 9px !important;
+      }
+      .brand-name {
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        line-height: 1.1 !important;
+      }
+      .brand-tag {
+        font-size: 0.64rem !important;
+        font-weight: 800 !important;
+        color: var(--brand-cyan) !important;
+        line-height: 1.1 !important;
+      }
+
+      /* 4. Perfect 4-Card Screen Fit on Mobile (2x2 Grid) */
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+      }
+      .product-card {
+        border-radius: 12px !important;
+      }
+      .product-img-wrap {
+        aspect-ratio: 16 / 10 !important;
+      }
+      .product-ribbon {
+        top: 4px !important;
+        right: 4px !important;
+        padding: 2px 6px !important;
+        font-size: 0.58rem !important;
+      }
+      .product-card-body {
+        padding: 6px 6px 8px !important;
+        gap: 3px !important;
+      }
+      .product-name {
+        font-size: 0.82rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.2 !important;
+      }
+      .product-price {
+        font-size: 0.8rem !important;
+        margin: 1px 0 !important;
+      }
+      .product-card-body .nav-btn {
+        padding: 4px 6px !important;
+        font-size: 0.72rem !important;
+        min-height: 26px !important;
+        border-radius: 6px !important;
+      }
     }
 
     #howToDepositCard:hover {
@@ -187,8 +266,7 @@
        TOP TICKER / ANNOUNCEMENT
        ========================================== -->
   <div class="top-ticker" id="announcementBar">
-    <span>⚡</span>
-    <span id="announcementText">Welcome to FREAKSHOWTOPUP! Instant Automated Free Fire Diamonds, PUBG UC & Game Top-Up in Bangladesh & Globally.</span>
+    <span id="announcementText">⚡ Welcome to FREAKSHOW TOPUP</span>
   </div>
 
   <!-- ==========================================

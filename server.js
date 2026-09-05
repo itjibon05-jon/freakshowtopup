@@ -1514,6 +1514,15 @@ const server = http.createServer(async (req, res) => {
       }
 
       // 8. Secure VIP Access Code Management
+      if (pathname === '/api/admin/vip-code' && method === 'GET') {
+        const currentCode = db.settings.currentVipCode || db.settings.vipAccessCode || 'JOY100LVL';
+        return sendJson(res, 200, {
+          success: true,
+          currentVipCode: currentCode,
+          vipCodeVersion: db.settings.vipCodeVersion || 1
+        }, req);
+      }
+
       if (pathname === '/api/admin/vip-code' && method === 'PUT') {
         const body = await parseBody(req);
         const oldCode = String(body.oldCode || '').trim().toUpperCase();
@@ -1530,12 +1539,12 @@ const server = http.createServer(async (req, res) => {
           return sendJson(res, 400, { success: false, message: 'New VIP Access Code and confirmation do not match.' }, req);
         }
 
-        // 1. Verify Old Code against stored bcrypt hash or legacy string
+        // 1. Verify Old Code against stored bcrypt hash, legacy string, or currentVipCode
         let isOldValid = false;
         if (db.settings.vipAccessCodeHash) {
           isOldValid = await bcrypt.compare(oldCode, db.settings.vipAccessCodeHash);
-        } else if (db.settings.vipAccessCode) {
-          isOldValid = oldCode === String(db.settings.vipAccessCode).trim().toUpperCase();
+        } else if (db.settings.currentVipCode || db.settings.vipAccessCode) {
+          isOldValid = oldCode === String(db.settings.currentVipCode || db.settings.vipAccessCode).trim().toUpperCase();
         } else {
           isOldValid = oldCode === 'JOY100LVL';
         }
@@ -1546,8 +1555,9 @@ const server = http.createServer(async (req, res) => {
 
         // 2. Hash New Code with bcrypt & Update Version to immediately invalidate previous sessions
         const newHash = await bcrypt.hash(newCode, 12);
+        db.settings.currentVipCode = newCode;
+        db.settings.vipAccessCode = newCode;
         db.settings.vipAccessCodeHash = newHash;
-        delete db.settings.vipAccessCode;
         db.settings.vipCodeVersion = Date.now();
 
         // 3. Invalidate/revoke VIP status across all users in database
@@ -1591,8 +1601,9 @@ const server = http.createServer(async (req, res) => {
         }
 
         const newHash = await bcrypt.hash(newSecret, 12);
+        db.settings.currentVipCode = newSecret;
+        db.settings.vipAccessCode = newSecret;
         db.settings.vipAccessCodeHash = newHash;
-        delete db.settings.vipAccessCode;
         db.settings.vipCodeVersion = Date.now();
 
         if (Array.isArray(db.users)) {

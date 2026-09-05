@@ -1736,28 +1736,44 @@
         </div>
 
         <div class="card-box" style="max-width: 580px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(0,242,254,0.06); border: 1px solid rgba(0,242,254,0.25); border-radius: var(--radius-md); margin-bottom: 20px;">
-            <div>
-              <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Current Code Status</div>
-              <div style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-top: 4px; letter-spacing: 4px;">●●●●●●●● (MASKED)</div>
+          <!-- Active VIP Code Display Card -->
+          <div style="padding: 18px; background: linear-gradient(135deg, rgba(0,242,254,0.08) 0%, rgba(15,28,48,0.6) 100%); border: 1.5px solid rgba(0,242,254,0.35); border-radius: var(--radius-md); margin-bottom: 22px; box-shadow: 0 4px 20px rgba(0,242,254,0.1);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <div style="font-size: 0.74rem; color: var(--brand-cyan); text-transform: uppercase; font-weight: 800; letter-spacing: 0.8px;">👑 Active VIP Secret Code (বর্তমান ভিআইপি কোড)</div>
+                <div id="displayCurrentVipCode" style="font-family: monospace; font-size: 1.35rem; font-weight: 900; color: #fff; margin-top: 6px; letter-spacing: 3px;">••••••••••</div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="btn btn-ghost" onclick="toggleVipCodeVisibility()" id="btnRevealVip" style="padding: 6px 14px; font-size: 0.82rem; color: var(--brand-cyan); border-color: rgba(0,242,254,0.4);" title="Show or hide VIP code">
+                  👁️ Reveal
+                </button>
+                <button type="button" class="btn btn-primary" onclick="copyCurrentVipCode()" style="padding: 6px 14px; font-size: 0.82rem; font-weight: 800;" title="Copy to clipboard">
+                  📋 Copy
+                </button>
+              </div>
             </div>
-            <span class="badge badge-success">🔒 Encrypted & Active</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.74rem; color: var(--text-muted);">
+              <span>🔄 Changing code automatically revokes previous user passes.</span>
+              <button type="button" class="btn btn-danger" onclick="handleResetVipCode()" style="padding: 3px 10px; font-size: 0.72rem;">
+                🎲 Auto-Reset
+              </button>
+            </div>
           </div>
 
           <form id="formChangeVipCode" onsubmit="handleChangeVipCode(event)">
             <div class="form-group">
-              <label class="form-label">Old VIP Access Code <span style="color: var(--brand-red);">*</span></label>
-              <input type="password" id="vipOldCode" class="form-input" placeholder="Enter current VIP access code" required autocomplete="off">
+              <label class="form-label">Current / Old VIP Access Code <span style="color: var(--brand-red);">*</span></label>
+              <input type="text" id="vipOldCode" class="form-input" placeholder="Enter current VIP access code" required autocomplete="off">
             </div>
 
             <div class="form-group">
               <label class="form-label">New VIP Access Code <span style="color: var(--brand-cyan);">*</span></label>
-              <input type="password" id="vipNewCode" class="form-input" placeholder="Enter new secret code (min 4 chars)" required autocomplete="new-password">
+              <input type="text" id="vipNewCode" class="form-input" placeholder="Enter new secret code (min 4 chars)" required autocomplete="new-password">
             </div>
 
             <div class="form-group">
               <label class="form-label">Confirm New VIP Access Code <span style="color: var(--brand-cyan);">*</span></label>
-              <input type="password" id="vipConfirmCode" class="form-input" placeholder="Confirm new secret code" required autocomplete="new-password">
+              <input type="text" id="vipConfirmCode" class="form-input" placeholder="Confirm new secret code" required autocomplete="new-password">
             </div>
 
             <div id="vipCodeChangeAlert" style="display:none; margin-bottom: 16px; padding: 12px; border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 700;"></div>
@@ -2884,6 +2900,11 @@
       // If switching to referral tab, load referral data
       if (tabId === 'referral') {
         loadReferralAdminData();
+      }
+
+      // If switching to VIP tab, load active VIP code
+      if (tabId === 'vip-access' || tabId === 'settings') {
+        loadActiveVipCode();
       }
 
       // If data not loaded yet, fetch
@@ -4538,6 +4559,15 @@
         });
         const data = await res.json();
         if (data.success && data.newVipCode) {
+          window._activeVipCode = data.newVipCode;
+          const displayEl = document.getElementById('displayCurrentVipCode');
+          if (displayEl) {
+            displayEl.textContent = data.newVipCode;
+            displayEl.style.color = 'var(--brand-cyan)';
+          }
+          const oldInput = document.getElementById('vipOldCode');
+          if (oldInput) oldInput.value = data.newVipCode;
+
           if (alertEl) {
             alertEl.style.display = 'block';
             alertEl.style.background = 'rgba(52,211,153,0.15)';
@@ -4551,6 +4581,52 @@
       } catch (err) {
         alert('Server error resetting VIP code.');
       }
+    };
+
+    window._activeVipCode = 'JOY100LVL';
+    window._isVipCodeRevealed = false;
+
+    window.loadActiveVipCode = async function () {
+      try {
+        const res = await fetch('/api/admin/vip-code', {
+          headers: { 'Authorization': `Bearer ${ADMIN_STATE.token}` }
+        });
+        const data = await res.json();
+        if (data.success && data.currentVipCode) {
+          window._activeVipCode = data.currentVipCode;
+          const oldInput = document.getElementById('vipOldCode');
+          if (oldInput && !oldInput.value) oldInput.value = data.currentVipCode;
+          const displayEl = document.getElementById('displayCurrentVipCode');
+          if (displayEl) {
+            displayEl.textContent = window._isVipCodeRevealed ? window._activeVipCode : '••••••••••';
+          }
+        }
+      } catch (e) {}
+    };
+
+    window.toggleVipCodeVisibility = function () {
+      window._isVipCodeRevealed = !window._isVipCodeRevealed;
+      const displayEl = document.getElementById('displayCurrentVipCode');
+      const btnReveal = document.getElementById('btnRevealVip');
+      if (displayEl) {
+        if (window._isVipCodeRevealed) {
+          displayEl.textContent = window._activeVipCode || 'JOY100LVL';
+          displayEl.style.color = 'var(--brand-cyan)';
+          if (btnReveal) btnReveal.innerHTML = '🙈 Mask';
+        } else {
+          displayEl.textContent = '••••••••••';
+          displayEl.style.color = '#fff';
+          if (btnReveal) btnReveal.innerHTML = '👁️ Reveal';
+        }
+      }
+    };
+
+    window.copyCurrentVipCode = function () {
+      const code = window._activeVipCode || 'JOY100LVL';
+      navigator.clipboard.writeText(code);
+      const oldInput = document.getElementById('vipOldCode');
+      if (oldInput) oldInput.value = code;
+      showToast(`📋 VIP Code copied: ${code}`);
     };
 
     // ==========================================
