@@ -532,13 +532,13 @@ async function loadCatalogProducts() {
         localStorage.setItem('fs_catalog_cache', JSON.stringify({ products: APP.products, categories: APP.categories }));
       } catch (e) {}
 
-      // Dynamically sync package prices and stock status with DB products
+      // Dynamically sync package prices and stock status with DB products by exact product ID
       const allCatalogs = [FF_CATEGORY_PACKAGES, APP_SPECIAL_SERVICES];
       APP.products.forEach(p => {
         allCatalogs.forEach(catalog => {
           Object.values(catalog).forEach(cat => {
             if (Array.isArray(cat.packages)) {
-              const pkg = cat.packages.find(item => item.id === p.id || item.name === p.name);
+              const pkg = cat.packages.find(item => item.id === p.id);
               if (pkg) {
                 pkg.price = Number(p.sellingPrice);
                 pkg.inStock = (p.inStock !== false);
@@ -894,7 +894,8 @@ const FF_CATEGORY_PACKAGES = {
       { id: 'p-ff-vip-m3', name: 'VIP Monthly x3', price: 2250, tag: 'VIP Triple' },
       { id: 'p-ff-vip-w5', name: 'VIP Weekly x5', price: 765, tag: '5x VIP' },
       { id: 'p-ff-vip-m5', name: 'VIP Monthly x5', price: 3750, tag: '5x VIP' },
-      { id: 'p-ff-vip-combo', name: 'VIP Weekly + Monthly', price: 900, tag: 'Best VIP' }
+      { id: 'p-ff-vip-combo', name: 'VIP Weekly + Monthly', price: 900, tag: 'Best VIP' },
+      { id: 'p-1015-diamond', name: '1015 Diamond', price: 650, tag: 'VIP Rate' }
     ]
   },
   'ff-weekly-monthly': {
@@ -1034,6 +1035,36 @@ const APP_SPECIAL_SERVICES = {
   }
 };
 
+function isVipAuthorized() {
+  const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
+
+  // 1. Account level check (authenticated user)
+  if (APP.user && String(APP.user.vipCodeVersion) === currentVersion && (APP.user.hasVipAccess || APP.user.vipUnlocked)) {
+    return true;
+  }
+
+  // 2. localStorage check (permanent across page refreshes & browser restarts)
+  const localVer = localStorage.getItem('vip_code_version');
+  const localUnlocked = localStorage.getItem('vip_unlocked') === 'true';
+  if (localUnlocked && localVer === currentVersion) {
+    return true;
+  }
+
+  // 3. sessionStorage check (browser tab session)
+  const sessVer = sessionStorage.getItem('vip_code_version');
+  const sessUnlocked = sessionStorage.getItem('vip_unlocked') === 'true';
+  if (sessUnlocked && sessVer === currentVersion) {
+    return true;
+  }
+
+  // 4. In-memory check
+  if (APP.isVipUnlocked === true && String(APP.unlockedVipVersion) === currentVersion) {
+    return true;
+  }
+
+  return false;
+}
+
 window.openVipAccess = async function() {
   try {
     const res = await fetch('/api/settings');
@@ -1047,19 +1078,25 @@ window.openVipAccess = async function() {
   } catch (e) {}
 
   const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
-  const storedVersion = sessionStorage.getItem('vip_code_version');
-  let isUnlocked = (sessionStorage.getItem('vip_unlocked') === 'true' || APP.isVipUnlocked === true);
+  const authorized = isVipAuthorized();
 
-  if (!storedVersion || storedVersion !== currentVersion) {
+  if (authorized) {
+    APP.isVipUnlocked = true;
+    APP.unlockedVipVersion = currentVersion;
+    localStorage.setItem('vip_unlocked', 'true');
+    localStorage.setItem('vip_code_version', currentVersion);
+    sessionStorage.setItem('vip_unlocked', 'true');
+    sessionStorage.setItem('vip_code_version', currentVersion);
+    openTopUpWizard('ff-vip-access');
+  } else {
+    // Clear stale stored versions
+    localStorage.removeItem('vip_unlocked');
+    localStorage.removeItem('vip_code_version');
     sessionStorage.removeItem('vip_unlocked');
     sessionStorage.removeItem('vip_code_version');
     APP.isVipUnlocked = false;
-    isUnlocked = false;
-  }
+    APP.unlockedVipVersion = null;
 
-  if (isUnlocked) {
-    openTopUpWizard('ff-vip-access');
-  } else {
     const errEl = document.getElementById('vipCodeError');
     if (errEl) errEl.style.display = 'none';
     const input = document.getElementById('vipCodeInput');
@@ -1087,15 +1124,26 @@ window.submitVipAccessCode = async function(e) {
   try {
     const res = await fetch('/api/vip/verify', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(APP.token ? { 'Authorization': `Bearer ${APP.token}` } : {})
+      },
       body: JSON.stringify({ code })
     });
     const data = await res.json();
     if (data.success) {
-      APP.isVipUnlocked = true;
       const vVer = String(data.vipCodeVersion || (APP.settings && APP.settings.vipCodeVersion) || '1');
+      APP.isVipUnlocked = true;
+      APP.unlockedVipVersion = vVer;
+      localStorage.setItem('vip_unlocked', 'true');
+      localStorage.setItem('vip_code_version', vVer);
       sessionStorage.setItem('vip_unlocked', 'true');
       sessionStorage.setItem('vip_code_version', vVer);
+      if (APP.user) {
+        APP.user.vipCodeVersion = Number(vVer);
+        APP.user.hasVipAccess = true;
+        APP.user.vipUnlocked = true;
+      }
       closeAllModals();
       showToast('👑 VIP Access Granted! Exclusive prices unlocked.');
       openTopUpWizard('ff-vip-access');
@@ -1120,14 +1168,7 @@ window.submitVipAccessCode = async function(e) {
 
 function openTopUpWizard(identifier) {
   if (identifier === 'ff-vip-access') {
-    const currentVersion = String((APP.settings && APP.settings.vipCodeVersion) || '1');
-    const storedVersion = sessionStorage.getItem('vip_code_version');
-    if (storedVersion && storedVersion !== currentVersion) {
-      sessionStorage.removeItem('vip_unlocked');
-      sessionStorage.removeItem('vip_code_version');
-      APP.isVipUnlocked = false;
-    }
-    if (!APP.isVipUnlocked && sessionStorage.getItem('vip_unlocked') !== 'true') {
+    if (!isVipAuthorized()) {
       window.openVipAccess();
       return;
     }
@@ -1243,9 +1284,9 @@ function openTopUpWizard(identifier) {
 
   let packagesList = categoryGroup.packages && categoryGroup.packages.length > 0 ? categoryGroup.packages : [{ id: 'p-default', name: 'Standard Pack', price: 50, tag: 'Instant', inStock: true }];
   
-  // Ensure each package in packagesList has up-to-date inStock status from APP.products
+  // Ensure each package in packagesList has up-to-date inStock status from APP.products by exact ID
   packagesList = packagesList.map(pkg => {
-    const live = (APP.products || []).find(p => p.id === pkg.id || p.name === pkg.name);
+    const live = (APP.products || []).find(p => p.id === pkg.id);
     return {
       ...pkg,
       price: live ? Number(live.sellingPrice) : pkg.price,

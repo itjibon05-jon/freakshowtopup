@@ -982,6 +982,27 @@ function calcProfitPreview() {
   document.getElementById('prodProfitPreview').textContent = `৳${profit.toFixed(2)}`;
 }
 
+function onProductCategoryChange(selectedSubId = null) {
+  const catId = document.getElementById('prodCategory') ? document.getElementById('prodCategory').value : '';
+  const subSelect = document.getElementById('prodSubcategory');
+  if (!subSelect) return;
+
+  const categories = ADMIN_STATE.data.categories || [];
+  const cat = categories.find(c => c.id === catId);
+  const subs = (cat && Array.isArray(cat.subcategories)) ? cat.subcategories : [];
+
+  if (subs.length === 0) {
+    subSelect.innerHTML = '<option value="">-- No Subcategory (Direct Main Category) --</option>';
+  } else {
+    subSelect.innerHTML = '<option value="">-- Select Subcategory --</option>' +
+      subs.map(s => `<option value="${s.id}" ${s.id === selectedSubId ? 'selected' : ''}>${s.name} ${s.badge ? `(${s.badge})` : ''}</option>`).join('');
+  }
+
+  if (selectedSubId) {
+    subSelect.value = selectedSubId;
+  }
+}
+
 function openAddProductModal() {
   document.getElementById('productModalTitle').textContent = '➕ Add Product / Denomination';
   document.getElementById('prodEditId').value = '';
@@ -992,6 +1013,7 @@ function openAddProductModal() {
   if (document.getElementById('prodCommand')) document.getElementById('prodCommand').value = '';
   if (document.getElementById('prodInStock')) document.getElementById('prodInStock').value = 'true';
   document.getElementById('prodIcon').value = 'assets/ff_diamond.jpg';
+  onProductCategoryChange();
   calcProfitPreview();
   openModal('productModal');
 }
@@ -1003,7 +1025,16 @@ function openEditProductModal(prodId) {
   document.getElementById('prodEditId').value = p.id;
   document.getElementById('prodName').value = p.name;
   document.getElementById('prodCategory').value = p.categoryId;
-  document.getElementById('prodType').value = p.productType || 'FIXED';
+  onProductCategoryChange(p.subcategoryId);
+  if (p.deliveryType || p.productType) {
+    const delSelect = document.getElementById('prodDeliveryType');
+    if (delSelect) {
+      if (p.deliveryType === 'CODE Delivery' || p.productType === 'CODE DELIVERY') delSelect.value = 'CODE DELIVERY';
+      else if (p.deliveryType === 'Gmail Delivery' || p.productType === 'GMAIL DELIVERY') delSelect.value = 'GMAIL DELIVERY';
+      else if (p.deliveryType === 'Admin Delivery' || p.productType === 'ADMIN DELIVERY') delSelect.value = 'ADMIN DELIVERY';
+      else delSelect.value = 'AUTO TOP-UP';
+    }
+  }
   document.getElementById('prodSellingPrice').value = p.sellingPrice;
   document.getElementById('prodSupplierCost').value = p.supplierCost;
   document.getElementById('prodSupplierCode').value = p.providerCode || '';
@@ -1034,7 +1065,9 @@ async function submitProduct(e) {
   const id = document.getElementById('prodEditId').value;
   const name = document.getElementById('prodName').value;
   const categoryId = document.getElementById('prodCategory').value;
-  const productType = document.getElementById('prodType').value;
+  const subcategoryId = document.getElementById('prodSubcategory') ? document.getElementById('prodSubcategory').value : '';
+  const productType = document.getElementById('prodDeliveryType') ? document.getElementById('prodDeliveryType').value : 'AUTO TOP-UP';
+  const deliveryType = productType === 'CODE DELIVERY' ? 'CODE Delivery' : (productType === 'GMAIL DELIVERY' ? 'Gmail Delivery' : (productType === 'ADMIN DELIVERY' ? 'Admin Delivery' : 'UID Auto'));
   const sellingPrice = parseFloat(document.getElementById('prodSellingPrice').value);
   const supplierCost = parseFloat(document.getElementById('prodSupplierCost').value);
   const providerCode = document.getElementById('prodSupplierCode').value;
@@ -1052,7 +1085,7 @@ async function submitProduct(e) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${ADMIN_STATE.token}`
       },
-      body: JSON.stringify({ name, categoryId, productType, sellingPrice, supplierCost, providerCode, command, inStock, icon, isActive: true })
+      body: JSON.stringify({ name, categoryId, subcategoryId: subcategoryId || null, productType, deliveryType, sellingPrice, supplierCost, providerCode, command, inStock, icon, isActive: true })
     });
     const data = await res.json();
     if (data.success) {

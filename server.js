@@ -408,10 +408,20 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (isValid) {
+        const currentVer = Number(db.settings.vipCodeVersion || 1);
+        const authUser = auth.authenticateRequest(req);
+        if (authUser) {
+          authUser.vipCodeVersion = currentVer;
+          authUser.hasVipAccess = true;
+          authUser.vipUnlocked = true;
+          authUser.vipUnlockedAt = new Date().toISOString();
+          db.saveAll();
+        }
+
         return sendJson(res, 200, {
           success: true,
           message: 'VIP Access Granted!',
-          vipCodeVersion: Number(db.settings.vipCodeVersion || 1)
+          vipCodeVersion: currentVer
         }, req);
       }
       return sendJson(res, 400, { success: false, message: 'Invalid VIP Access Code. Contact admin for secret code.' }, req);

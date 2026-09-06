@@ -101,6 +101,17 @@
     "walletBDT": 500,
     "isVip": false,
     "vipUnlocked": false,
-    "hasVipAccess": false
+    "hasVipAccess": false,
+    "username": "viptest"
+  },
+  {
+    "id": "usr_bug1_test",
+    "email": "bug1test@example.com",
+    "username": "bug1tester",
+    "role": "USER",
+    "walletBDT": 100,
+    "hasVipAccess": false,
+    "vipUnlocked": false,
+    "isVip": false
   }
 ]

@@ -4,7 +4,7 @@
   "siteLogo": "assets/logo.jpg",
   "domain": "freakshowtopup.shop",
   "announcement": "⚡ Welcome to FREAKSHOW TOPUP",
-  "vipCodeVersion": 1788630686485,
+  "vipCodeVersion": 1788655327404,
   "minDepositBDT": 25,
   "minDepositUSD": 0.2,
   "usdToBdtRate": 120,
@@ -66,8 +66,8 @@
     "directButtonLink": "#products",
     "directButtonActive": false
   },
-  "currentVipCode": "JOY100LVL",
-  "vipAccessCodeHash": "$2a$10$0tA3rGT0opTovTPe41sVheLvW0tXLMdOQ6RVZlpAeNIsbvvJD7pba",
+  "currentVipCode": "CUSTOMVIP2026",
+  "vipAccessCodeHash": "$2a$10$2nqz8NzcpKm9LO6DOSiCweTtek2NgR4i0u90ILwcLkLgue8oaczdu",
   "maintenanceMode": false,
   "recentOrdersSectionEnabled": true,
   "referralSystemEnabled": true,
@@ -99,5 +99,5 @@
   "registrationDisabled": false,
   "popupDisabled": false,
   "newUserBonusEnabled": false,
-  "vipAccessCode": "JOY100LVL"
+  "vipAccessCode": "CUSTOMVIP2026"
 }
