@@ -208,6 +208,9 @@ function setupLanguage() {
   });
   const langToggle = document.getElementById('btnLangToggle');
   if (langToggle) langToggle.textContent = APP.lang === 'en' ? '🇬🇧 EN' : '🇧🇩 বাংলা';
+  if (APP.settings && Object.keys(APP.settings).length > 0) {
+    applyBrandingAndHeroSettings(APP.settings);
+  }
 }
 
 function toggleLanguage() {
