@@ -212,6 +212,23 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
+      .login-container {
+        padding: 28px 18px;
+        border-radius: 18px;
+      }
+      .brand-title {
+        font-size: 1.35rem;
+      }
+      .form-input {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -237,6 +254,9 @@
         <label class="form-label" for="adminPassword">Secret Password</label>
         <div class="input-wrap">
           <input type="password" id="adminPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+        </div>
+      </div>
+
       <div style="display: flex; justify-content: flex-end; margin-top: -10px; margin-bottom: 16px;">
         <a href="javascript:void(0)" onclick="handleForgotPassword()" style="font-size: 0.8rem; color: var(--brand-cyan); text-decoration: none; font-weight: 600;">Forgot Password?</a>
       </div>

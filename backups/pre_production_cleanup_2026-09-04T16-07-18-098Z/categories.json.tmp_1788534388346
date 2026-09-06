@@ -1,0 +1,185 @@
+[
+  {
+    "id": "cat-ff",
+    "name": "Free Fire Fast Focus",
+    "slug": "free-fire",
+    "icon": "assets/ff_diamond.jpg",
+    "sortOrder": 1,
+    "isActive": true,
+    "subcategories": [
+      {
+        "id": "sub-ff-bd",
+        "categoryId": "cat-ff",
+        "name": "Free Fire Top Up [BD]",
+        "slug": "free-fire-topup-bd",
+        "icon": "assets/ff_diamond.jpg",
+        "badge": "Instant ⚡",
+        "deliveryType": "UID Auto",
+        "sortOrder": 1,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-lite",
+        "categoryId": "cat-ff",
+        "name": "Weekly Lite",
+        "slug": "weekly-lite",
+        "icon": "assets/ff_weekly_lite.jpg",
+        "badge": "Weekly Lite",
+        "deliveryType": "UID Auto",
+        "sortOrder": 2,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-membership",
+        "categoryId": "cat-ff",
+        "name": "Weekly & Monthly Pass",
+        "slug": "weekly-monthly-pass",
+        "icon": "assets/ff_membership_v2.jpg",
+        "badge": "VIP Passes",
+        "deliveryType": "UID Auto",
+        "sortOrder": 3,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-lvl",
+        "categoryId": "cat-ff",
+        "name": "Level Up Pass",
+        "slug": "level-up-pass",
+        "icon": "assets/ff_levelup.jpg",
+        "badge": "Level Rewards",
+        "deliveryType": "UID Auto",
+        "sortOrder": 4,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-indo",
+        "categoryId": "cat-ff",
+        "name": "Indonesia UID TopUp",
+        "slug": "indonesia-uid-topup",
+        "icon": "assets/ff_indonesia.jpg",
+        "badge": "Indo Server",
+        "deliveryType": "UID Auto",
+        "sortOrder": 5,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-likes",
+        "categoryId": "cat-ff",
+        "name": "FreeFire Like",
+        "slug": "free-fire-like-booster",
+        "icon": "assets/ff_like.jpg",
+        "badge": "Profile Likes",
+        "notice": "(অবশ্যই ২৪ ঘণ্টা পর পর অর্ডার করবেন ১ মিনিট আগেও করবেন না) ২০০ লাইক যাবে।",
+        "deliveryType": "UID Auto",
+        "sortOrder": 6,
+        "isActive": true
+      },
+      {
+        "id": "sub-ff-vip",
+        "categoryId": "cat-ff",
+        "name": "VIP Access Pass",
+        "slug": "ff-vip-access",
+        "icon": "assets/ff_membership_v2.jpg",
+        "badge": "👑 SECRET VIP",
+        "deliveryType": "UID Auto",
+        "sortOrder": 7,
+        "isActive": true,
+        "isVip": true
+      }
+    ]
+  },
+  {
+    "id": "cat-vouchers",
+    "name": "Vouchers & Shells",
+    "slug": "vouchers-shells",
+    "icon": "assets/unipin_voucher.jpg",
+    "sortOrder": 2,
+    "isActive": true,
+    "subcategories": [
+      {
+        "id": "sub-vouchers-unipin",
+        "categoryId": "cat-vouchers",
+        "name": "UniPin Vouchers",
+        "slug": "unipin-vouchers",
+        "icon": "assets/unipin_voucher.jpg",
+        "badge": "Digital Code",
+        "deliveryType": "CODE Delivery",
+        "sortOrder": 1,
+        "isActive": true
+      },
+      {
+        "id": "sub-vouchers-garena",
+        "categoryId": "cat-vouchers",
+        "name": "Garena Shells (BD & MY)",
+        "slug": "garena-shells",
+        "icon": "assets/garena_voucher.jpg",
+        "badge": "Garena Code",
+        "deliveryType": "CODE Delivery",
+        "sortOrder": 2,
+        "isActive": true
+      },
+      {
+        "id": "sub-vouchers-indo",
+        "categoryId": "cat-vouchers",
+        "name": "INDO Garena Shell",
+        "slug": "indo-garena-shell",
+        "icon": "assets/garena_voucher.jpg",
+        "badge": "Indo Shell",
+        "deliveryType": "CODE Delivery",
+        "sortOrder": 3,
+        "isActive": true
+      },
+      {
+        "id": "sub-vouchers-sg",
+        "categoryId": "cat-vouchers",
+        "name": "SG Garena Shell",
+        "slug": "sg-garena-shell",
+        "icon": "assets/garena_voucher.jpg",
+        "badge": "Singapore",
+        "deliveryType": "CODE Delivery",
+        "sortOrder": 4,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "id": "cat-sub",
+    "name": "App Subscriptions & Digital Services",
+    "slug": "app-subscriptions",
+    "icon": "assets/youtube_premium.jpg",
+    "sortOrder": 4,
+    "isActive": true,
+    "subcategories": [
+      {
+        "id": "sub-sub-youtube",
+        "categoryId": "cat-sub",
+        "name": "YouTube Premium",
+        "slug": "youtube-premium",
+        "icon": "assets/youtube_premium.jpg",
+        "badge": "No Ads VIP",
+        "deliveryType": "Gmail Delivery",
+        "sortOrder": 1,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "id": "cat-jrj-jibon",
+    "slug": "jrj-jibon",
+    "name": "JRJ JIBON",
+    "icon": "assets/ff_diamond.jpg",
+    "sortOrder": 1,
+    "isActive": false,
+    "subcategories": []
+  },
+  {
+    "id": "cat-less-is-more",
+    "name": "LESS IS MORE",
+    "slug": "less-is-more",
+    "icon": "assets/less_is_more.png",
+    "sortOrder": 1,
+    "position": "TOP",
+    "isActive": false,
+    "subcategories": []
+  }
+]

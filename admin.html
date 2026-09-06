@@ -718,6 +718,7 @@
         transition: all 0.2s ease !important;
         outline: none !important;
         user-select: none !important;
+        -webkit-tap-highlight-color: transparent !important;
       }
 
       .hamburger-btn:hover,
@@ -766,9 +767,11 @@
         font-size: 1.15rem !important;
         cursor: pointer !important;
         transition: all 0.2s ease !important;
+        -webkit-tap-highlight-color: transparent !important;
       }
 
-      .sidebar-close-btn:hover {
+      .sidebar-close-btn:hover,
+      .sidebar-close-btn:active {
         background: rgba(239, 68, 68, 0.2) !important;
         color: #f87171 !important;
         border-color: rgba(239, 68, 68, 0.4) !important;
@@ -782,9 +785,9 @@
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background: rgba(4, 6, 12, 0.78) !important;
-        backdrop-filter: blur(5px) !important;
-        -webkit-backdrop-filter: blur(5px) !important;
+        background: rgba(4, 6, 12, 0.82) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
         z-index: 998 !important;
         opacity: 0 !important;
         pointer-events: none !important;
@@ -802,9 +805,9 @@
         top: 0 !important;
         left: 0 !important;
         bottom: 0 !important;
-        width: 285px !important;
-        min-width: 285px !important;
-        max-width: 85vw !important;
+        width: 290px !important;
+        min-width: 290px !important;
+        max-width: 86vw !important;
         height: 100vh !important;
         height: 100dvh !important;
         z-index: 1000 !important;
@@ -846,10 +849,11 @@
         white-space: normal !important;
         border-left: 3px solid transparent !important;
         border-bottom: none !important;
-        padding: 11px 14px !important;
-        min-height: 44px !important;
+        padding: 12px 14px !important;
+        min-height: 46px !important;
         font-size: 0.92rem !important;
         border-radius: var(--radius-md) !important;
+        -webkit-tap-highlight-color: transparent !important;
       }
 
       .menu-item.active {
@@ -885,12 +889,8 @@
 
       .header-actions .btn {
         padding: 7px 10px !important;
-        font-size: 0.78rem !important;
+        font-size: 0.8rem !important;
         min-height: 38px !important;
-      }
-
-      .header-actions .btn-danger {
-        padding: 7px 10px !important;
       }
 
       /* CONTENT AREA RESPONSIVE */
@@ -909,6 +909,26 @@
       .section-title-wrap {
         margin-bottom: 16px !important;
         gap: 10px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      .section-title-wrap > div:last-child {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+
+      .section-title-wrap .form-input,
+      .section-title-wrap .form-select {
+        width: 100% !important;
+        flex: 1 1 140px !important;
+        min-width: 0 !important;
+      }
+
+      .section-title-wrap .btn {
+        flex-shrink: 0 !important;
       }
 
       /* METRICS GRID RESPONSIVE */
@@ -958,6 +978,7 @@
       /* TABLES RESPONSIVE */
       .table-container {
         width: 100% !important;
+        max-width: 100% !important;
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
         border-radius: var(--radius-md) !important;
@@ -973,17 +994,37 @@
       /* MODALS RESPONSIVE */
       .modal-backdrop {
         padding: 10px !important;
+        z-index: 2000 !important;
       }
 
       .modal-window {
         padding: 18px 14px !important;
         max-width: 96vw !important;
-        max-height: 90vh !important;
+        width: 100% !important;
+        max-height: 88vh !important;
+        max-height: 88dvh !important;
         border-radius: var(--radius-lg) !important;
       }
 
       .modal-title {
         font-size: 1.05rem !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-actions .btn-header-add-user,
+      .header-actions .btn-header-add-prod {
+        display: none !important;
+      }
+
+      .header-actions .btn-text {
+        display: none !important;
+      }
+
+      .header-actions .btn {
+        padding: 7px 10px !important;
+        min-width: 38px !important;
+        justify-content: center !important;
       }
     }
 
@@ -998,11 +1039,21 @@
       }
 
       .metric-val {
-        font-size: 1.2rem !important;
+        font-size: 1.15rem !important;
       }
 
-      .header-actions button span:not(.icon-only) {
-        display: none;
+      .m-brand-name {
+        font-size: 0.95rem !important;
+      }
+
+      .m-brand-sub {
+        font-size: 0.6rem !important;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .metrics-grid {
+        grid-template-columns: 1fr !important;
       }
     }
   </style>
@@ -1124,14 +1175,13 @@
       </div>
 
       <div class="header-actions">
-        <button class="btn btn-ghost" onclick="loadAllAdminData()">🔄 Refresh</button>
-        <button class="btn btn-primary" onclick="openAddUserModal()">➕ Add User</button>
-        <button class="btn btn-primary" onclick="openAddProductModal()"
-          style="background: linear-gradient(135deg, var(--brand-purple), var(--brand-blue));">➕ Add Product</button>
-        <a href="/" target="_blank" class="btn btn-ghost">🌐 Site ↗</a>
-        <button class="btn btn-danger" onclick="handleAdminLogout()"
-          style="font-weight: 800; background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #f87171;">🚪
-          Sign Out</button>
+        <button class="btn btn-ghost" onclick="loadAllAdminData()" title="Refresh Dashboard Data"><span class="btn-icon">🔄</span><span class="btn-text"> Refresh</span></button>
+        <button class="btn btn-primary btn-header-add-user" onclick="openAddUserModal()" title="Add New User"><span class="btn-icon">➕</span><span class="btn-text"> Add User</span></button>
+        <button class="btn btn-primary btn-header-add-prod" onclick="openAddProductModal()" title="Add New Product"
+          style="background: linear-gradient(135deg, var(--brand-purple), var(--brand-blue));"><span class="btn-icon">➕</span><span class="btn-text"> Add Product</span></button>
+        <a href="/" target="_blank" class="btn btn-ghost" title="View Live Website"><span class="btn-icon">🌐</span><span class="btn-text"> Site ↗</span></a>
+        <button class="btn btn-danger" onclick="handleAdminLogout()" title="Sign Out"
+          style="font-weight: 800; background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #f87171;"><span class="btn-icon">🚪</span><span class="btn-text"> Sign Out</span></button>
       </div>
     </header>
 

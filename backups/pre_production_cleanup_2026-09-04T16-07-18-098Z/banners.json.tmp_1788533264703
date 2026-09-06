@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ban_welcome_offer",
+    "title": "🔥 20% Extra Diamonds on First Deposit!",
+    "description": "Instant automated recharge with bKash, Nagad & Rocket. 24/7 delivery to Free Fire & PUBG.",
+    "image": "assets/freefire_special_offer.jpg",
+    "buttonText": "Recharge Now 🚀",
+    "destinationUrl": "#freefire-section",
+    "status": "ACTIVE",
+    "displayOrder": 1,
+    "displayFrequency": "ONCE_PER_SESSION",
+    "startAt": "2026-01-01T00:00:00.000Z",
+    "endAt": "2026-12-31T23:59:59.000Z",
+    "createdAt": "2026-08-28T12:00:00.000Z",
+    "updatedAt": "2026-08-28T12:00:00.000Z"
+  }
+]

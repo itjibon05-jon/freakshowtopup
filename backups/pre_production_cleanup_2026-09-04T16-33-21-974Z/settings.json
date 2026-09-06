@@ -1,0 +1,78 @@
+{
+  "siteName": "FREAKSHOWTOPUP",
+  "domain": "freakshowtopup.shop",
+  "announcement": "⚡ Welcome to FREAKSHOWTOPUP! Instant Automated Free Fire Diamonds, PUBG UC & Game Top-Up in Bangladesh & Globally.",
+  "minDepositBDT": 25,
+  "minDepositUSD": 0.2,
+  "usdToBdtRate": 120,
+  "exchangeRate": 120,
+  "referralCommissionPercent": 0.01,
+  "telegramBotToken": "8476447549:AAEy_ypik8gy3yLCaL0CAxiOp9D1a78GVr0",
+  "telegramAdminChatId": "5339688506",
+  "telegramGroupId": "-1004410551940",
+  "telegramUsername": "freakshowtopup",
+  "telegramLink": "https://t.me/freakshowtopup",
+  "whatsappNumber": "+8801641625723",
+  "whatsappLink": "https://wa.me/8801641625723",
+  "adminEmail": "admin.freakshow@gmail.com",
+  "supportEmail": "admin.freakshow@gmail.com",
+  "telegramAuthorizedUserIds": [
+    "5339688506"
+  ],
+  "paymentNumbers": {
+    "bkash": "01641625723 (Personal / Send Money)",
+    "nagad": "01641625723 (Personal / Send Money)",
+    "rocket": "01641625723 (Personal / Send Money)",
+    "cellfin": "01641625723 (Cellfin / Bank Transfer)",
+    "bank": "01641625723 (Cellfin / Bank Transfer)",
+    "bangla_qr": "assets/bqr.png",
+    "binance": "5339688506",
+    "binanceId": "5339688506",
+    "binanceTrc20": "TYD6xK4Fqpz28V9kL6M3QzRtY5W8NuP2Xs"
+  },
+  "paymentInstructions": {
+    "bkash": "📝 টাকা পাঠানোর নিয়মাবলী:\n১. *247# ডায়াল করে বা অ্যাপ ওপেন করুন।\n২. Send Money অপশন সিলেক্ট করুন।\n৩. উপরের নম্বরে টাকা পাঠান।\n৪. টাকার পরিমাণ দিন (মিনিমাম ২৫ ৳)।\n৫. আপনার PIN দিয়ে কনফার্ম করুন।\n৬. সফল হলে ফিরতি SMS-এর Transaction ID (TrxID) কপি করুন।\n৭. TrxID ঘরে বসিয়ে ভেরিফাই ➔ বাটনে চাপুন।",
+    "nagad": "📝 টাকা পাঠানোর নিয়মাবলী:\n১. *167# ডায়াল করে বা অ্যাপ ওপেন করুন।\n২. Send Money অপশন সিলেক্ট করুন।\n৩. উপরের নম্বরে টাকা পাঠান।\n৪. টাকার পরিমাণ দিন (মিনিমাম ২৫ ৳)।\n৫. আপনার PIN দিয়ে কনফার্ম করুন।\n৬. সফল হলে ফিরতি SMS-এর Transaction ID (TrxID) কপি করুন।\n৭. TrxID ঘরে বসিয়ে ভেরিফাই ➔ বাটনে চাপুন।",
+    "rocket": "📝 টাকা পাঠানোর নিয়মাবলী:\n১. *322# ডায়াল করে বা অ্যাপ ওপেন করুন।\n২. Send Money অপশন সিলেক্ট করুন।\n৩. উপরের নম্বরে টাকা পাঠান।\n৪. টাকার পরিমাণ দিন (মিনিমাম ২৫ ৳)।\n৫. আপনার PIN দিয়ে কনফার্ম করুন।\n৬. সফল হলে ফিরতি SMS-এর Transaction ID (TrxID) কপি করুন।\n৭. TrxID ঘরে বসিয়ে ভেরিফাই ➔ বাটনে চাপুন।",
+    "cellfin": "📝 টাকা পাঠানোর নিয়মাবলী:\n১. অ্যাপ ওপেন করুন।\n২. Send Money অপশন সিলেক্ট করুন।\n৩. উপরের নম্বরে টাকা পাঠান।\n৪. টাকার পরিমাণ দিন (মিনিমাম ২৫ ৳)।\n৫. আপনার PIN দিয়ে কনফার্ম করুন।\n৬. সফল হলে ফিরতি SMS-এর Transaction ID (TrxID) কপি করুন।\n৭. TrxID ঘরে বসিয়ে ভেরিফাই ➔ বাটনে চাপুন।",
+    "binance": "📝 Binance / USDT ডিপোজিট নিয়মাবলী:\n১. আপনার Binance App বা Crypto Wallet ওপেন করুন।\n২. উপরের Binance ID বা TRC20 Address-এ ডলার (USDT) পাঠান।\n৩. ট্রানজেকশন সফল হলে Transaction ID (TrxID / Hash) কপি করুন।\n৪. নিচে TrxID এবং প্রেরকের নাম/আইডি বসিয়ে ভেরিফাই ও জমা দিন বাটনে চাপুন।",
+    "bangla_qr": "📝 বাংলা কিউআর (Bangla QR) পেমেন্ট নিয়মাবলী:\n১. আপনার bKash, Nagad, Cellfin, Rocket বা যেকোনো ব্যাংকিং অ্যাপ ওপেন করুন।\n২. Scan QR কোড অপশন সিলেক্ট করে উপরের QR কোডটি স্ক্যান করুন।\n৩. টাকার পরিমাণ দিন এবং PIN দিয়ে পেমেন্ট সম্পন্ন করুন।\n৪. সফল হলে ফিরতি SMS-এর Transaction ID (TrxID) কপি করুন।\n৫. নিচে TrxID বসিয়ে ভেরিফাই ও জমা দিন বাটনে চাপুন।"
+  },
+  "customButtons": {
+    "directButtonText": "Direct Top-Up",
+    "directButtonLink": "#products",
+    "directButtonActive": false
+  },
+  "vipAccessCodeHash": "$2a$10$xx10FxFx92wNmBZMASD0nObP1kT7CNEgtJ1kRE25xJsNWy5qKReCu",
+  "maintenanceMode": false,
+  "recentOrdersSectionEnabled": false,
+  "referralSystemEnabled": true,
+  "minDepositForCommission": 0,
+  "maxCommissionPerDeposit": 0,
+  "firstDepositOnly": false,
+  "referralValidityDays": 90,
+  "antiFraudEnabled": true,
+  "paymentMethodStatus": {
+    "bkash": true,
+    "nagad": true,
+    "rocket": true,
+    "cellfin": true,
+    "bangla_qr": true,
+    "binance": true
+  },
+  "howToDeposit": {
+    "enabled": true,
+    "title": "কীভাবে ডিপোজিট করবেন? (Updated Video)",
+    "url": "https://youtube.com/watch?v=mock_video_id",
+    "image": "assets/how_to_deposit_test.jpg",
+    "description": "ভিডিও টিউটোরিয়াল দেখতে এখানে ক্লিক করুন"
+  },
+  "how_to_deposit_enabled": true,
+  "how_to_deposit_title": "কীভাবে ডিপোজিট করবেন? (Updated Video)",
+  "how_to_deposit_image": "assets/how_to_deposit_test.jpg",
+  "how_to_deposit_url": "https://youtube.com/watch?v=mock_video_id",
+  "autoTopupDisabled": false,
+  "registrationDisabled": false,
+  "popupDisabled": false,
+  "newUserBonusEnabled": false
+}

@@ -110,8 +110,26 @@
     "username": "bug1tester",
     "role": "USER",
     "walletBDT": 100,
-    "hasVipAccess": false,
-    "vipUnlocked": false,
-    "isVip": false
+    "hasVipAccess": true,
+    "vipUnlocked": true,
+    "isVip": false,
+    "vipCodeVersion": 2000
+  },
+  {
+    "id": "usr_792de7c613985804",
+    "email": "usd_calc_user_1788659047519@freakshowtopup.shop",
+    "username": "usd_calc_user_1",
+    "name": "USD Exchange Tester",
+    "passwordHash": "$2a$12$3v4na6lmND42b9vPn.22X.8REeeWJqH4s8xOAIiF6G6l1YkP0gg3a",
+    "role": "USER",
+    "country": "GLOBAL",
+    "currency": "USD",
+    "currencyChangeUsed": true,
+    "referralCode": "FS702235",
+    "referredById": null,
+    "status": "ACTIVE",
+    "createdAt": "2026-09-06T01:44:08.204Z",
+    "updatedAt": "2026-09-06T01:44:08.205Z",
+    "lastLoginAt": "2026-09-06T01:44:08.206Z"
   }
 ]

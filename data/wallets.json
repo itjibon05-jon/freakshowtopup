@@ -44,5 +44,14 @@
     "userId": "poor_shopper_1788619969904",
     "balance": 5,
     "currency": "BDT"
+  },
+  {
+    "id": "wal_6f4634c83fc6b5c2",
+    "userId": "usr_792de7c613985804",
+    "currency": "USD",
+    "balance": 1230,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-06T01:44:08.206Z",
+    "updatedAt": "2026-09-06T01:44:08.611Z"
   }
 ]

@@ -1,0 +1,4466 @@
+[
+  {
+    "id": "wal_ed055746899c60b0",
+    "userId": "usr_39398b248d54d82f",
+    "currency": "USD",
+    "balance": 460,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T11:40:07.853Z",
+    "updatedAt": "2026-09-04T03:35:44.927Z"
+  },
+  {
+    "id": "wal_c8b0f5dbf5825df8",
+    "userId": "usr_c7f2f4cac904cf45",
+    "currency": "BDT",
+    "balance": 200,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T11:40:07.951Z",
+    "updatedAt": "2026-09-04T12:37:27.164Z"
+  },
+  {
+    "id": "wal_3f3b140017ef3d9b",
+    "userId": "usr_992a83d49c79d76c",
+    "currency": "BDT",
+    "balance": 478,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T11:40:07.992Z",
+    "updatedAt": "2026-08-28T11:40:08.852Z"
+  },
+  {
+    "id": "wal_7d2ea82afe11b919",
+    "userId": "usr_b9ed23c63ff48068",
+    "currency": "USD",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T12:12:53.796Z",
+    "updatedAt": "2026-08-28T12:12:53.796Z"
+  },
+  {
+    "id": "wal_5a1e0687f72901c1",
+    "userId": "usr_4f9a603e3e7ff736",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T12:12:53.914Z",
+    "updatedAt": "2026-08-28T12:12:53.930Z"
+  },
+  {
+    "id": "wal_6bfbc49050569679",
+    "userId": "usr_ee3ae083f4d001c9",
+    "currency": "BDT",
+    "balance": 478,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T12:12:53.957Z",
+    "updatedAt": "2026-08-28T12:12:54.878Z"
+  },
+  {
+    "id": "wal_d9ac98a8e2e36a73",
+    "userId": "usr_master_admin_01",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T12:27:38.699Z",
+    "updatedAt": "2026-08-28T12:27:38.699Z"
+  },
+  {
+    "id": "wal_ddd6655414b7b8d2",
+    "userId": "usr_75de8b252be3d22c",
+    "currency": "BDT",
+    "balance": 181,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T12:57:44.809Z",
+    "updatedAt": "2026-08-29T15:58:09.996Z"
+  },
+  {
+    "id": "wal_cec02fb3814e2d0e",
+    "userId": "usr_6c5c11b464993665",
+    "currency": "USD",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:38:33.679Z",
+    "updatedAt": "2026-08-28T15:38:33.679Z"
+  },
+  {
+    "id": "wal_7de081d95d2fddba",
+    "userId": "usr_ac064073d18d2426",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:38:33.744Z",
+    "updatedAt": "2026-08-28T15:38:33.761Z"
+  },
+  {
+    "id": "wal_0a2fb13aaff6faf0",
+    "userId": "usr_5670be6aad2272c1",
+    "currency": "BDT",
+    "balance": 478,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:38:33.771Z",
+    "updatedAt": "2026-08-28T15:38:34.610Z"
+  },
+  {
+    "id": "wal_3b9fde44624721a9",
+    "userId": "usr_7bb1afb94cb13a53",
+    "currency": "USD",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:44:43.367Z",
+    "updatedAt": "2026-08-28T15:44:43.367Z"
+  },
+  {
+    "id": "wal_dcfff32748e85248",
+    "userId": "usr_44473b21f1bbc773",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:44:43.432Z",
+    "updatedAt": "2026-08-28T15:44:43.452Z"
+  },
+  {
+    "id": "wal_904398df1674370d",
+    "userId": "usr_0c2c558f9c0b4d39",
+    "currency": "BDT",
+    "balance": 478,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:44:43.464Z",
+    "updatedAt": "2026-08-28T15:44:44.306Z"
+  },
+  {
+    "id": "wal_ebbce1549b6bbcf9",
+    "userId": "usr_0c910c34821ef9f2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:44:44.718Z",
+    "updatedAt": "2026-08-28T15:44:44.718Z"
+  },
+  {
+    "id": "wal_9fe5b77522beb7de",
+    "userId": "usr_90aefb45fd5f9b17",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-28T15:47:12.901Z",
+    "updatedAt": "2026-08-28T15:47:12.901Z"
+  },
+  {
+    "id": "wal_5cb1df82a25d273b",
+    "userId": "usr_f6a5dba4566b3bb2",
+    "currency": "USD",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:04:23.971Z",
+    "updatedAt": "2026-08-29T15:04:23.971Z"
+  },
+  {
+    "id": "wal_0d034ec2d43aa3b6",
+    "userId": "usr_5b78c3d679c069bf",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:04:24.038Z",
+    "updatedAt": "2026-08-29T15:04:24.053Z"
+  },
+  {
+    "id": "wal_7827a1074e489ef3",
+    "userId": "usr_7e3e004691b6ba7c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:04:24.062Z",
+    "updatedAt": "2026-08-29T15:04:25.889Z"
+  },
+  {
+    "id": "wal_c63d7596c0096b8b",
+    "userId": "usr_8d6f70a2974304b7",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:04:25.924Z",
+    "updatedAt": "2026-08-29T15:04:25.924Z"
+  },
+  {
+    "id": "wal_f6207a3f60d17f66",
+    "userId": "usr_fbcb9ef2b71f03d0",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:02.728Z",
+    "updatedAt": "2026-08-29T15:08:02.728Z"
+  },
+  {
+    "id": "wal_8df88b433f8334e2",
+    "userId": "usr_9f17b005c9b8aff4",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:04.292Z",
+    "updatedAt": "2026-08-29T15:08:04.292Z"
+  },
+  {
+    "id": "wal_d152adc61b7e971e",
+    "userId": "usr_07fc100e3ae939b8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:04.778Z",
+    "updatedAt": "2026-08-29T15:08:04.778Z"
+  },
+  {
+    "id": "wal_8d8bbbb90494dc2e",
+    "userId": "usr_d76dce19c9643e97",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:05.258Z",
+    "updatedAt": "2026-08-29T15:08:05.364Z"
+  },
+  {
+    "id": "wal_fed7ea72a5ea4601",
+    "userId": "usr_c8d5a261919ea6ae",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:05.848Z",
+    "updatedAt": "2026-08-29T15:08:05.881Z"
+  },
+  {
+    "id": "wal_49706986ef497cfe",
+    "userId": "usr_641a17c68e06c156",
+    "currency": "BDT",
+    "balance": 978,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:06.376Z",
+    "updatedAt": "2026-08-29T15:08:06.427Z"
+  },
+  {
+    "id": "wal_e93b905991f9a22e",
+    "userId": "usr_f2b2f63cf854192a",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:06.976Z",
+    "updatedAt": "2026-08-29T15:08:06.992Z"
+  },
+  {
+    "id": "wal_e4bc146f91a327ad",
+    "userId": "usr_93b5162509ea2daf",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:41.420Z",
+    "updatedAt": "2026-08-29T15:08:41.420Z"
+  },
+  {
+    "id": "wal_b2e46f5b4ae4cde7",
+    "userId": "usr_93e4102ff5f6395f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:43.095Z",
+    "updatedAt": "2026-08-29T15:08:43.095Z"
+  },
+  {
+    "id": "wal_c746dbc22ff137b2",
+    "userId": "usr_149e074bb82de74c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:43.681Z",
+    "updatedAt": "2026-08-29T15:08:43.813Z"
+  },
+  {
+    "id": "wal_2f60c45c16e2a57c",
+    "userId": "usr_5af09c725b912515",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:44.368Z",
+    "updatedAt": "2026-08-29T15:08:44.400Z"
+  },
+  {
+    "id": "wal_2ec60af5f80f934e",
+    "userId": "usr_8d4e6367e4bb48db",
+    "currency": "BDT",
+    "balance": 978,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:44.922Z",
+    "updatedAt": "2026-08-29T15:08:44.968Z"
+  },
+  {
+    "id": "wal_041a99e4832828e4",
+    "userId": "usr_47198817da56efb8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:45.547Z",
+    "updatedAt": "2026-08-29T15:08:45.649Z"
+  },
+  {
+    "id": "wal_f8a3f4751533d211",
+    "userId": "usr_bff0ed5910b9109b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:46.140Z",
+    "updatedAt": "2026-08-29T15:08:46.765Z"
+  },
+  {
+    "id": "wal_317aa30da51f109e",
+    "userId": "usr_ea177bcf532433dc",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:08:46.615Z",
+    "updatedAt": "2026-08-29T15:08:46.765Z"
+  },
+  {
+    "id": "wal_e09ffef0876031df",
+    "userId": "usr_a02a5497cc05bc80",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:34.778Z",
+    "updatedAt": "2026-08-29T15:09:34.778Z"
+  },
+  {
+    "id": "wal_a3cd49fee0a46182",
+    "userId": "usr_108a313a10d3dac2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:36.164Z",
+    "updatedAt": "2026-08-29T15:09:36.164Z"
+  },
+  {
+    "id": "wal_f4a7d3009d8fdb8d",
+    "userId": "usr_2e29f1cab3b80b9a",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:36.668Z",
+    "updatedAt": "2026-08-29T15:09:36.821Z"
+  },
+  {
+    "id": "wal_55fc8415b2e712e9",
+    "userId": "usr_3c246b5e50ba7103",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:37.537Z",
+    "updatedAt": "2026-08-29T15:09:37.575Z"
+  },
+  {
+    "id": "wal_e0ba3f9c48b64267",
+    "userId": "usr_555f2a8a395a07f9",
+    "currency": "BDT",
+    "balance": 978,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:38.069Z",
+    "updatedAt": "2026-08-29T15:09:38.118Z"
+  },
+  {
+    "id": "wal_927d98d37cde786c",
+    "userId": "usr_a629b85c8cbc7b1d",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:38.692Z",
+    "updatedAt": "2026-08-29T15:09:38.808Z"
+  },
+  {
+    "id": "wal_7805ad04c5f52947",
+    "userId": "usr_e400da10d8c428b8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:39.327Z",
+    "updatedAt": "2026-08-29T15:09:39.936Z"
+  },
+  {
+    "id": "wal_b5b413ebcb433392",
+    "userId": "usr_5b6df1d76e838e5a",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-29T15:09:39.793Z",
+    "updatedAt": "2026-08-29T15:09:39.936Z"
+  },
+  {
+    "id": "wal_37e7acb47b8a4e49",
+    "userId": "usr_mtel2z1q",
+    "currency": "BDT",
+    "balance": 479,
+    "lockedAmount": 0,
+    "createdAt": "2026-08-30T01:31:38.215Z",
+    "updatedAt": "2026-09-01T17:18:55.740Z"
+  },
+  {
+    "id": "wal_78d10b24c9462775",
+    "userId": "usr_15bf15ef5c1812b1",
+    "currency": "BDT",
+    "balance": 138,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T17:53:21.844Z",
+    "updatedAt": "2026-09-04T03:18:50.433Z"
+  },
+  {
+    "id": "wal_34941b381cfb695e",
+    "userId": "usr_b27d4647100b50a1",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:46.657Z",
+    "updatedAt": "2026-09-02T19:03:46.657Z"
+  },
+  {
+    "id": "wal_d08e588a628df22c",
+    "userId": "usr_cc43b2586f2630b4",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:49.193Z",
+    "updatedAt": "2026-09-02T19:03:49.193Z"
+  },
+  {
+    "id": "wal_2cfb80bbf0b8b681",
+    "userId": "usr_b94e6b6979d27478",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:50.040Z",
+    "updatedAt": "2026-09-02T19:03:50.219Z"
+  },
+  {
+    "id": "wal_1b9d1fcbc38d9e3d",
+    "userId": "usr_1493d8d37e5f232f",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:51.080Z",
+    "updatedAt": "2026-09-02T19:03:51.123Z"
+  },
+  {
+    "id": "wal_89d0233338075635",
+    "userId": "usr_b6a7bebb47a15e15",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:51.913Z",
+    "updatedAt": "2026-09-02T19:03:51.986Z"
+  },
+  {
+    "id": "wal_c222cce28ec921e4",
+    "userId": "usr_4e376502b245bcbe",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:52.844Z",
+    "updatedAt": "2026-09-02T19:03:52.978Z"
+  },
+  {
+    "id": "wal_9f94d19efe0b6949",
+    "userId": "usr_dd14f38c0d0df142",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:53.802Z",
+    "updatedAt": "2026-09-02T19:03:54.791Z"
+  },
+  {
+    "id": "wal_c58d559eb549d429",
+    "userId": "usr_8827878f9b1989fc",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-02T19:03:54.607Z",
+    "updatedAt": "2026-09-02T19:03:54.791Z"
+  },
+  {
+    "id": "wal_87bce6dc13f32f42",
+    "userId": "usr_d0635035ffdeccc9",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:56:58.533Z",
+    "updatedAt": "2026-09-03T05:56:58.533Z"
+  },
+  {
+    "id": "wal_1e0388bf9c5a09c4",
+    "userId": "usr_e0e431d37c08ae38",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:02.626Z",
+    "updatedAt": "2026-09-03T05:57:02.626Z"
+  },
+  {
+    "id": "wal_947ecc72ea5e6539",
+    "userId": "usr_7f65073c2e3b4a91",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:04.114Z",
+    "updatedAt": "2026-09-03T05:57:04.817Z"
+  },
+  {
+    "id": "wal_0eaeda6bd3cb8aa5",
+    "userId": "usr_a1cb97ddc7bafd4a",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:15.381Z",
+    "updatedAt": "2026-09-03T05:57:15.381Z"
+  },
+  {
+    "id": "wal_105433e9c6ba9942",
+    "userId": "usr_691b3e2b65e8da11",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:19.694Z",
+    "updatedAt": "2026-09-03T05:57:19.694Z"
+  },
+  {
+    "id": "wal_ca31f04a41300db1",
+    "userId": "usr_f0b737a37f6442a3",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:21.098Z",
+    "updatedAt": "2026-09-03T05:57:21.531Z"
+  },
+  {
+    "id": "wal_5fe0c49ee4dfd8bd",
+    "userId": "usr_25fc9b57b3bba7de",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:23.877Z",
+    "updatedAt": "2026-09-03T05:57:24.048Z"
+  },
+  {
+    "id": "wal_27e572bf11a9ba5c",
+    "userId": "usr_e39b2baae460fd41",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:25.553Z",
+    "updatedAt": "2026-09-03T05:57:25.856Z"
+  },
+  {
+    "id": "wal_e930f8e0a67577b7",
+    "userId": "usr_a5540054ee9be2e2",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:27.505Z",
+    "updatedAt": "2026-09-03T05:57:27.814Z"
+  },
+  {
+    "id": "wal_ee117812e8483aa0",
+    "userId": "usr_0cbf859fe7338817",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:30.639Z",
+    "updatedAt": "2026-09-03T05:57:32.725Z"
+  },
+  {
+    "id": "wal_9eb73a38ae70cf1f",
+    "userId": "usr_2c027d5fe632c65c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T05:57:32.278Z",
+    "updatedAt": "2026-09-03T05:57:32.725Z"
+  },
+  {
+    "id": "wal_3d5b55dfc7e10b43",
+    "userId": "usr_350771143fc23061",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:00:50.571Z",
+    "updatedAt": "2026-09-03T06:00:50.571Z"
+  },
+  {
+    "id": "wal_6822243a5128563f",
+    "userId": "usr_d44c983d7971af4d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:00:56.341Z",
+    "updatedAt": "2026-09-03T06:00:56.341Z"
+  },
+  {
+    "id": "wal_3ade0524e1c8295a",
+    "userId": "usr_1793ec0e0fa2179f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:00:57.903Z",
+    "updatedAt": "2026-09-03T06:00:58.748Z"
+  },
+  {
+    "id": "wal_fd3c21c5acb2cdc9",
+    "userId": "usr_7b3487420654b28e",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:01:00.819Z",
+    "updatedAt": "2026-09-03T06:01:01.036Z"
+  },
+  {
+    "id": "wal_e5f2bafe904f465e",
+    "userId": "usr_5056dacd14fd8927",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:01:02.821Z",
+    "updatedAt": "2026-09-03T06:01:03.204Z"
+  },
+  {
+    "id": "wal_6177148a21886a49",
+    "userId": "usr_7ef24d6a8b1e9041",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:01:04.795Z",
+    "updatedAt": "2026-09-03T06:01:05.051Z"
+  },
+  {
+    "id": "wal_f7c3591f597fef8a",
+    "userId": "usr_a48330e53714b121",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:01:07.137Z",
+    "updatedAt": "2026-09-03T06:01:08.829Z"
+  },
+  {
+    "id": "wal_f3ab049fc0cd81ac",
+    "userId": "usr_c02a650bd5cc4ece",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:01:08.497Z",
+    "updatedAt": "2026-09-03T06:01:08.829Z"
+  },
+  {
+    "id": "wal_55c20b5cfc342e0e",
+    "userId": "usr_bd86dea0af688d7e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:05:38.101Z",
+    "updatedAt": "2026-09-03T06:05:38.101Z"
+  },
+  {
+    "id": "wal_03928e4f7b7a1f64",
+    "userId": "usr_23610e41b6d56c7e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:05:44.625Z",
+    "updatedAt": "2026-09-03T06:05:44.625Z"
+  },
+  {
+    "id": "wal_06a070e741b9e096",
+    "userId": "usr_17d3c6512611c19b",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:05:46.560Z",
+    "updatedAt": "2026-09-03T06:05:47.084Z"
+  },
+  {
+    "id": "wal_e0839ea41f0e949d",
+    "userId": "usr_fbc4652eb518fb38",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:06:07.162Z",
+    "updatedAt": "2026-09-03T06:06:10.857Z"
+  },
+  {
+    "id": "wal_9188622c3806b9bd",
+    "userId": "usr_225b171c4eaeeeb2",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:06:23.577Z",
+    "updatedAt": "2026-09-03T06:06:24.544Z"
+  },
+  {
+    "id": "wal_d3c0e777819980cf",
+    "userId": "usr_24b7639c02286835",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:06:29.032Z",
+    "updatedAt": "2026-09-03T06:06:30.487Z"
+  },
+  {
+    "id": "wal_e6dae7f74f163c4f",
+    "userId": "usr_2953ba7619266ecb",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:06:33.791Z",
+    "updatedAt": "2026-09-03T06:06:40.385Z"
+  },
+  {
+    "id": "wal_4d9d7b4e62847eba",
+    "userId": "usr_2312618f639bb239",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T06:06:36.472Z",
+    "updatedAt": "2026-09-03T06:06:40.385Z"
+  },
+  {
+    "id": "wal_ca4ca8fd221cb141",
+    "userId": "usr_43db448a2e2828a7",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:17.531Z",
+    "updatedAt": "2026-09-03T07:22:17.531Z"
+  },
+  {
+    "id": "wal_dbd6391bf80648a5",
+    "userId": "usr_8c6c73d3542c4bb5",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:19.889Z",
+    "updatedAt": "2026-09-03T07:22:19.889Z"
+  },
+  {
+    "id": "wal_3ca10a0694f6f8e2",
+    "userId": "usr_abf59b988996e551",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:20.703Z",
+    "updatedAt": "2026-09-03T07:22:20.889Z"
+  },
+  {
+    "id": "wal_dcfde0389de0e0ab",
+    "userId": "usr_74e3e3ec9edf657b",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:21.710Z",
+    "updatedAt": "2026-09-03T07:22:21.759Z"
+  },
+  {
+    "id": "wal_1369cb7d2f6ba3a9",
+    "userId": "usr_2ed7de56b507e557",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:22.583Z",
+    "updatedAt": "2026-09-03T07:22:22.663Z"
+  },
+  {
+    "id": "wal_0319ffce22d0d3f5",
+    "userId": "usr_b523641210a7e109",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:23.621Z",
+    "updatedAt": "2026-09-03T07:22:23.744Z"
+  },
+  {
+    "id": "wal_9eb0e7a3d71f8bc9",
+    "userId": "usr_1f69812f126c806c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:24.605Z",
+    "updatedAt": "2026-09-03T07:22:25.645Z"
+  },
+  {
+    "id": "wal_3894b93a697e918d",
+    "userId": "usr_f5b20e13ce557941",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:22:25.469Z",
+    "updatedAt": "2026-09-03T07:22:25.645Z"
+  },
+  {
+    "id": "wal_e36ff7634bc4cd2a",
+    "userId": "usr_69e4cf7ad28d87ac",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:03.465Z",
+    "updatedAt": "2026-09-03T07:27:03.465Z"
+  },
+  {
+    "id": "wal_e3930b528ab9b66e",
+    "userId": "usr_452eeb2c7899b1d8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:05.710Z",
+    "updatedAt": "2026-09-03T07:27:05.710Z"
+  },
+  {
+    "id": "wal_aa1f10f6c8ed385b",
+    "userId": "usr_97a180250f9df01e",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:06.494Z",
+    "updatedAt": "2026-09-03T07:27:06.685Z"
+  },
+  {
+    "id": "wal_7666dddbe1f6f1e9",
+    "userId": "usr_3853ea6fdb143bb1",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:07.608Z",
+    "updatedAt": "2026-09-03T07:27:07.669Z"
+  },
+  {
+    "id": "wal_238e512e20f993cd",
+    "userId": "usr_63fe9e81a50cd579",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:08.476Z",
+    "updatedAt": "2026-09-03T07:27:08.552Z"
+  },
+  {
+    "id": "wal_5cd60574f75eee66",
+    "userId": "usr_5905d181f31ea97c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:09.432Z",
+    "updatedAt": "2026-09-03T07:27:09.584Z"
+  },
+  {
+    "id": "wal_360eb9d46991c003",
+    "userId": "usr_e5e70eff6950c0d4",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:10.304Z",
+    "updatedAt": "2026-09-03T07:27:11.174Z"
+  },
+  {
+    "id": "wal_4010a0e3ee43677f",
+    "userId": "usr_48732d488e894339",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T07:27:10.979Z",
+    "updatedAt": "2026-09-03T07:27:11.174Z"
+  },
+  {
+    "id": "wal_de022e0d89f7b882",
+    "userId": "usr_f8e74da71f59f33a",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:00.981Z",
+    "updatedAt": "2026-09-03T16:02:00.981Z"
+  },
+  {
+    "id": "wal_379a3c8fff38a438",
+    "userId": "usr_fb2fa7c4a9943307",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:03.186Z",
+    "updatedAt": "2026-09-03T16:02:03.186Z"
+  },
+  {
+    "id": "wal_022039a2f87f74e6",
+    "userId": "usr_4ae7e802f7ffd545",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:03.942Z",
+    "updatedAt": "2026-09-03T16:02:04.115Z"
+  },
+  {
+    "id": "wal_fcc5d3986904868a",
+    "userId": "usr_d4802f6444b5e3f5",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:04.948Z",
+    "updatedAt": "2026-09-03T16:02:04.994Z"
+  },
+  {
+    "id": "wal_190e3d9b0fbe1b26",
+    "userId": "usr_7778387167a4fb34",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:05.744Z",
+    "updatedAt": "2026-09-03T16:02:05.806Z"
+  },
+  {
+    "id": "wal_983b5f4ef01a641a",
+    "userId": "usr_7a1813e2a2a9c29c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:06.621Z",
+    "updatedAt": "2026-09-03T16:02:06.770Z"
+  },
+  {
+    "id": "wal_ef97127d4ae329d9",
+    "userId": "usr_987d4ae29915b50b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:07.598Z",
+    "updatedAt": "2026-09-03T16:02:08.498Z"
+  },
+  {
+    "id": "wal_61376a80ccc7c7f9",
+    "userId": "usr_44633cc6271e3296",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:02:08.323Z",
+    "updatedAt": "2026-09-03T16:02:08.498Z"
+  },
+  {
+    "id": "wal_c6ca68cbc3985799",
+    "userId": "usr_93b03056355c03b3",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:17:50.469Z",
+    "updatedAt": "2026-09-03T16:17:50.469Z"
+  },
+  {
+    "id": "wal_440a4ca83e18498e",
+    "userId": "usr_f547fdf2935fc23f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:17:54.083Z",
+    "updatedAt": "2026-09-03T16:17:54.083Z"
+  },
+  {
+    "id": "wal_c3eaf73708d6236e",
+    "userId": "usr_0b56956d5f3ff54c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:17:55.479Z",
+    "updatedAt": "2026-09-03T16:17:55.887Z"
+  },
+  {
+    "id": "wal_ae7a0e5177583d29",
+    "userId": "usr_dedf317e3d68744b",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:17:57.102Z",
+    "updatedAt": "2026-09-03T16:17:57.202Z"
+  },
+  {
+    "id": "wal_fdaaf81820a0839e",
+    "userId": "usr_6fd370766d012d0d",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:17:58.697Z",
+    "updatedAt": "2026-09-03T16:17:58.937Z"
+  },
+  {
+    "id": "wal_05095734c91c23f5",
+    "userId": "usr_7b854c9c04c4e348",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:18:00.495Z",
+    "updatedAt": "2026-09-03T16:18:00.746Z"
+  },
+  {
+    "id": "wal_8b0e70c43f4499c5",
+    "userId": "usr_b95fc9103f7610af",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:18:02.129Z",
+    "updatedAt": "2026-09-03T16:18:04.034Z"
+  },
+  {
+    "id": "wal_feb2fc93ddbcd1c8",
+    "userId": "usr_198b13571111f41e",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:18:03.633Z",
+    "updatedAt": "2026-09-03T16:18:04.034Z"
+  },
+  {
+    "id": "wal_d2fb2b652b584587",
+    "userId": "usr_2797605c7730b30c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:19.194Z",
+    "updatedAt": "2026-09-03T16:41:19.194Z"
+  },
+  {
+    "id": "wal_c47607471d7344d9",
+    "userId": "usr_37b0fde152b13914",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:25.677Z",
+    "updatedAt": "2026-09-03T16:41:25.677Z"
+  },
+  {
+    "id": "wal_98ecc0ee34c31173",
+    "userId": "usr_83992d57066ae7a8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:27.058Z",
+    "updatedAt": "2026-09-03T16:41:27.583Z"
+  },
+  {
+    "id": "wal_34fb9f2c0fd8096d",
+    "userId": "usr_0233553115f5024f",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:31.352Z",
+    "updatedAt": "2026-09-03T16:41:31.535Z"
+  },
+  {
+    "id": "wal_88a6691601d66bf5",
+    "userId": "usr_fb2787e95169f328",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:33.049Z",
+    "updatedAt": "2026-09-03T16:41:33.316Z"
+  },
+  {
+    "id": "wal_d8194aa09058ed06",
+    "userId": "usr_d3c775bd00480920",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:34.796Z",
+    "updatedAt": "2026-09-03T16:41:35.126Z"
+  },
+  {
+    "id": "wal_1f3fad9331ff657b",
+    "userId": "usr_0f10d614b9a51985",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:37.022Z",
+    "updatedAt": "2026-09-03T16:41:38.509Z"
+  },
+  {
+    "id": "wal_9c2ff9a80ce89597",
+    "userId": "usr_9bb99ac29d006d7b",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:41:38.059Z",
+    "updatedAt": "2026-09-03T16:41:38.508Z"
+  },
+  {
+    "id": "wal_89390c049d8d76ae",
+    "userId": "usr_d8b767192a696a54",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:47:56.196Z",
+    "updatedAt": "2026-09-03T16:47:56.196Z"
+  },
+  {
+    "id": "wal_f26c279c8917c814",
+    "userId": "usr_34bc1e6b6a85da5d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:47:58.200Z",
+    "updatedAt": "2026-09-03T16:47:58.200Z"
+  },
+  {
+    "id": "wal_9ef515e7e4c387fc",
+    "userId": "usr_264b8a327f6abdeb",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:47:58.880Z",
+    "updatedAt": "2026-09-03T16:47:59.054Z"
+  },
+  {
+    "id": "wal_9859ce6dc60a8460",
+    "userId": "usr_66675f20ea7ff84f",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:47:59.774Z",
+    "updatedAt": "2026-09-03T16:47:59.824Z"
+  },
+  {
+    "id": "wal_14753c8868bc1f76",
+    "userId": "usr_4205784c2150cbe8",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:48:00.603Z",
+    "updatedAt": "2026-09-03T16:48:00.688Z"
+  },
+  {
+    "id": "wal_30dd9d682144e7c5",
+    "userId": "usr_5c4aef4fab949d86",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:48:01.489Z",
+    "updatedAt": "2026-09-03T16:48:01.632Z"
+  },
+  {
+    "id": "wal_f0116bc26fc86fa0",
+    "userId": "usr_b5cac06f7ea3729e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:48:02.359Z",
+    "updatedAt": "2026-09-03T16:48:03.220Z"
+  },
+  {
+    "id": "wal_6c270d7b1f8e6435",
+    "userId": "usr_42bc3d124f154bf1",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:48:03.027Z",
+    "updatedAt": "2026-09-03T16:48:03.220Z"
+  },
+  {
+    "id": "wal_544243f723884735",
+    "userId": "usr_6fff11db12270cae",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:41.575Z",
+    "updatedAt": "2026-09-03T16:55:41.575Z"
+  },
+  {
+    "id": "wal_25d0ee06d4cfe9d6",
+    "userId": "usr_24bef7aade77a52b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:44.719Z",
+    "updatedAt": "2026-09-03T16:55:44.719Z"
+  },
+  {
+    "id": "wal_2d4765150f9ac1ce",
+    "userId": "usr_e1bb3c18cb0ce024",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:45.930Z",
+    "updatedAt": "2026-09-03T16:55:46.329Z"
+  },
+  {
+    "id": "wal_c467e37dbf0d0bd2",
+    "userId": "usr_a05bf7cf15abacea",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:47.450Z",
+    "updatedAt": "2026-09-03T16:55:47.638Z"
+  },
+  {
+    "id": "wal_2841fb542c3882b8",
+    "userId": "usr_6397f958a0717bb2",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:48.716Z",
+    "updatedAt": "2026-09-03T16:55:48.945Z"
+  },
+  {
+    "id": "wal_f0517bc5794c711c",
+    "userId": "usr_0dd4c7155a5d5975",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:50.891Z",
+    "updatedAt": "2026-09-03T16:55:51.116Z"
+  },
+  {
+    "id": "wal_d135e5cd68da8a39",
+    "userId": "usr_7e28d6652410ce67",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:52.118Z",
+    "updatedAt": "2026-09-03T16:55:53.863Z"
+  },
+  {
+    "id": "wal_4766a1ccd0a2dbd9",
+    "userId": "usr_9a7a597b5aaf8a0c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:55:53.118Z",
+    "updatedAt": "2026-09-03T16:55:53.863Z"
+  },
+  {
+    "id": "wal_744c13c5563bea32",
+    "userId": "usr_3a694c25e9886ad3",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:02.400Z",
+    "updatedAt": "2026-09-03T16:59:02.400Z"
+  },
+  {
+    "id": "wal_aabdd62c65d1d3de",
+    "userId": "usr_18f4bdd7b03c9d74",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:05.147Z",
+    "updatedAt": "2026-09-03T16:59:05.147Z"
+  },
+  {
+    "id": "wal_a8f60635dc2e6c0e",
+    "userId": "usr_4cb5939208f630e9",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:06.728Z",
+    "updatedAt": "2026-09-03T16:59:06.974Z"
+  },
+  {
+    "id": "wal_4574b92951cabbf5",
+    "userId": "usr_c8750a275e9f2c65",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:07.960Z",
+    "updatedAt": "2026-09-03T16:59:08.048Z"
+  },
+  {
+    "id": "wal_2cfff724238af328",
+    "userId": "usr_2f921e449aaaaf17",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:08.896Z",
+    "updatedAt": "2026-09-03T16:59:08.972Z"
+  },
+  {
+    "id": "wal_775c99de5ac50883",
+    "userId": "usr_340fc7889f10a445",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:09.939Z",
+    "updatedAt": "2026-09-03T16:59:10.081Z"
+  },
+  {
+    "id": "wal_f6df29f4eef28447",
+    "userId": "usr_88d7d495c4d54f53",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:11.019Z",
+    "updatedAt": "2026-09-03T16:59:12.234Z"
+  },
+  {
+    "id": "wal_0ff82c0cb799de8e",
+    "userId": "usr_26161fd311371eb0",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-03T16:59:12.009Z",
+    "updatedAt": "2026-09-03T16:59:12.234Z"
+  },
+  {
+    "id": "wal_a2d9b688cff34829",
+    "userId": "usr_d5db2523eac0ff36",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:22.048Z",
+    "updatedAt": "2026-09-04T01:59:22.048Z"
+  },
+  {
+    "id": "wal_e1026cf773adaa2a",
+    "userId": "usr_6dce499f02292c7b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:26.432Z",
+    "updatedAt": "2026-09-04T01:59:26.432Z"
+  },
+  {
+    "id": "wal_fed0e1927c69f709",
+    "userId": "usr_e39304d87e1127bf",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:27.646Z",
+    "updatedAt": "2026-09-04T01:59:28.068Z"
+  },
+  {
+    "id": "wal_953d07f3484f8808",
+    "userId": "usr_4fb97d438668c834",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:30.597Z",
+    "updatedAt": "2026-09-04T01:59:30.797Z"
+  },
+  {
+    "id": "wal_ac038b6d8dd0169d",
+    "userId": "usr_b6ae637e1ebfc6f6",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:32.224Z",
+    "updatedAt": "2026-09-04T01:59:32.422Z"
+  },
+  {
+    "id": "wal_475c9d6e661e8f16",
+    "userId": "usr_28e2c458642a339f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:34.232Z",
+    "updatedAt": "2026-09-04T01:59:34.576Z"
+  },
+  {
+    "id": "wal_83ae1631bb151c35",
+    "userId": "usr_c9d52bcee6f71cde",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:37.442Z",
+    "updatedAt": "2026-09-04T01:59:39.286Z"
+  },
+  {
+    "id": "wal_8cf16c4d19a99b58",
+    "userId": "usr_e6b08332eec47595",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T01:59:38.760Z",
+    "updatedAt": "2026-09-04T01:59:39.284Z"
+  },
+  {
+    "id": "wal_c4466f34ab712f30",
+    "userId": "usr_cb096d21123c731d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:08.550Z",
+    "updatedAt": "2026-09-04T02:18:08.550Z"
+  },
+  {
+    "id": "wal_a0c8142f01e1cba1",
+    "userId": "usr_5a19d4684b000237",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:11.753Z",
+    "updatedAt": "2026-09-04T02:18:11.753Z"
+  },
+  {
+    "id": "wal_673c1c1dde86b044",
+    "userId": "usr_b9c3369c45067bb6",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:13.531Z",
+    "updatedAt": "2026-09-04T02:18:13.834Z"
+  },
+  {
+    "id": "wal_d86191ed3b4d5b1b",
+    "userId": "usr_18cf1639e558b81d",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:14.799Z",
+    "updatedAt": "2026-09-04T02:18:14.900Z"
+  },
+  {
+    "id": "wal_12af3a17e56adabf",
+    "userId": "usr_b3e1b80e5b3f3bb9",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:15.756Z",
+    "updatedAt": "2026-09-04T02:18:15.867Z"
+  },
+  {
+    "id": "wal_fc289c1c8ceb231e",
+    "userId": "usr_6dc5cb68f9ac82fa",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:16.733Z",
+    "updatedAt": "2026-09-04T02:18:16.914Z"
+  },
+  {
+    "id": "wal_10bf7c872ec3888c",
+    "userId": "usr_aff3c31c9b9a6de4",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:17.950Z",
+    "updatedAt": "2026-09-04T02:18:19.481Z"
+  },
+  {
+    "id": "wal_5150bb69b4b3111a",
+    "userId": "usr_1da90e18b96a6d32",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:18:19.278Z",
+    "updatedAt": "2026-09-04T02:18:19.479Z"
+  },
+  {
+    "id": "wal_c83b21d339b9fa03",
+    "userId": "usr_d309aabea50d4551",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:29:02.251Z",
+    "updatedAt": "2026-09-04T02:29:02.251Z"
+  },
+  {
+    "id": "wal_ac2c07467a9eb107",
+    "userId": "usr_f1eaddcbfac3bede",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:29:14.341Z",
+    "updatedAt": "2026-09-04T02:29:14.341Z"
+  },
+  {
+    "id": "wal_78f4b38c352e97a6",
+    "userId": "usr_2616a3a3d968b402",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T02:29:32.953Z",
+    "updatedAt": "2026-09-04T02:29:32.953Z"
+  },
+  {
+    "id": "wal_efd01f7d99700fb3",
+    "userId": "usr_73748a6a18d24b32",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:51.289Z",
+    "updatedAt": "2026-09-04T03:00:51.289Z"
+  },
+  {
+    "id": "wal_2b08eb1d70552998",
+    "userId": "usr_52c6fa5ad37fb9ba",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:53.612Z",
+    "updatedAt": "2026-09-04T03:00:53.612Z"
+  },
+  {
+    "id": "wal_f18818e7244c6850",
+    "userId": "usr_e3957f499af852cc",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:54.422Z",
+    "updatedAt": "2026-09-04T03:00:54.622Z"
+  },
+  {
+    "id": "wal_999b342e4a063829",
+    "userId": "usr_ce567566f4132371",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:55.585Z",
+    "updatedAt": "2026-09-04T03:00:55.643Z"
+  },
+  {
+    "id": "wal_44aa15584e571220",
+    "userId": "usr_dab0fdf457c5c83f",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:56.447Z",
+    "updatedAt": "2026-09-04T03:00:56.538Z"
+  },
+  {
+    "id": "wal_9bbb8157ae12d09b",
+    "userId": "usr_9b64ee7229fe68ac",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:57.480Z",
+    "updatedAt": "2026-09-04T03:00:57.624Z"
+  },
+  {
+    "id": "wal_f3f381b8f35db091",
+    "userId": "usr_dd020783cff8f717",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:58.424Z",
+    "updatedAt": "2026-09-04T03:00:59.418Z"
+  },
+  {
+    "id": "wal_c00dcc77650304d7",
+    "userId": "usr_41688fcd88623b5d",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:00:59.189Z",
+    "updatedAt": "2026-09-04T03:00:59.418Z"
+  },
+  {
+    "id": "wal_28236bd3ac653d9d",
+    "userId": "usr_9a02a324627ced44",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:07:58.590Z",
+    "updatedAt": "2026-09-04T03:07:58.590Z"
+  },
+  {
+    "id": "wal_64ca2754be1494b9",
+    "userId": "usr_36617a30a08ead55",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:05.689Z",
+    "updatedAt": "2026-09-04T03:08:05.689Z"
+  },
+  {
+    "id": "wal_03e06d9b9006f334",
+    "userId": "usr_c6bbf137d49e58e8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:08.372Z",
+    "updatedAt": "2026-09-04T03:08:10.111Z"
+  },
+  {
+    "id": "wal_6ef7914405f9f63d",
+    "userId": "usr_03d6d515c4e275d9",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:12.791Z",
+    "updatedAt": "2026-09-04T03:08:13.271Z"
+  },
+  {
+    "id": "wal_230762a20709e8af",
+    "userId": "usr_01d2c0903f3daa18",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:16.810Z",
+    "updatedAt": "2026-09-04T03:08:18.874Z"
+  },
+  {
+    "id": "wal_286dbe0736fd4d75",
+    "userId": "usr_a5d514b0c715b6ce",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:22.499Z",
+    "updatedAt": "2026-09-04T03:08:23.094Z"
+  },
+  {
+    "id": "wal_4422d67a847c935e",
+    "userId": "usr_8aa1b9ff6d545cde",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:26.195Z",
+    "updatedAt": "2026-09-04T03:08:31.109Z"
+  },
+  {
+    "id": "wal_90168324b9d6285d",
+    "userId": "usr_62fd25370c9342de",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:08:29.687Z",
+    "updatedAt": "2026-09-04T03:08:31.058Z"
+  },
+  {
+    "id": "wal_f6214742492b19b1",
+    "userId": "usr_6728163b91f848cf",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:24.984Z",
+    "updatedAt": "2026-09-04T03:21:24.984Z"
+  },
+  {
+    "id": "wal_b9aed21ca2173da7",
+    "userId": "usr_5c8636e76c6f2942",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:28.839Z",
+    "updatedAt": "2026-09-04T03:21:28.839Z"
+  },
+  {
+    "id": "wal_96e37cd4783c6908",
+    "userId": "usr_e267b9544bf34129",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:30.117Z",
+    "updatedAt": "2026-09-04T03:21:30.485Z"
+  },
+  {
+    "id": "wal_f7f68c3f926aef4e",
+    "userId": "usr_3f08adc804215423",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:31.902Z",
+    "updatedAt": "2026-09-04T03:21:32.022Z"
+  },
+  {
+    "id": "wal_0def31ec8f56fbcb",
+    "userId": "usr_155d52dec0268466",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:33.277Z",
+    "updatedAt": "2026-09-04T03:21:33.412Z"
+  },
+  {
+    "id": "wal_3ed54982a56577f7",
+    "userId": "usr_c12369bba35b63c8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:34.856Z",
+    "updatedAt": "2026-09-04T03:21:35.088Z"
+  },
+  {
+    "id": "wal_0387404d547fcc28",
+    "userId": "usr_6e65b52519b9f2de",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:36.456Z",
+    "updatedAt": "2026-09-04T03:21:38.193Z"
+  },
+  {
+    "id": "wal_c0009176dbe43ef0",
+    "userId": "usr_8a641b7c7fc9b2db",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:21:37.794Z",
+    "updatedAt": "2026-09-04T03:21:38.193Z"
+  },
+  {
+    "id": "wal_a40d26ec12a71933",
+    "userId": "usr_c768e3fda8cdd733",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:14.121Z",
+    "updatedAt": "2026-09-04T03:36:14.121Z"
+  },
+  {
+    "id": "wal_4321f825a430d442",
+    "userId": "usr_3d71f15d6395feaa",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:17.740Z",
+    "updatedAt": "2026-09-04T03:36:17.740Z"
+  },
+  {
+    "id": "wal_b8959cd3936ac50c",
+    "userId": "usr_78a37d3ff423f7f5",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:19.207Z",
+    "updatedAt": "2026-09-04T03:36:19.768Z"
+  },
+  {
+    "id": "wal_fe3513a313961626",
+    "userId": "usr_51e46141f95a0d8f",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:21.120Z",
+    "updatedAt": "2026-09-04T03:36:21.273Z"
+  },
+  {
+    "id": "wal_523eb802ab653364",
+    "userId": "usr_e5f37f0e3bd87dbb",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:22.770Z",
+    "updatedAt": "2026-09-04T03:36:23.015Z"
+  },
+  {
+    "id": "wal_0122cfd5e6fe1eab",
+    "userId": "usr_d9dac03e0f299dd1",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:24.332Z",
+    "updatedAt": "2026-09-04T03:36:24.574Z"
+  },
+  {
+    "id": "wal_16482119046c3596",
+    "userId": "usr_aba789eb26e9631c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:26.895Z",
+    "updatedAt": "2026-09-04T03:36:28.650Z"
+  },
+  {
+    "id": "wal_a5264db27045690f",
+    "userId": "usr_46298e52e684080d",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T03:36:28.273Z",
+    "updatedAt": "2026-09-04T03:36:28.650Z"
+  },
+  {
+    "id": "wal_2653e2560e214e55",
+    "userId": "usr_2f1444cbc9123e1f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:06.768Z",
+    "updatedAt": "2026-09-04T05:22:06.768Z"
+  },
+  {
+    "id": "wal_47ddfbcb35c4ce0b",
+    "userId": "usr_3ad397c69e9a9962",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:10.341Z",
+    "updatedAt": "2026-09-04T05:22:10.341Z"
+  },
+  {
+    "id": "wal_d24b18e6a0a58ae0",
+    "userId": "usr_a8d2f37b9aecc0b0",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:11.504Z",
+    "updatedAt": "2026-09-04T05:22:11.794Z"
+  },
+  {
+    "id": "wal_30ac633d97fa1db8",
+    "userId": "usr_2e626811fe7fbb2b",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:13.038Z",
+    "updatedAt": "2026-09-04T05:22:13.113Z"
+  },
+  {
+    "id": "wal_3f347a64d1c18639",
+    "userId": "usr_e7640a3136a82a77",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:14.299Z",
+    "updatedAt": "2026-09-04T05:22:14.379Z"
+  },
+  {
+    "id": "wal_a315184da7174c24",
+    "userId": "usr_7e9fab813c2df113",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:15.425Z",
+    "updatedAt": "2026-09-04T05:22:15.487Z"
+  },
+  {
+    "id": "wal_a11f175daa424d14",
+    "userId": "usr_03c33c075a8a742d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:16.760Z",
+    "updatedAt": "2026-09-04T05:22:16.760Z"
+  },
+  {
+    "id": "wal_dab128e182b7816a",
+    "userId": "usr_fd8ad5f3e43c7c9d",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:22:17.831Z",
+    "updatedAt": "2026-09-04T05:22:17.885Z"
+  },
+  {
+    "id": "wal_e662eb6f0d9d5a71",
+    "userId": "usr_d1599ae786b34816",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:06.091Z",
+    "updatedAt": "2026-09-04T05:23:06.091Z"
+  },
+  {
+    "id": "wal_d5dec57daea07159",
+    "userId": "usr_b38cc0fad04b2c92",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:09.689Z",
+    "updatedAt": "2026-09-04T05:23:09.689Z"
+  },
+  {
+    "id": "wal_a0ff9ebd1e38b994",
+    "userId": "usr_51b580bea1b238a5",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:11.209Z",
+    "updatedAt": "2026-09-04T05:23:11.566Z"
+  },
+  {
+    "id": "wal_443a81cd938241db",
+    "userId": "usr_be66b4b4ff03bde4",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:12.804Z",
+    "updatedAt": "2026-09-04T05:23:12.904Z"
+  },
+  {
+    "id": "wal_84ea8b7a7b7f1639",
+    "userId": "usr_a5907aa260566e1b",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:14.177Z",
+    "updatedAt": "2026-09-04T05:23:14.343Z"
+  },
+  {
+    "id": "wal_ae51a546aeb46de0",
+    "userId": "usr_987b2bbf8790b85d",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:15.622Z",
+    "updatedAt": "2026-09-04T05:23:15.872Z"
+  },
+  {
+    "id": "wal_a8ccbd16e8538efa",
+    "userId": "usr_0ae41b819a7fb0a1",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:17.222Z",
+    "updatedAt": "2026-09-04T05:23:18.609Z"
+  },
+  {
+    "id": "wal_005346c9d79e4d25",
+    "userId": "usr_9221f3412e1dd972",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T05:23:18.326Z",
+    "updatedAt": "2026-09-04T05:23:18.609Z"
+  },
+  {
+    "id": "wal_aab1147bc1e8eb9e",
+    "userId": "usr_2cefbd572ea379a3",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:33.164Z",
+    "updatedAt": "2026-09-04T06:12:33.164Z"
+  },
+  {
+    "id": "wal_c693dece546bd3ac",
+    "userId": "usr_4e438b8dcdc62606",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:35.542Z",
+    "updatedAt": "2026-09-04T06:12:35.542Z"
+  },
+  {
+    "id": "wal_d7b1e3936420e792",
+    "userId": "usr_7e8bb9eecfd00cfc",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:36.360Z",
+    "updatedAt": "2026-09-04T06:12:36.559Z"
+  },
+  {
+    "id": "wal_1ead7bc48cb580a3",
+    "userId": "usr_3c89a551e297fcb2",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:37.381Z",
+    "updatedAt": "2026-09-04T06:12:37.444Z"
+  },
+  {
+    "id": "wal_c70f4fdea9c1f79c",
+    "userId": "usr_7ac80e2ad231dbb3",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:38.305Z",
+    "updatedAt": "2026-09-04T06:12:38.410Z"
+  },
+  {
+    "id": "wal_062e69df8a8fa0fa",
+    "userId": "usr_d56bdf1616d431d8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:39.395Z",
+    "updatedAt": "2026-09-04T06:12:39.552Z"
+  },
+  {
+    "id": "wal_da7ed87657c6c6b8",
+    "userId": "usr_ebf23dee3d2028bf",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:40.378Z",
+    "updatedAt": "2026-09-04T06:12:41.393Z"
+  },
+  {
+    "id": "wal_308eb6e13a2a2a71",
+    "userId": "usr_8e3763e85bce0b97",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:41.165Z",
+    "updatedAt": "2026-09-04T06:12:41.393Z"
+  },
+  {
+    "id": "wal_b8e6d7b38ca48e98",
+    "userId": "usr_8d629fef68692f77",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:44.236Z",
+    "updatedAt": "2026-09-04T06:12:45.154Z"
+  },
+  {
+    "id": "wal_4487cdd6299eceb8",
+    "userId": "usr_a0a7f066d77c24b3",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:45.046Z",
+    "updatedAt": "2026-09-04T06:12:45.123Z"
+  },
+  {
+    "id": "wal_641143d7313c474c",
+    "userId": "usr_9d7e8c145461b002",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:56.917Z",
+    "updatedAt": "2026-09-04T06:12:57.967Z"
+  },
+  {
+    "id": "wal_13b9362c03a61a8a",
+    "userId": "usr_ec6085b8c7d3ecfc",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:12:57.734Z",
+    "updatedAt": "2026-09-04T06:12:57.937Z"
+  },
+  {
+    "id": "wal_b377fea79015c59c",
+    "userId": "usr_cbb27ac0763141b1",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:13:22.405Z",
+    "updatedAt": "2026-09-04T06:13:23.466Z"
+  },
+  {
+    "id": "wal_f7145ae3a01f548f",
+    "userId": "usr_c078f10699ad10e6",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:13:23.216Z",
+    "updatedAt": "2026-09-04T06:13:23.431Z"
+  },
+  {
+    "id": "wal_f23040936b0aee26",
+    "userId": "usr_92eb775070d48899",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:13:59.891Z",
+    "updatedAt": "2026-09-04T06:14:01.354Z"
+  },
+  {
+    "id": "wal_e4bde44b4b749d38",
+    "userId": "usr_379785bd88df2965",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:00.704Z",
+    "updatedAt": "2026-09-04T06:14:01.179Z"
+  },
+  {
+    "id": "wal_ec5e1d50dad42a53",
+    "userId": "usr_3e0dc421a9e03709",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:23.764Z",
+    "updatedAt": "2026-09-04T06:14:23.764Z"
+  },
+  {
+    "id": "wal_6a16f0f14a32f286",
+    "userId": "usr_cb867116d42828d9",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:26.534Z",
+    "updatedAt": "2026-09-04T06:14:26.534Z"
+  },
+  {
+    "id": "wal_aec1026ef73f13e4",
+    "userId": "usr_2629cb58ed1e8cdf",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:27.368Z",
+    "updatedAt": "2026-09-04T06:14:27.587Z"
+  },
+  {
+    "id": "wal_badac4e57ca7858b",
+    "userId": "usr_7c0d60895b76fcf3",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:28.454Z",
+    "updatedAt": "2026-09-04T06:14:28.521Z"
+  },
+  {
+    "id": "wal_516afa493408889c",
+    "userId": "usr_034daa442e0dcf05",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:29.405Z",
+    "updatedAt": "2026-09-04T06:14:29.507Z"
+  },
+  {
+    "id": "wal_1a14cebf7f2e764c",
+    "userId": "usr_1a78f99a5950b8de",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:30.399Z",
+    "updatedAt": "2026-09-04T06:14:30.553Z"
+  },
+  {
+    "id": "wal_f9aecd97cd34bbb8",
+    "userId": "usr_761d1f102857c03f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:31.433Z",
+    "updatedAt": "2026-09-04T06:14:32.466Z"
+  },
+  {
+    "id": "wal_8a62456377039c61",
+    "userId": "usr_e7b15da73911d347",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:32.252Z",
+    "updatedAt": "2026-09-04T06:14:32.465Z"
+  },
+  {
+    "id": "wal_4ad43aea6616e4b8",
+    "userId": "usr_8ce3d5be54495fe9",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:35.630Z",
+    "updatedAt": "2026-09-04T06:14:36.541Z"
+  },
+  {
+    "id": "wal_7325e98a4486e788",
+    "userId": "usr_d5473fc4c0176b6e",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:36.439Z",
+    "updatedAt": "2026-09-04T06:14:36.511Z"
+  },
+  {
+    "id": "wal_bca5c3d90e3124d6",
+    "userId": "usr_db1e8803719902ad",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:57.082Z",
+    "updatedAt": "2026-09-04T06:14:58.576Z"
+  },
+  {
+    "id": "wal_9634064ddf56110e",
+    "userId": "usr_7af796927c3d92d6",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:14:57.893Z",
+    "updatedAt": "2026-09-04T06:14:58.435Z"
+  },
+  {
+    "id": "wal_17fceba888cc8850",
+    "userId": "usr_5a1e582877299005",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:18.873Z",
+    "updatedAt": "2026-09-04T06:15:18.873Z"
+  },
+  {
+    "id": "wal_ba839e7dbb132d51",
+    "userId": "usr_b9f39e0e3a706800",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:21.296Z",
+    "updatedAt": "2026-09-04T06:15:21.296Z"
+  },
+  {
+    "id": "wal_a4308fbee25eb8c0",
+    "userId": "usr_1fae78abeaea19c1",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:22.139Z",
+    "updatedAt": "2026-09-04T06:15:22.364Z"
+  },
+  {
+    "id": "wal_cc2ca7e08eaa5545",
+    "userId": "usr_65e09b619d27bf3f",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:23.207Z",
+    "updatedAt": "2026-09-04T06:15:23.278Z"
+  },
+  {
+    "id": "wal_557cbacf807f492e",
+    "userId": "usr_3256d48727eaed2e",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:24.250Z",
+    "updatedAt": "2026-09-04T06:15:24.360Z"
+  },
+  {
+    "id": "wal_54c110b70d880562",
+    "userId": "usr_a59e2dfe8a974b59",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:25.241Z",
+    "updatedAt": "2026-09-04T06:15:25.406Z"
+  },
+  {
+    "id": "wal_708de5f2c8bd2780",
+    "userId": "usr_c4b3672203b1fe82",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:26.434Z",
+    "updatedAt": "2026-09-04T06:15:27.507Z"
+  },
+  {
+    "id": "wal_d74a06d5355dd716",
+    "userId": "usr_5fb198a0adfeac22",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:27.274Z",
+    "updatedAt": "2026-09-04T06:15:27.507Z"
+  },
+  {
+    "id": "wal_2de8f85633a82d7c",
+    "userId": "usr_c0abff0d0effb738",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:30.356Z",
+    "updatedAt": "2026-09-04T06:15:31.598Z"
+  },
+  {
+    "id": "wal_423ebd94b9bc7c0b",
+    "userId": "usr_b7218010907b9fe1",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:31.504Z",
+    "updatedAt": "2026-09-04T06:15:31.570Z"
+  },
+  {
+    "id": "wal_08689994d368a790",
+    "userId": "usr_3aa8b129f2f15ac0",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:53.885Z",
+    "updatedAt": "2026-09-04T06:15:53.885Z"
+  },
+  {
+    "id": "wal_62bdcd2d425d0bfb",
+    "userId": "usr_8562311c1f4e2f99",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:56.308Z",
+    "updatedAt": "2026-09-04T06:15:56.308Z"
+  },
+  {
+    "id": "wal_25316bc36bf2347b",
+    "userId": "usr_b06e4822f3d2debc",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:57.147Z",
+    "updatedAt": "2026-09-04T06:15:57.376Z"
+  },
+  {
+    "id": "wal_1e03993ada79f19b",
+    "userId": "usr_19c998d8ac8bbd12",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:58.225Z",
+    "updatedAt": "2026-09-04T06:15:58.294Z"
+  },
+  {
+    "id": "wal_9bd1362676d2bd61",
+    "userId": "usr_cd55e0fb79bb751b",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:15:59.161Z",
+    "updatedAt": "2026-09-04T06:15:59.267Z"
+  },
+  {
+    "id": "wal_cd2abd4629dd6f48",
+    "userId": "usr_54bda96d2b6e82a3",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:00.156Z",
+    "updatedAt": "2026-09-04T06:16:00.318Z"
+  },
+  {
+    "id": "wal_400fa3b5e730b590",
+    "userId": "usr_0d9e760d5098b56b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:01.390Z",
+    "updatedAt": "2026-09-04T06:16:02.473Z"
+  },
+  {
+    "id": "wal_cd6593b2f55bb3be",
+    "userId": "usr_68446ee389e7ee53",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:02.226Z",
+    "updatedAt": "2026-09-04T06:16:02.473Z"
+  },
+  {
+    "id": "wal_627da354edc121d5",
+    "userId": "usr_13bae52a396cf13f",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:05.551Z",
+    "updatedAt": "2026-09-04T06:16:06.455Z"
+  },
+  {
+    "id": "wal_9386fef3acb179bb",
+    "userId": "usr_00be8f2e85bcdc07",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:06.356Z",
+    "updatedAt": "2026-09-04T06:16:06.425Z"
+  },
+  {
+    "id": "wal_7f89c36f62575cc6",
+    "userId": "usr_b15b358eaccb6902",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:34.587Z",
+    "updatedAt": "2026-09-04T06:16:34.587Z"
+  },
+  {
+    "id": "wal_bf320b8ed32aa3bc",
+    "userId": "usr_fa5129b7023b524f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:37.228Z",
+    "updatedAt": "2026-09-04T06:16:37.228Z"
+  },
+  {
+    "id": "wal_7e1dbebe6d88a17c",
+    "userId": "usr_03e48e754660b2b0",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:38.114Z",
+    "updatedAt": "2026-09-04T06:16:38.340Z"
+  },
+  {
+    "id": "wal_d4c5b58894c83733",
+    "userId": "usr_7a613f666a748dbd",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:39.196Z",
+    "updatedAt": "2026-09-04T06:16:39.268Z"
+  },
+  {
+    "id": "wal_20a3ae36c4d77551",
+    "userId": "usr_b60637e54c559a72",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:40.134Z",
+    "updatedAt": "2026-09-04T06:16:40.240Z"
+  },
+  {
+    "id": "wal_031d8179601c2742",
+    "userId": "usr_bcf9784bf6aeb60c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:41.191Z",
+    "updatedAt": "2026-09-04T06:16:41.385Z"
+  },
+  {
+    "id": "wal_450832b4c862c233",
+    "userId": "usr_51cd39f0b6d3df16",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:42.246Z",
+    "updatedAt": "2026-09-04T06:16:43.276Z"
+  },
+  {
+    "id": "wal_d558142de2e3f0e5",
+    "userId": "usr_fb1609f7bc12d6a5",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:43.045Z",
+    "updatedAt": "2026-09-04T06:16:43.276Z"
+  },
+  {
+    "id": "wal_8b89383467aaab20",
+    "userId": "usr_481503cc6b2a5a3f",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:46.241Z",
+    "updatedAt": "2026-09-04T06:16:47.140Z"
+  },
+  {
+    "id": "wal_ff895399057a3428",
+    "userId": "usr_d950d1feb648ab4d",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:16:47.040Z",
+    "updatedAt": "2026-09-04T06:16:47.109Z"
+  },
+  {
+    "id": "wal_123f442c17469adb",
+    "userId": "usr_18f80e21b38369a9",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:09.990Z",
+    "updatedAt": "2026-09-04T06:17:09.990Z"
+  },
+  {
+    "id": "wal_7e00a5907252eb2a",
+    "userId": "usr_598052b8e7ee9f93",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:17.363Z",
+    "updatedAt": "2026-09-04T06:17:17.363Z"
+  },
+  {
+    "id": "wal_00733a0669312a4a",
+    "userId": "usr_9380a411c0cb4188",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:18.958Z",
+    "updatedAt": "2026-09-04T06:17:19.301Z"
+  },
+  {
+    "id": "wal_1bcd8710c22c20a9",
+    "userId": "usr_6d7de7cc47ff384d",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:20.527Z",
+    "updatedAt": "2026-09-04T06:17:20.611Z"
+  },
+  {
+    "id": "wal_0d05d4ffccb52ba6",
+    "userId": "usr_d4b5b2e3b3fed9ea",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:21.884Z",
+    "updatedAt": "2026-09-04T06:17:22.011Z"
+  },
+  {
+    "id": "wal_fe107e2b5babea87",
+    "userId": "usr_403d8fcb25270785",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:23.343Z",
+    "updatedAt": "2026-09-04T06:17:23.556Z"
+  },
+  {
+    "id": "wal_7ad8ea5cf536e980",
+    "userId": "usr_43fa7ca8c9c2a413",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:24.838Z",
+    "updatedAt": "2026-09-04T06:17:24.838Z"
+  },
+  {
+    "id": "wal_5265a1ac127c1a58",
+    "userId": "usr_14d522a7893c0c4a",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:28.493Z",
+    "updatedAt": "2026-09-04T06:17:28.493Z"
+  },
+  {
+    "id": "wal_690a95dc1f0479cb",
+    "userId": "usr_4041786823d82f87",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:32.389Z",
+    "updatedAt": "2026-09-04T06:17:32.389Z"
+  },
+  {
+    "id": "wal_bf7a24406cd76556",
+    "userId": "usr_ee78eeea072ec135",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:33.788Z",
+    "updatedAt": "2026-09-04T06:17:34.210Z"
+  },
+  {
+    "id": "wal_3a8649250ecd1649",
+    "userId": "usr_fd0b31edb5a3ed5c",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:35.608Z",
+    "updatedAt": "2026-09-04T06:17:35.697Z"
+  },
+  {
+    "id": "wal_92c7eaa2d16afa27",
+    "userId": "usr_2d218d66886549c7",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:38.131Z",
+    "updatedAt": "2026-09-04T06:17:38.258Z"
+  },
+  {
+    "id": "wal_c88c9c1e0c078e8c",
+    "userId": "usr_ff3c4563de79d16f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:39.941Z",
+    "updatedAt": "2026-09-04T06:17:40.197Z"
+  },
+  {
+    "id": "wal_7a2e0a0a40494585",
+    "userId": "usr_ec0a03fb99d4a0b8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:41.287Z",
+    "updatedAt": "2026-09-04T06:17:42.634Z"
+  },
+  {
+    "id": "wal_42af56423aeb1766",
+    "userId": "usr_9a2bff62557513f7",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:42.341Z",
+    "updatedAt": "2026-09-04T06:17:42.632Z"
+  },
+  {
+    "id": "wal_17d810d3f7c2361d",
+    "userId": "usr_e3783c97f1407417",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:45.845Z",
+    "updatedAt": "2026-09-04T06:17:46.883Z"
+  },
+  {
+    "id": "wal_aa0a9e1a2ca8c851",
+    "userId": "usr_8758fc707c635d1a",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:17:46.773Z",
+    "updatedAt": "2026-09-04T06:17:46.848Z"
+  },
+  {
+    "id": "wal_dd138ef4999f58de",
+    "userId": "usr_b22f34bc0f6d27ea",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:19:10.147Z",
+    "updatedAt": "2026-09-04T06:19:11.445Z"
+  },
+  {
+    "id": "wal_ccf352a7690cc925",
+    "userId": "usr_bf62c7a686754993",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:19:11.178Z",
+    "updatedAt": "2026-09-04T06:19:11.407Z"
+  },
+  {
+    "id": "wal_3d9e1bae66e75a02",
+    "userId": "usr_d370cc1010d3f8c8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:20.705Z",
+    "updatedAt": "2026-09-04T06:33:20.705Z"
+  },
+  {
+    "id": "wal_8fde85cf2a541c17",
+    "userId": "usr_5e006ecbec0d6f12",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:23.866Z",
+    "updatedAt": "2026-09-04T06:33:23.866Z"
+  },
+  {
+    "id": "wal_3fca397521081160",
+    "userId": "usr_ca2eba8698c5d23f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:24.990Z",
+    "updatedAt": "2026-09-04T06:33:25.355Z"
+  },
+  {
+    "id": "wal_c7dc8c0fa2e147d9",
+    "userId": "usr_cb859f750b774a81",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:26.499Z",
+    "updatedAt": "2026-09-04T06:33:26.583Z"
+  },
+  {
+    "id": "wal_20c3f92a99b1d09d",
+    "userId": "usr_0f4901ab9298e901",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:27.721Z",
+    "updatedAt": "2026-09-04T06:33:27.858Z"
+  },
+  {
+    "id": "wal_53127984baf80683",
+    "userId": "usr_6d3b2747d04ae2dd",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:29.039Z",
+    "updatedAt": "2026-09-04T06:33:29.213Z"
+  },
+  {
+    "id": "wal_c4e1761c6d208f84",
+    "userId": "usr_044f726fb31f66d8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:30.338Z",
+    "updatedAt": "2026-09-04T06:33:31.849Z"
+  },
+  {
+    "id": "wal_0de6eb2de5031ddc",
+    "userId": "usr_496759b9ebf40af5",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:31.463Z",
+    "updatedAt": "2026-09-04T06:33:31.849Z"
+  },
+  {
+    "id": "wal_ec829d1abd01fb05",
+    "userId": "usr_718f1329f2ec79e2",
+    "currency": "BDT",
+    "balance": 25,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:35.588Z",
+    "updatedAt": "2026-09-04T06:33:36.813Z"
+  },
+  {
+    "id": "wal_5892abc71737e6b9",
+    "userId": "usr_500e771fdf8ca8dd",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:36.673Z",
+    "updatedAt": "2026-09-04T06:33:36.786Z"
+  },
+  {
+    "id": "wal_73311125444d1f97",
+    "userId": "usr_878a6ab14c251c09",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:39.387Z",
+    "updatedAt": "2026-09-04T06:33:40.514Z"
+  },
+  {
+    "id": "wal_937fb76faa67e58c",
+    "userId": "usr_cef571bf614b6bee",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:33:40.430Z",
+    "updatedAt": "2026-09-04T06:33:40.430Z"
+  },
+  {
+    "id": "wal_c4c570573f8387bf",
+    "userId": "usr_c601ab6b42bc6233",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:11.065Z",
+    "updatedAt": "2026-09-04T06:34:13.176Z"
+  },
+  {
+    "id": "wal_50bb6e2049b9b954",
+    "userId": "usr_a4983cf4a97c8634",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:12.277Z",
+    "updatedAt": "2026-09-04T06:34:13.006Z"
+  },
+  {
+    "id": "wal_bfc36466e8f42424",
+    "userId": "usr_0fd4c23247f6e689",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:15.977Z",
+    "updatedAt": "2026-09-04T06:34:17.168Z"
+  },
+  {
+    "id": "wal_14c7c3087aa7e209",
+    "userId": "usr_0f1696954c4ba2c7",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:17.106Z",
+    "updatedAt": "2026-09-04T06:34:17.106Z"
+  },
+  {
+    "id": "wal_9f834cc0b597f1d3",
+    "userId": "usr_22e7b850f9e9b4f2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:31.995Z",
+    "updatedAt": "2026-09-04T06:34:31.995Z"
+  },
+  {
+    "id": "wal_39d692e224d4fe66",
+    "userId": "usr_141741f4c5b9662d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:35.627Z",
+    "updatedAt": "2026-09-04T06:34:35.627Z"
+  },
+  {
+    "id": "wal_39230eace1f95a61",
+    "userId": "usr_d58b68cf5d31dfb8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:36.828Z",
+    "updatedAt": "2026-09-04T06:34:37.189Z"
+  },
+  {
+    "id": "wal_91374e68e3864a9c",
+    "userId": "usr_0aee85a2a50ef9ed",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:38.350Z",
+    "updatedAt": "2026-09-04T06:34:38.439Z"
+  },
+  {
+    "id": "wal_b67e8fca1bf9e203",
+    "userId": "usr_0115e7b9bb873e4a",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:39.601Z",
+    "updatedAt": "2026-09-04T06:34:39.728Z"
+  },
+  {
+    "id": "wal_1fecd48117dcaf97",
+    "userId": "usr_ace646310f5e90fa",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:41.026Z",
+    "updatedAt": "2026-09-04T06:34:41.238Z"
+  },
+  {
+    "id": "wal_b13f61bce3de08b1",
+    "userId": "usr_d113e787e0964939",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:42.507Z",
+    "updatedAt": "2026-09-04T06:34:42.507Z"
+  },
+  {
+    "id": "wal_aa31790186003db7",
+    "userId": "usr_638c7aa3981b7e2a",
+    "currency": "BDT",
+    "balance": 480,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:43.686Z",
+    "updatedAt": "2026-09-04T06:34:43.840Z"
+  },
+  {
+    "id": "wal_b6c2a58e935c8be2",
+    "userId": "usr_62fa3c5f51e40a28",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:47.993Z",
+    "updatedAt": "2026-09-04T06:34:50.001Z"
+  },
+  {
+    "id": "wal_eb85184c9dd63d01",
+    "userId": "usr_146f235dca2bab57",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:49.190Z",
+    "updatedAt": "2026-09-04T06:34:49.857Z"
+  },
+  {
+    "id": "wal_9bb601e70d9356e9",
+    "userId": "usr_9baea37dedec56d0",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:55.219Z",
+    "updatedAt": "2026-09-04T06:34:56.435Z"
+  },
+  {
+    "id": "wal_5443335a511eda3e",
+    "userId": "usr_1e101feca985a474",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:34:56.401Z",
+    "updatedAt": "2026-09-04T06:34:56.401Z"
+  },
+  {
+    "id": "wal_3c777665daa51bc9",
+    "userId": "usr_cb592cbe2477eea8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:35:51.279Z",
+    "updatedAt": "2026-09-04T06:35:51.279Z"
+  },
+  {
+    "id": "wal_b14f65e484069164",
+    "userId": "usr_db1e49f51140fb75",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:35:55.121Z",
+    "updatedAt": "2026-09-04T06:35:55.121Z"
+  },
+  {
+    "id": "wal_f4296b3ad61160ea",
+    "userId": "usr_29454e4c8144e275",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:35:56.505Z",
+    "updatedAt": "2026-09-04T06:35:56.826Z"
+  },
+  {
+    "id": "wal_8a9c8d1e3cd41baa",
+    "userId": "usr_37bf83245aec2fe5",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:35:58.056Z",
+    "updatedAt": "2026-09-04T06:35:58.157Z"
+  },
+  {
+    "id": "wal_312f6e39b03a642a",
+    "userId": "usr_dc56f45ce7324e53",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:35:59.580Z",
+    "updatedAt": "2026-09-04T06:35:59.729Z"
+  },
+  {
+    "id": "wal_74b6c92f820425b2",
+    "userId": "usr_ac9cdd6d3a8b13c9",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:00.978Z",
+    "updatedAt": "2026-09-04T06:36:01.212Z"
+  },
+  {
+    "id": "wal_6b39537001c4c903",
+    "userId": "usr_b2e342cd93bbb499",
+    "currency": "BDT",
+    "balance": 0.05,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:02.541Z",
+    "updatedAt": "2026-09-04T06:36:04.040Z"
+  },
+  {
+    "id": "wal_b8950c541fdf78e0",
+    "userId": "usr_02d882d12a2a9ec4",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:03.771Z",
+    "updatedAt": "2026-09-04T06:36:03.980Z"
+  },
+  {
+    "id": "wal_cf6739a13315e3c9",
+    "userId": "usr_3203c429bda40626",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:08.407Z",
+    "updatedAt": "2026-09-04T06:36:11.456Z"
+  },
+  {
+    "id": "wal_663eca42c12fc240",
+    "userId": "usr_183650fa882cfeb3",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:09.718Z",
+    "updatedAt": "2026-09-04T06:36:11.045Z"
+  },
+  {
+    "id": "wal_edf6dad1ac459276",
+    "userId": "usr_eb3a26851f4071e0",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:14.524Z",
+    "updatedAt": "2026-09-04T06:36:15.785Z"
+  },
+  {
+    "id": "wal_d5065c865b1d8d37",
+    "userId": "usr_a64d0c6d0aa027de",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:15.728Z",
+    "updatedAt": "2026-09-04T06:36:15.728Z"
+  },
+  {
+    "id": "wal_2a52788cdba611fd",
+    "userId": "usr_0d818af13334179b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:40.466Z",
+    "updatedAt": "2026-09-04T06:36:40.466Z"
+  },
+  {
+    "id": "wal_ffb1ba819eb1e50b",
+    "userId": "usr_f0deb7dd9116f643",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:44.251Z",
+    "updatedAt": "2026-09-04T06:36:44.251Z"
+  },
+  {
+    "id": "wal_2c6b0d1d0e7df30f",
+    "userId": "usr_f5900bc97ec8f899",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:45.569Z",
+    "updatedAt": "2026-09-04T06:36:45.901Z"
+  },
+  {
+    "id": "wal_e07fd6d2770ac141",
+    "userId": "usr_f8d2c9f6fafc5543",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:47.138Z",
+    "updatedAt": "2026-09-04T06:36:47.221Z"
+  },
+  {
+    "id": "wal_1425772e867dba20",
+    "userId": "usr_8c80296a3f7fa259",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:48.577Z",
+    "updatedAt": "2026-09-04T06:36:48.893Z"
+  },
+  {
+    "id": "wal_22e5db61982815cb",
+    "userId": "usr_07f59ffb7e194dca",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:50.306Z",
+    "updatedAt": "2026-09-04T06:36:50.503Z"
+  },
+  {
+    "id": "wal_0372103228d4ea1d",
+    "userId": "usr_e7148280923ab087",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:51.883Z",
+    "updatedAt": "2026-09-04T06:36:53.522Z"
+  },
+  {
+    "id": "wal_b0671e858aadea8f",
+    "userId": "usr_27cdaf96141bc4d4",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:53.264Z",
+    "updatedAt": "2026-09-04T06:36:53.479Z"
+  },
+  {
+    "id": "wal_f1aded4df61debf1",
+    "userId": "usr_308f40e9c879dd9f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:57.827Z",
+    "updatedAt": "2026-09-04T06:37:00.099Z"
+  },
+  {
+    "id": "wal_f4eb272aaa98f9b0",
+    "userId": "usr_54a12f344d4ae035",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:36:59.132Z",
+    "updatedAt": "2026-09-04T06:36:59.914Z"
+  },
+  {
+    "id": "wal_fd6dcd86f1da0d92",
+    "userId": "usr_687e98aeb2f7d40c",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:37:03.114Z",
+    "updatedAt": "2026-09-04T06:37:04.427Z"
+  },
+  {
+    "id": "wal_4368a4aa10366d8a",
+    "userId": "usr_e0273ba5833ea20e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:37:04.383Z",
+    "updatedAt": "2026-09-04T06:37:04.383Z"
+  },
+  {
+    "id": "wal_530cbe6e450aa53e",
+    "userId": "usr_12862c4bb2e05f23",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:37:45.249Z",
+    "updatedAt": "2026-09-04T06:37:46.957Z"
+  },
+  {
+    "id": "wal_ac15bfb67991e409",
+    "userId": "usr_dcae121aa1b3e45f",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:37:46.475Z",
+    "updatedAt": "2026-09-04T06:37:46.924Z"
+  },
+  {
+    "id": "wal_0b2153f303e51f10",
+    "userId": "usr_df7b0f446e6f5a61",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:38:05.649Z",
+    "updatedAt": "2026-09-04T06:38:07.499Z"
+  },
+  {
+    "id": "wal_c9b4ad59da7a1beb",
+    "userId": "usr_fbe20b87ab26a5f3",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:38:06.933Z",
+    "updatedAt": "2026-09-04T06:38:07.433Z"
+  },
+  {
+    "id": "wal_0123570f4c2095a3",
+    "userId": "usr_c4900a29ee5ee36a",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:11.334Z",
+    "updatedAt": "2026-09-04T06:39:13.035Z"
+  },
+  {
+    "id": "wal_d064e6795f1400c0",
+    "userId": "usr_f511034e69dd979a",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:12.567Z",
+    "updatedAt": "2026-09-04T06:39:13.002Z"
+  },
+  {
+    "id": "wal_34dd2557a55d0343",
+    "userId": "usr_7c3bab8a02a6d014",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:49.797Z",
+    "updatedAt": "2026-09-04T06:39:49.797Z"
+  },
+  {
+    "id": "wal_0c3c61bbf96f070f",
+    "userId": "usr_1ab2cf0d8ed11d53",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:53.529Z",
+    "updatedAt": "2026-09-04T06:39:53.529Z"
+  },
+  {
+    "id": "wal_9c24d5db90bd152a",
+    "userId": "usr_a0fd9afdc2c2adb5",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:54.833Z",
+    "updatedAt": "2026-09-04T06:39:55.192Z"
+  },
+  {
+    "id": "wal_8368e284cf83447a",
+    "userId": "usr_86f40f6162910fe1",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:56.448Z",
+    "updatedAt": "2026-09-04T06:39:56.593Z"
+  },
+  {
+    "id": "wal_9d396a8e9c93481a",
+    "userId": "usr_a8b94827f6b48b54",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:57.919Z",
+    "updatedAt": "2026-09-04T06:39:58.125Z"
+  },
+  {
+    "id": "wal_4d40afd2c342e9c6",
+    "userId": "usr_f2f426dec2d53bb4",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:39:59.363Z",
+    "updatedAt": "2026-09-04T06:39:59.624Z"
+  },
+  {
+    "id": "wal_7700a408fd927088",
+    "userId": "usr_31e8bddc5eee9353",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:00.814Z",
+    "updatedAt": "2026-09-04T06:40:02.345Z"
+  },
+  {
+    "id": "wal_3a8da718492c6468",
+    "userId": "usr_1f0520ee78e8074c",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:02.064Z",
+    "updatedAt": "2026-09-04T06:40:02.274Z"
+  },
+  {
+    "id": "wal_e0a464b4d65efd2f",
+    "userId": "usr_8da00610ac7736ff",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:06.815Z",
+    "updatedAt": "2026-09-04T06:40:08.996Z"
+  },
+  {
+    "id": "wal_753f60d1cfcf5b44",
+    "userId": "usr_242adc6abeda6df4",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:07.984Z",
+    "updatedAt": "2026-09-04T06:40:08.776Z"
+  },
+  {
+    "id": "wal_90e3ef545442328d",
+    "userId": "usr_72c0a99db3c8eb8b",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:13.028Z",
+    "updatedAt": "2026-09-04T06:40:14.277Z"
+  },
+  {
+    "id": "wal_ed2b0c4cfb4c10e7",
+    "userId": "usr_89c3480168732410",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:40:14.214Z",
+    "updatedAt": "2026-09-04T06:40:14.214Z"
+  },
+  {
+    "id": "wal_ad3fa83cd4a99c31",
+    "userId": "usr_4f983c1e2375bca6",
+    "currency": "BDT",
+    "balance": 12.5,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:41:13.677Z",
+    "updatedAt": "2026-09-04T06:41:15.316Z"
+  },
+  {
+    "id": "wal_0308ec436f385a92",
+    "userId": "usr_91abd1d4b0c27e0f",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:41:14.868Z",
+    "updatedAt": "2026-09-04T06:41:15.280Z"
+  },
+  {
+    "id": "wal_6c9bcd724f7ee88c",
+    "userId": "usr_87f5869dd03a6eb2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:17.233Z",
+    "updatedAt": "2026-09-04T06:42:17.233Z"
+  },
+  {
+    "id": "wal_4db123f2964a53c4",
+    "userId": "usr_ee0dd7d223f4e808",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:20.958Z",
+    "updatedAt": "2026-09-04T06:42:20.958Z"
+  },
+  {
+    "id": "wal_432e2b5f27cf094f",
+    "userId": "usr_448689b7519a9dda",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:22.257Z",
+    "updatedAt": "2026-09-04T06:42:22.625Z"
+  },
+  {
+    "id": "wal_b4e2b6efb55013b6",
+    "userId": "usr_ff104be2b883ab62",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:23.881Z",
+    "updatedAt": "2026-09-04T06:42:24.003Z"
+  },
+  {
+    "id": "wal_5877ec78c63bc7d7",
+    "userId": "usr_219f0489b504a537",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:25.287Z",
+    "updatedAt": "2026-09-04T06:42:25.430Z"
+  },
+  {
+    "id": "wal_fd9dc1da4e2de95e",
+    "userId": "usr_0cb0e2da421c9b38",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:26.677Z",
+    "updatedAt": "2026-09-04T06:42:26.917Z"
+  },
+  {
+    "id": "wal_1f8c0febb5e70f18",
+    "userId": "usr_a1a9e12d76e9d52e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:28.250Z",
+    "updatedAt": "2026-09-04T06:42:30.004Z"
+  },
+  {
+    "id": "wal_f77ffdfd79cb2417",
+    "userId": "usr_09e6cf3ba7bbaa42",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:29.444Z",
+    "updatedAt": "2026-09-04T06:42:29.689Z"
+  },
+  {
+    "id": "wal_abf5da975440abb6",
+    "userId": "usr_27c267c8b5489e8e",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:34.310Z",
+    "updatedAt": "2026-09-04T06:42:36.528Z"
+  },
+  {
+    "id": "wal_71ca2a6eb4e289cb",
+    "userId": "usr_1544976871ed3e31",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:35.827Z",
+    "updatedAt": "2026-09-04T06:42:36.298Z"
+  },
+  {
+    "id": "wal_0a2780c3ba4cfac6",
+    "userId": "usr_8782777ac1733f61",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:39.284Z",
+    "updatedAt": "2026-09-04T06:42:40.572Z"
+  },
+  {
+    "id": "wal_573185c79f8f55c9",
+    "userId": "usr_4df391cf234e986b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T06:42:40.520Z",
+    "updatedAt": "2026-09-04T06:42:40.520Z"
+  },
+  {
+    "id": "wal_e6e50c0a463295fc",
+    "userId": "usr_17c6bb643ecc1af4",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:26.697Z",
+    "updatedAt": "2026-09-04T07:52:26.697Z"
+  },
+  {
+    "id": "wal_490478e7c0734859",
+    "userId": "usr_0219049d7f9b8cda",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:30.566Z",
+    "updatedAt": "2026-09-04T07:52:30.566Z"
+  },
+  {
+    "id": "wal_b59a2483177608a8",
+    "userId": "usr_b88ea84ccf19810f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:31.778Z",
+    "updatedAt": "2026-09-04T07:52:32.186Z"
+  },
+  {
+    "id": "wal_ab1b9efed77234a8",
+    "userId": "usr_a86bb6349bc7822b",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:33.396Z",
+    "updatedAt": "2026-09-04T07:52:33.515Z"
+  },
+  {
+    "id": "wal_85e44b9f774e0602",
+    "userId": "usr_c4f60b5ab4a0c045",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:34.877Z",
+    "updatedAt": "2026-09-04T07:52:35.075Z"
+  },
+  {
+    "id": "wal_e9b375878a578221",
+    "userId": "usr_98a716aa789b8cb8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:36.433Z",
+    "updatedAt": "2026-09-04T07:52:36.664Z"
+  },
+  {
+    "id": "wal_eabb8f653ddd5f56",
+    "userId": "usr_bfd61d468074d5b6",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:37.991Z",
+    "updatedAt": "2026-09-04T07:52:39.677Z"
+  },
+  {
+    "id": "wal_19606a1c75077600",
+    "userId": "usr_73699fd1ddf0733e",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:39.317Z",
+    "updatedAt": "2026-09-04T07:52:39.542Z"
+  },
+  {
+    "id": "wal_042f0241da0853f5",
+    "userId": "usr_26a1ba171e73ab22",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:43.702Z",
+    "updatedAt": "2026-09-04T07:52:45.555Z"
+  },
+  {
+    "id": "wal_d782d9893b3853c9",
+    "userId": "usr_9e015ada9f06ba47",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:44.931Z",
+    "updatedAt": "2026-09-04T07:52:45.368Z"
+  },
+  {
+    "id": "wal_ed4b71f8b0307fc0",
+    "userId": "usr_6fd1666c6b26aff7",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:49.013Z",
+    "updatedAt": "2026-09-04T07:52:50.256Z"
+  },
+  {
+    "id": "wal_84af430f0b740a50",
+    "userId": "usr_26b706f380436a4c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T07:52:50.190Z",
+    "updatedAt": "2026-09-04T07:52:50.190Z"
+  },
+  {
+    "id": "wal_9ccbb4d55cee84ea",
+    "userId": "usr_4cb564e6f92566bb",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:42.308Z",
+    "updatedAt": "2026-09-04T08:29:42.308Z"
+  },
+  {
+    "id": "wal_aa92391cd4379505",
+    "userId": "usr_73f8a23514d76a38",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:44.535Z",
+    "updatedAt": "2026-09-04T08:29:44.535Z"
+  },
+  {
+    "id": "wal_160358f11e389d76",
+    "userId": "usr_0ed0857139c60cc4",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:45.320Z",
+    "updatedAt": "2026-09-04T08:29:45.540Z"
+  },
+  {
+    "id": "wal_6f2896028e6f0c8c",
+    "userId": "usr_25f321103833e9cc",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:46.327Z",
+    "updatedAt": "2026-09-04T08:29:46.401Z"
+  },
+  {
+    "id": "wal_4cd2de6a5ffd40b2",
+    "userId": "usr_00a55b935de7b6fa",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:47.199Z",
+    "updatedAt": "2026-09-04T08:29:47.307Z"
+  },
+  {
+    "id": "wal_f9843fc73640425b",
+    "userId": "usr_50319ea589af9da8",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:48.164Z",
+    "updatedAt": "2026-09-04T08:29:48.336Z"
+  },
+  {
+    "id": "wal_93eda678e49e791b",
+    "userId": "usr_887d0bb66cdb8b4d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:49.105Z",
+    "updatedAt": "2026-09-04T08:29:50.150Z"
+  },
+  {
+    "id": "wal_b8a29eda68fc3b8b",
+    "userId": "usr_56675f978d98a581",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:49.880Z",
+    "updatedAt": "2026-09-04T08:29:50.028Z"
+  },
+  {
+    "id": "wal_797bf8ff7a4a4025",
+    "userId": "usr_186304265475b355",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:52.815Z",
+    "updatedAt": "2026-09-04T08:29:54.028Z"
+  },
+  {
+    "id": "wal_ad56751c6c29c79f",
+    "userId": "usr_22ddd0abfd601a98",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:29:53.553Z",
+    "updatedAt": "2026-09-04T08:29:53.902Z"
+  },
+  {
+    "id": "wal_fed79658c0b916e0",
+    "userId": "usr_641d0ddb8bc41716",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:30:25.058Z",
+    "updatedAt": "2026-09-04T08:30:25.811Z"
+  },
+  {
+    "id": "wal_49e04f3892efd582",
+    "userId": "usr_73ca3bab990fbd22",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T08:30:25.780Z",
+    "updatedAt": "2026-09-04T08:30:25.780Z"
+  },
+  {
+    "id": "wal_413ccd4b05e65442",
+    "userId": "usr_4b1feae267a31f58",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:14:56.353Z",
+    "updatedAt": "2026-09-04T09:14:56.353Z"
+  },
+  {
+    "id": "wal_53cf232f052caed3",
+    "userId": "usr_f6d73381662f53cf",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:14:58.554Z",
+    "updatedAt": "2026-09-04T09:14:58.554Z"
+  },
+  {
+    "id": "wal_a62db12d6070ed56",
+    "userId": "usr_6ff9f701cb136a27",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:14:59.362Z",
+    "updatedAt": "2026-09-04T09:14:59.584Z"
+  },
+  {
+    "id": "wal_e3363da6a84679e9",
+    "userId": "usr_e2368e2f30d9c609",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:00.382Z",
+    "updatedAt": "2026-09-04T09:15:00.457Z"
+  },
+  {
+    "id": "wal_7369f9bcd084fa80",
+    "userId": "usr_0fd99f9974396f84",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:01.271Z",
+    "updatedAt": "2026-09-04T09:15:01.389Z"
+  },
+  {
+    "id": "wal_fcd6bffd109bc533",
+    "userId": "usr_b0133bdda2ea269c",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:02.274Z",
+    "updatedAt": "2026-09-04T09:15:02.450Z"
+  },
+  {
+    "id": "wal_2fb0024b0d063985",
+    "userId": "usr_9c735c36a5e06619",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:03.257Z",
+    "updatedAt": "2026-09-04T09:15:04.314Z"
+  },
+  {
+    "id": "wal_bfe0d9bfb018ea53",
+    "userId": "usr_cf597df0f6d031cf",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:04.028Z",
+    "updatedAt": "2026-09-04T09:15:04.182Z"
+  },
+  {
+    "id": "wal_c31cc3861db5f873",
+    "userId": "usr_556ab9e624ed2788",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:07.004Z",
+    "updatedAt": "2026-09-04T09:15:08.292Z"
+  },
+  {
+    "id": "wal_83b45eb2f81fa3ef",
+    "userId": "usr_7d1e8130617af4d3",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:07.772Z",
+    "updatedAt": "2026-09-04T09:15:08.164Z"
+  },
+  {
+    "id": "wal_bb4d5870ea14f3e6",
+    "userId": "usr_f008e043f5b15790",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:39.278Z",
+    "updatedAt": "2026-09-04T09:15:40.060Z"
+  },
+  {
+    "id": "wal_a2eb3778535c05bc",
+    "userId": "usr_3c464fd19f0deda7",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:40.025Z",
+    "updatedAt": "2026-09-04T09:15:40.025Z"
+  },
+  {
+    "id": "wal_aceb2adbb6c3a1fa",
+    "userId": "usr_eb47bb153ab17631",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T09:15:44.804Z",
+    "updatedAt": "2026-09-04T09:15:44.804Z"
+  },
+  {
+    "id": "wal_c5348cacd799145d",
+    "userId": "usr_c8f02d4878cd7699",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:23:13.549Z",
+    "updatedAt": "2026-09-04T12:30:32.100Z"
+  },
+  {
+    "id": "wal_845c4ea50a2640a3",
+    "userId": "usr_09ef3172c0ffa9ee",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:41.271Z",
+    "updatedAt": "2026-09-04T12:37:41.271Z"
+  },
+  {
+    "id": "wal_5e29ebb577923b58",
+    "userId": "usr_562d9f5bca4f235a",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:46.160Z",
+    "updatedAt": "2026-09-04T12:37:46.160Z"
+  },
+  {
+    "id": "wal_7916f11119fec463",
+    "userId": "usr_14fb066e74dfbb32",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:47.842Z",
+    "updatedAt": "2026-09-04T12:37:48.402Z"
+  },
+  {
+    "id": "wal_81e3e2d3008ef2a9",
+    "userId": "usr_cfde82b9b0e76e89",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:51.775Z",
+    "updatedAt": "2026-09-04T12:37:52.956Z"
+  },
+  {
+    "id": "wal_4b0dac5331a34366",
+    "userId": "usr_0cead33c32a84e8b",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:55.869Z",
+    "updatedAt": "2026-09-04T12:37:56.284Z"
+  },
+  {
+    "id": "wal_9c7eee80c94472fe",
+    "userId": "usr_e0c61ec5d8bf59a6",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:37:58.039Z",
+    "updatedAt": "2026-09-04T12:37:58.456Z"
+  },
+  {
+    "id": "wal_694a794c20e92d25",
+    "userId": "usr_cafed2c01626b57a",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:00.287Z",
+    "updatedAt": "2026-09-04T12:38:03.971Z"
+  },
+  {
+    "id": "wal_693d850375d9f168",
+    "userId": "usr_ce658e66c9d76bba",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:02.691Z",
+    "updatedAt": "2026-09-04T12:38:03.257Z"
+  },
+  {
+    "id": "wal_953a66b3598f1f45",
+    "userId": "usr_2d303628aaa40d2b",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:13.115Z",
+    "updatedAt": "2026-09-04T12:38:18.836Z"
+  },
+  {
+    "id": "wal_14dd64231ca42574",
+    "userId": "usr_938b30b820402a96",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:15.188Z",
+    "updatedAt": "2026-09-04T12:38:17.897Z"
+  },
+  {
+    "id": "wal_7ce7645739b8364d",
+    "userId": "usr_75533caf310eea83",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:24.085Z",
+    "updatedAt": "2026-09-04T12:38:25.760Z"
+  },
+  {
+    "id": "wal_440713832b0c4b34",
+    "userId": "usr_09e496df3e7fc7c3",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:25.653Z",
+    "updatedAt": "2026-09-04T12:38:25.653Z"
+  },
+  {
+    "id": "wal_741b101e3e794c57",
+    "userId": "usr_b592affea363bd68",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T12:38:44.089Z",
+    "updatedAt": "2026-09-04T12:38:44.089Z"
+  },
+  {
+    "id": "wal_0a69e3c73d6b009a",
+    "userId": "usr_0486d87bd6adadbb",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:48.302Z",
+    "updatedAt": "2026-09-04T14:14:48.302Z"
+  },
+  {
+    "id": "wal_87ee81bb73c21216",
+    "userId": "usr_9355d8c237d0b491",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:50.303Z",
+    "updatedAt": "2026-09-04T14:14:50.303Z"
+  },
+  {
+    "id": "wal_c552a14efb6bb058",
+    "userId": "usr_96096601433326ce",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:51.038Z",
+    "updatedAt": "2026-09-04T14:14:51.242Z"
+  },
+  {
+    "id": "wal_b182d059aac4cd60",
+    "userId": "usr_a6f29e135a9ee57a",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:52.003Z",
+    "updatedAt": "2026-09-04T14:14:52.089Z"
+  },
+  {
+    "id": "wal_bdd13a0c6707b52c",
+    "userId": "usr_2ab7e5215aba8080",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:52.853Z",
+    "updatedAt": "2026-09-04T14:14:52.981Z"
+  },
+  {
+    "id": "wal_e1164b0961665343",
+    "userId": "usr_e9336b0e192fa825",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:53.752Z",
+    "updatedAt": "2026-09-04T14:14:53.942Z"
+  },
+  {
+    "id": "wal_468fef0eab23a46c",
+    "userId": "usr_f2e69b4d2d189083",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:54.673Z",
+    "updatedAt": "2026-09-04T14:14:55.681Z"
+  },
+  {
+    "id": "wal_3cda630035ec5041",
+    "userId": "usr_90d80f9e63b849a3",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:55.339Z",
+    "updatedAt": "2026-09-04T14:14:55.487Z"
+  },
+  {
+    "id": "wal_fbdd4224d61c4fe6",
+    "userId": "usr_b8c2660138d5c025",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:58.181Z",
+    "updatedAt": "2026-09-04T14:14:59.384Z"
+  },
+  {
+    "id": "wal_124e011b3dc0b49e",
+    "userId": "usr_32a3d0a85b4784d0",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:14:58.902Z",
+    "updatedAt": "2026-09-04T14:14:59.252Z"
+  },
+  {
+    "id": "wal_58841f2f21d212a2",
+    "userId": "usr_3a9af2d787ebf035",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:15:30.609Z",
+    "updatedAt": "2026-09-04T14:15:31.423Z"
+  },
+  {
+    "id": "wal_2fcc1acf30e4b156",
+    "userId": "usr_ad0b2b755d1706ea",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:15:31.387Z",
+    "updatedAt": "2026-09-04T14:15:31.387Z"
+  },
+  {
+    "id": "wal_8dccc25022e37e46",
+    "userId": "usr_981444a4ad502216",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:03.143Z",
+    "updatedAt": "2026-09-04T14:16:03.143Z"
+  },
+  {
+    "id": "wal_75e867e9174044c3",
+    "userId": "usr_aaee58d102cb32d3",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:05.252Z",
+    "updatedAt": "2026-09-04T14:16:05.252Z"
+  },
+  {
+    "id": "wal_2eebebfd715d733e",
+    "userId": "usr_d36af2e18e8710be",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:06.021Z",
+    "updatedAt": "2026-09-04T14:16:06.165Z"
+  },
+  {
+    "id": "wal_57bfc2e4a3f6f70c",
+    "userId": "usr_d5f171f9803e1b32",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:06.925Z",
+    "updatedAt": "2026-09-04T14:16:07.002Z"
+  },
+  {
+    "id": "wal_ebb3b7024e820e7a",
+    "userId": "usr_a837485f83e98481",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:07.759Z",
+    "updatedAt": "2026-09-04T14:16:07.880Z"
+  },
+  {
+    "id": "wal_555666529916ad52",
+    "userId": "usr_c9f41361fe1ddb8e",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:08.704Z",
+    "updatedAt": "2026-09-04T14:16:08.876Z"
+  },
+  {
+    "id": "wal_e1b7dc549f66426e",
+    "userId": "usr_555504fba9746586",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:09.621Z",
+    "updatedAt": "2026-09-04T14:16:10.643Z"
+  },
+  {
+    "id": "wal_5618227c73b84a2b",
+    "userId": "usr_39c49e4b7fa25968",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:10.341Z",
+    "updatedAt": "2026-09-04T14:16:10.495Z"
+  },
+  {
+    "id": "wal_f1ff8c0b3350076e",
+    "userId": "usr_0475e09a538cced4",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:13.380Z",
+    "updatedAt": "2026-09-04T14:16:15.200Z"
+  },
+  {
+    "id": "wal_ebd9b8556ca2d1ad",
+    "userId": "usr_1ccfaba782f9c8cc",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:14.154Z",
+    "updatedAt": "2026-09-04T14:16:14.983Z"
+  },
+  {
+    "id": "wal_e593604873c1b67e",
+    "userId": "usr_63ae9742a4ff260e",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:16.120Z",
+    "updatedAt": "2026-09-04T14:16:16.850Z"
+  },
+  {
+    "id": "wal_32361ef2fc27d478",
+    "userId": "usr_5f13ee30f9166132",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:16.818Z",
+    "updatedAt": "2026-09-04T14:16:16.818Z"
+  },
+  {
+    "id": "wal_0467eafb2ddd1315",
+    "userId": "usr_370059861de228ac",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:17.925Z",
+    "updatedAt": "2026-09-04T14:16:17.925Z"
+  },
+  {
+    "id": "wal_22c313af78b47c0f",
+    "userId": "usr_892b58407e70d8b2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:19.004Z",
+    "updatedAt": "2026-09-04T14:16:19.004Z"
+  },
+  {
+    "id": "wal_1f2a50ee01bafa85",
+    "userId": "usr_62a8de5c25ed9113",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:31.142Z",
+    "updatedAt": "2026-09-04T14:16:31.142Z"
+  },
+  {
+    "id": "wal_d845c55a63afa1bc",
+    "userId": "usr_d1b7633e98bf7f68",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:44.142Z",
+    "updatedAt": "2026-09-04T14:16:44.142Z"
+  },
+  {
+    "id": "wal_1cac62a0f9048baa",
+    "userId": "usr_a6672841e6ebf1cb",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:46.281Z",
+    "updatedAt": "2026-09-04T14:16:46.281Z"
+  },
+  {
+    "id": "wal_c357bce4dca8f90e",
+    "userId": "usr_706129ec6f66650e",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:47.024Z",
+    "updatedAt": "2026-09-04T14:16:47.171Z"
+  },
+  {
+    "id": "wal_1b7ab80a4e88219e",
+    "userId": "usr_97b24ffaa290559a",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:47.953Z",
+    "updatedAt": "2026-09-04T14:16:48.032Z"
+  },
+  {
+    "id": "wal_d44f60c20d9a9473",
+    "userId": "usr_6bb2dcd2d74d57fb",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:48.902Z",
+    "updatedAt": "2026-09-04T14:16:49.135Z"
+  },
+  {
+    "id": "wal_793615d3e652806c",
+    "userId": "usr_dd34353744b3fcf3",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:49.952Z",
+    "updatedAt": "2026-09-04T14:16:50.140Z"
+  },
+  {
+    "id": "wal_77dff8b073dc9a95",
+    "userId": "usr_41cb580eaf595730",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:51.464Z",
+    "updatedAt": "2026-09-04T14:16:52.462Z"
+  },
+  {
+    "id": "wal_1592e4302c08ab45",
+    "userId": "usr_60f8194e3355d190",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:52.178Z",
+    "updatedAt": "2026-09-04T14:16:52.329Z"
+  },
+  {
+    "id": "wal_d92110f93e356093",
+    "userId": "usr_9594cf70fc038eda",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:55.165Z",
+    "updatedAt": "2026-09-04T14:16:56.734Z"
+  },
+  {
+    "id": "wal_0cfd0533c7d1425b",
+    "userId": "usr_0778f470b1f2ecbc",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:55.989Z",
+    "updatedAt": "2026-09-04T14:16:56.597Z"
+  },
+  {
+    "id": "wal_b3aa51a16420644e",
+    "userId": "usr_cf93fdf39a96b8cd",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:57.727Z",
+    "updatedAt": "2026-09-04T14:16:58.470Z"
+  },
+  {
+    "id": "wal_5eaa39c0b3d78ed6",
+    "userId": "usr_199c6459d2ac60dd",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:58.439Z",
+    "updatedAt": "2026-09-04T14:16:58.439Z"
+  },
+  {
+    "id": "wal_84d6022a835a3544",
+    "userId": "usr_d15b06707fb258b2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:16:59.512Z",
+    "updatedAt": "2026-09-04T14:16:59.512Z"
+  },
+  {
+    "id": "wal_1f0fce870a8b6c08",
+    "userId": "usr_0325ebde99f53627",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:00.570Z",
+    "updatedAt": "2026-09-04T14:17:00.570Z"
+  },
+  {
+    "id": "wal_927b917f7c3f05c3",
+    "userId": "usr_cdd9088cad908ec2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:02.421Z",
+    "updatedAt": "2026-09-04T14:17:02.421Z"
+  },
+  {
+    "id": "wal_9ac42e3792977bba",
+    "userId": "usr_68330f137a437af9",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:21.114Z",
+    "updatedAt": "2026-09-04T14:17:21.114Z"
+  },
+  {
+    "id": "wal_8788ee09ed5ca92d",
+    "userId": "usr_60ffb0e2c869bd71",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:21.840Z",
+    "updatedAt": "2026-09-04T14:17:21.840Z"
+  },
+  {
+    "id": "wal_0ba5ba5a09ee3fc9",
+    "userId": "usr_39bb0be52fc86ecf",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:22.719Z",
+    "updatedAt": "2026-09-04T14:17:22.719Z"
+  },
+  {
+    "id": "wal_059a9900429b7de9",
+    "userId": "usr_94b6e9df4e9d7f54",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:28.138Z",
+    "updatedAt": "2026-09-04T14:17:28.138Z"
+  },
+  {
+    "id": "wal_9c0164e3b757b009",
+    "userId": "usr_41a9ca91639acc1e",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:30.227Z",
+    "updatedAt": "2026-09-04T14:17:30.227Z"
+  },
+  {
+    "id": "wal_058d512b184d8227",
+    "userId": "usr_168e1177a251afa1",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:30.985Z",
+    "updatedAt": "2026-09-04T14:17:31.150Z"
+  },
+  {
+    "id": "wal_c70845a61fdd1ea3",
+    "userId": "usr_d388188ef629c326",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:31.926Z",
+    "updatedAt": "2026-09-04T14:17:32.007Z"
+  },
+  {
+    "id": "wal_6dbfce7ca3cf4ee3",
+    "userId": "usr_c5bbc2b3c6afc449",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:32.745Z",
+    "updatedAt": "2026-09-04T14:17:32.871Z"
+  },
+  {
+    "id": "wal_bdf2b1ab265da897",
+    "userId": "usr_30c65e0a0b65143f",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:33.695Z",
+    "updatedAt": "2026-09-04T14:17:33.893Z"
+  },
+  {
+    "id": "wal_319e8a92fb6872cb",
+    "userId": "usr_e3223ef907eebdac",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:34.717Z",
+    "updatedAt": "2026-09-04T14:17:35.718Z"
+  },
+  {
+    "id": "wal_747cfccc798fadbf",
+    "userId": "usr_b5a2c0cb25ee76e3",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:35.424Z",
+    "updatedAt": "2026-09-04T14:17:35.576Z"
+  },
+  {
+    "id": "wal_0158d9a33e059a12",
+    "userId": "usr_7321f1c512b5d411",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:38.608Z",
+    "updatedAt": "2026-09-04T14:17:39.784Z"
+  },
+  {
+    "id": "wal_9e0043867b10566d",
+    "userId": "usr_4eb7fb428ad7a5b9",
+    "currency": "BDT",
+    "balance": 51050,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:39.285Z",
+    "updatedAt": "2026-09-04T14:17:39.652Z"
+  },
+  {
+    "id": "wal_b28d2a91378ea508",
+    "userId": "usr_892c8b1a6fce0376",
+    "currency": "BDT",
+    "balance": 0.01,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:40.734Z",
+    "updatedAt": "2026-09-04T14:17:41.476Z"
+  },
+  {
+    "id": "wal_71abcd153f615a2b",
+    "userId": "usr_f35012b7d97a2540",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:41.443Z",
+    "updatedAt": "2026-09-04T14:17:41.443Z"
+  },
+  {
+    "id": "wal_f0a6ccfabcdf2c4e",
+    "userId": "usr_d2f911a6fe212427",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:42.400Z",
+    "updatedAt": "2026-09-04T14:17:42.400Z"
+  },
+  {
+    "id": "wal_ff11af97ba038c5a",
+    "userId": "usr_d4066d2f5ca6e088",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:43.261Z",
+    "updatedAt": "2026-09-04T14:17:43.261Z"
+  },
+  {
+    "id": "wal_fd35b92a10844464",
+    "userId": "usr_7ecea349559cb7b2",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:44.026Z",
+    "updatedAt": "2026-09-04T14:17:44.026Z"
+  },
+  {
+    "id": "wal_7aee8966a36f6318",
+    "userId": "usr_cf2e1ffd8bc164bc",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:17:44.876Z",
+    "updatedAt": "2026-09-04T14:17:44.876Z"
+  },
+  {
+    "id": "wal_63b5278dd378cd69",
+    "userId": "usr_fe3341c0827c0b4f",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:19:24.953Z",
+    "updatedAt": "2026-09-04T14:19:24.953Z"
+  },
+  {
+    "id": "wal_798792d2d7b5cf97",
+    "userId": "usr_00993da9c7d4429d",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:19:25.713Z",
+    "updatedAt": "2026-09-04T14:19:25.713Z"
+  },
+  {
+    "id": "wal_50042e6367c29d1c",
+    "userId": "usr_8b30145961d0a0e5",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:39.672Z",
+    "updatedAt": "2026-09-04T14:31:39.672Z"
+  },
+  {
+    "id": "wal_ae7bdce2c66c5389",
+    "userId": "usr_a33d8c457607adc8",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:40.420Z",
+    "updatedAt": "2026-09-04T14:31:40.420Z"
+  },
+  {
+    "id": "wal_3e5e4eb42f1b04da",
+    "userId": "usr_2d65d3fff39d432b",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:47.609Z",
+    "updatedAt": "2026-09-04T14:31:47.609Z"
+  },
+  {
+    "id": "wal_517723de0dfe1f9b",
+    "userId": "usr_7893af7912b9244c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:49.711Z",
+    "updatedAt": "2026-09-04T14:31:49.711Z"
+  },
+  {
+    "id": "wal_04bd0b4600c1f94b",
+    "userId": "usr_b8fa48e49b1a04c2",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:50.451Z",
+    "updatedAt": "2026-09-04T14:31:50.731Z"
+  },
+  {
+    "id": "wal_7e2eaca5102b71c3",
+    "userId": "usr_5761878c74155362",
+    "currency": "USD",
+    "balance": 10,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:51.533Z",
+    "updatedAt": "2026-09-04T14:31:51.626Z"
+  },
+  {
+    "id": "wal_709241ed13c74d79",
+    "userId": "usr_c38529de3527b8bf",
+    "currency": "BDT",
+    "balance": 980,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:52.369Z",
+    "updatedAt": "2026-09-04T14:31:52.503Z"
+  },
+  {
+    "id": "wal_30c5fa88eedddf48",
+    "userId": "usr_ad79b4eb7f04e806",
+    "currency": "BDT",
+    "balance": 500,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:53.364Z",
+    "updatedAt": "2026-09-04T14:31:53.696Z"
+  },
+  {
+    "id": "wal_481262e34ad68c87",
+    "userId": "usr_836f777796fc4d2c",
+    "currency": "BDT",
+    "balance": 0,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:54.573Z",
+    "updatedAt": "2026-09-04T14:31:55.722Z"
+  },
+  {
+    "id": "wal_7fbc41f91105ce6b",
+    "userId": "usr_74927df945b9b3dd",
+    "currency": "BDT",
+    "balance": 1000,
+    "lockedAmount": 0,
+    "createdAt": "2026-09-04T14:31:55.405Z",
+    "updatedAt": "2026-09-04T14:31:55.573Z"
+  }
+]

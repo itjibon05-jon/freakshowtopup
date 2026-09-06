@@ -172,6 +172,13 @@ function toggleMobileSidebar() {
   }
 }
 
+// Close mobile sidebar on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMobileSidebar();
+  }
+});
+
 // ==========================================
 // 2. TAB SWITCHING ENGINE
 // ==========================================

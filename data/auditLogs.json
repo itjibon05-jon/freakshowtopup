@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "id": "aud_a123e59eeaa95fe6",
+    "actorId": "admin_super_1",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_REVERSED",
+    "targetId": "DEP-99647",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 1855,
+      "depositStatus": "APPROVED"
+    },
+    "after": {
+      "balance": 1230,
+      "depositStatus": "REVERSED"
+    },
+    "reason": "Customer disputed charge",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T01:44:08.611Z"
+  },
+  {
+    "id": "aud_f73368f7a179d59c",
+    "actorId": "admin_super_1",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-99647",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 1230,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1855,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Approved for test",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T01:44:08.573Z"
+  },
+  {
+    "id": "aud_ee4e9c34f26d294b",
+    "actorId": "admin_super_1",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-54489",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 0,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1250,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Binance deposit approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T01:44:08.393Z"
+  }
+]

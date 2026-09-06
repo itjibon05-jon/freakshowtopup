@@ -4,11 +4,11 @@
   "siteLogo": "assets/logo.jpg",
   "domain": "freakshowtopup.shop",
   "announcement": "⚡ Welcome to FREAKSHOW TOPUP",
-  "vipCodeVersion": 1788655342825,
+  "vipCodeVersion": 2000,
   "minDepositBDT": 25,
   "minDepositUSD": 0.2,
-  "usdToBdtRate": 120,
-  "exchangeRate": 120,
+  "usdToBdtRate": 125,
+  "exchangeRate": 125,
   "referralCommissionPercent": 2.5,
   "telegramBotToken": "8476447549:AAEy_ypik8gy3yLCaL0CAxiOp9D1a78GVr0",
   "telegramAdminChatId": "5339688506",
@@ -66,8 +66,8 @@
     "directButtonLink": "#products",
     "directButtonActive": false
   },
-  "currentVipCode": "JOY100LVL",
-  "vipAccessCodeHash": "$2a$10$Nlk8WmtOTgaHA9IhGPJgrOFfBNX5jDy2mlLBaNhfXQiX.Hk.o1BMq",
+  "currentVipCode": "NEWVIPCODE2027",
+  "vipAccessCodeHash": "$2a$10$cfeD.bDxNk2mCFIiFTHeFuHIhEO5vbIfPJHnjMjuJV2ZG.bKzK3bG",
   "maintenanceMode": false,
   "recentOrdersSectionEnabled": true,
   "referralSystemEnabled": true,
@@ -82,7 +82,7 @@
     "rocket": true,
     "cellfin": true,
     "bangla_qr": true,
-    "binance": false
+    "binance": true
   },
   "howToDeposit": {
     "enabled": true,
