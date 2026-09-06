@@ -147,11 +147,39 @@ function handleAdminLogout() {
   window.location.href = '/Admin-login';
 }
 
+function openMobileSidebar() {
+  const sb = document.getElementById('adminSidebar');
+  const ov = document.getElementById('sidebarOverlay');
+  if (sb) sb.classList.add('mobile-open');
+  if (ov) ov.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileSidebar() {
+  const sb = document.getElementById('adminSidebar');
+  const ov = document.getElementById('sidebarOverlay');
+  if (sb) sb.classList.remove('mobile-open');
+  if (ov) ov.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function toggleMobileSidebar() {
+  const sb = document.getElementById('adminSidebar');
+  if (sb && sb.classList.contains('mobile-open')) {
+    closeMobileSidebar();
+  } else {
+    openMobileSidebar();
+  }
+}
+
 // ==========================================
 // 2. TAB SWITCHING ENGINE
 // ==========================================
 
 function switchAdminTab(tabId) {
+  // Auto-close mobile drawer upon selecting any navigation tab
+  closeMobileSidebar();
+
   // Hide all tabs
   document.querySelectorAll('.tab-view').forEach(t => {
     t.classList.remove('active');

@@ -675,51 +675,343 @@
       opacity: 1;
     }
 
-    /* MOBILE / RESPONSIVE OVERRIDES */
-    @media (max-width: 960px) {
+    /* DESKTOP DEFAULT HIDDEN ELEMENTS */
+    .hamburger-btn,
+    .mobile-brand-title,
+    .sidebar-close-btn,
+    .sidebar-overlay {
+      display: none;
+    }
+
+    .header-left-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    /* MOBILE / RESPONSIVE OVERRIDES (< 992px) */
+    @media (max-width: 992px) {
       body {
-        flex-direction: column;
+        flex-direction: column !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        min-width: 0 !important;
       }
 
+      /* HAMBURGER BUTTON */
+      .hamburger-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        border-radius: var(--radius-md) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1.5px solid var(--border-accent) !important;
+        color: var(--brand-cyan) !important;
+        font-size: 1.35rem !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
+        transition: all 0.2s ease !important;
+        outline: none !important;
+        user-select: none !important;
+      }
+
+      .hamburger-btn:hover,
+      .hamburger-btn:active {
+        background: rgba(0, 242, 254, 0.15) !important;
+        box-shadow: 0 0 14px rgba(0, 242, 254, 0.3) !important;
+      }
+
+      /* MOBILE HEADER BRANDING */
+      .mobile-brand-title {
+        display: flex !important;
+        flex-direction: column !important;
+        line-height: 1.15 !important;
+        min-width: 0 !important;
+      }
+
+      .m-brand-name {
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 1.05rem !important;
+        font-weight: 900 !important;
+        letter-spacing: 0.5px !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+      }
+
+      .m-brand-sub {
+        font-size: 0.65rem !important;
+        font-weight: 800 !important;
+        color: var(--brand-cyan) !important;
+        letter-spacing: 0.8px !important;
+        white-space: nowrap !important;
+      }
+
+      /* SIDEBAR CLOSE BUTTON */
+      .sidebar-close-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        margin-left: auto !important;
+        border-radius: var(--radius-sm) !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid var(--border) !important;
+        color: var(--text-muted) !important;
+        font-size: 1.15rem !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+      }
+
+      .sidebar-close-btn:hover {
+        background: rgba(239, 68, 68, 0.2) !important;
+        color: #f87171 !important;
+        border-color: rgba(239, 68, 68, 0.4) !important;
+      }
+
+      /* SIDEBAR OVERLAY BACKDROP */
+      .sidebar-overlay {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(4, 6, 12, 0.78) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        z-index: 998 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.28s ease !important;
+      }
+
+      .sidebar-overlay.active {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+
+      /* SLIDE-OUT DRAWER SIDEBAR */
       .sidebar {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 285px !important;
+        min-width: 285px !important;
+        max-width: 85vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        z-index: 1000 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+        box-shadow: none !important;
+        background: #090e1a !important;
+        border-right: 1.5px solid rgba(0, 242, 254, 0.25) !important;
+        border-bottom: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .sidebar.mobile-open {
+        transform: translateX(0) !important;
+        box-shadow: 14px 0 50px rgba(0, 0, 0, 0.95) !important;
+      }
+
+      .sidebar-brand {
+        padding: 16px 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex-shrink: 0 !important;
       }
 
       .sidebar-menu {
-        flex-direction: row;
-        overflow-x: auto;
-        padding: 10px;
-        gap: 6px;
+        flex: 1 !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        flex-direction: column !important;
+        padding: 12px 10px !important;
+        gap: 5px !important;
+        -webkit-overflow-scrolling: touch !important;
       }
 
       .menu-item {
-        white-space: nowrap;
-        border-left: none;
-        border-bottom: 3px solid transparent;
+        white-space: normal !important;
+        border-left: 3px solid transparent !important;
+        border-bottom: none !important;
+        padding: 11px 14px !important;
+        min-height: 44px !important;
+        font-size: 0.92rem !important;
+        border-radius: var(--radius-md) !important;
       }
 
       .menu-item.active {
-        border-left: none;
-        border-bottom: 3px solid var(--brand-cyan);
+        border-left: 3px solid var(--brand-cyan) !important;
+        border-bottom: none !important;
+        background: linear-gradient(90deg, rgba(0, 242, 254, 0.18), rgba(59, 130, 246, 0.05)) !important;
+        color: var(--brand-cyan) !important;
       }
 
       .sidebar-footer {
-        display: none;
+        display: flex !important;
+        flex-shrink: 0 !important;
+        padding: 14px 12px !important;
+        border-top: 1px solid var(--border) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        gap: 8px !important;
+      }
+
+      /* TOP HEADER RESPONSIVE */
+      .top-header {
+        height: 60px !important;
+        padding: 0 12px !important;
+        gap: 10px !important;
+      }
+
+      .header-status-group {
+        display: none !important;
+      }
+
+      .header-actions {
+        gap: 6px !important;
+      }
+
+      .header-actions .btn {
+        padding: 7px 10px !important;
+        font-size: 0.78rem !important;
+        min-height: 38px !important;
+      }
+
+      .header-actions .btn-danger {
+        padding: 7px 10px !important;
+      }
+
+      /* CONTENT AREA RESPONSIVE */
+      .content-area {
+        padding: 14px 10px !important;
+      }
+
+      .page-heading {
+        font-size: 1.25rem !important;
+      }
+
+      .page-subheading {
+        font-size: 0.76rem !important;
+      }
+
+      .section-title-wrap {
+        margin-bottom: 16px !important;
+        gap: 10px !important;
+      }
+
+      /* METRICS GRID RESPONSIVE */
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .metric-card {
+        padding: 14px 12px !important;
+        border-radius: var(--radius-md) !important;
+      }
+
+      .metric-val {
+        font-size: 1.35rem !important;
+      }
+
+      .metric-label {
+        font-size: 0.7rem !important;
+      }
+
+      .metric-sub {
+        font-size: 0.7rem !important;
+      }
+
+      /* CARDS & FORMS RESPONSIVE */
+      .card-box {
+        padding: 16px 12px !important;
+        border-radius: var(--radius-lg) !important;
+        margin-bottom: 16px !important;
       }
 
       .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-size: 0.92rem !important;
+        padding: 10px 12px !important;
+        min-height: 44px !important;
+      }
+
+      /* TABLES RESPONSIVE */
+      .table-container {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        border-radius: var(--radius-md) !important;
+      }
+
+      table.data-table th,
+      table.data-table td {
+        padding: 10px 8px !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+      }
+
+      /* MODALS RESPONSIVE */
+      .modal-backdrop {
+        padding: 10px !important;
+      }
+
+      .modal-window {
+        padding: 18px 14px !important;
+        max-width: 96vw !important;
+        max-height: 90vh !important;
+        border-radius: var(--radius-lg) !important;
+      }
+
+      .modal-title {
+        font-size: 1.05rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      .metric-card {
+        padding: 12px 10px !important;
+      }
+
+      .metric-val {
+        font-size: 1.2rem !important;
+      }
+
+      .header-actions button span:not(.icon-only) {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- MOBILE SIDEBAR BACKDROP OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileSidebar()"></div>
 
   <!-- ==========================================
        SIDEBAR NAVIGATION
@@ -732,6 +1024,7 @@
         <div class="brand-name">FREAKSHOW</div>
         <div style="font-size: 0.72rem; color: var(--brand-cyan); font-weight: 800;">ADMIN CONTROL</div>
       </div>
+      <button type="button" class="sidebar-close-btn" onclick="closeMobileSidebar()" aria-label="Close navigation menu" title="Close Menu">✕</button>
     </div>
 
     <nav class="sidebar-menu" id="adminSidebarNav">
@@ -806,18 +1099,27 @@
   <div class="main-wrapper">
     <!-- TOP HEADER -->
     <header class="top-header">
-      <div class="header-status-group">
-        <div class="status-pill">
-          <span class="dot dot-green"></span>
-          <span>Web Live</span>
+      <div class="header-left-wrap">
+        <button type="button" class="hamburger-btn" id="btnAdminHamburger" onclick="toggleMobileSidebar()" aria-label="Toggle navigation menu" title="Open Menu">
+          <span>☰</span>
+        </button>
+        <div class="mobile-brand-title">
+          <span class="m-brand-name">FREAKSHOW</span>
+          <span class="m-brand-sub">ADMIN CONTROL</span>
         </div>
-        <div class="status-pill" id="headerSupplierBalancePill">
-          <span class="dot dot-gold"></span>
-          <span>Supplier API: <b id="headerApiBalanceText">৳...</b></span>
-        </div>
-        <div class="status-pill">
-          <span class="dot dot-blue"></span>
-          <span>Telegram: Active</span>
+        <div class="header-status-group">
+          <div class="status-pill">
+            <span class="dot dot-green"></span>
+            <span>Web Live</span>
+          </div>
+          <div class="status-pill" id="headerSupplierBalancePill">
+            <span class="dot dot-gold"></span>
+            <span>Supplier API: <b id="headerApiBalanceText">৳...</b></span>
+          </div>
+          <div class="status-pill">
+            <span class="dot dot-blue"></span>
+            <span>Telegram: Active</span>
+          </div>
         </div>
       </div>
 
@@ -2868,9 +3170,42 @@
     };
 
     // ==========================================
+    // 1.5 MOBILE SIDEBAR DRAWER CONTROLS
+    // ==========================================
+    window.openMobileSidebar = function () {
+      const sb = document.getElementById('adminSidebar');
+      const ov = document.getElementById('sidebarOverlay');
+      if (sb) sb.classList.add('mobile-open');
+      if (ov) ov.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeMobileSidebar = function () {
+      const sb = document.getElementById('adminSidebar');
+      const ov = document.getElementById('sidebarOverlay');
+      if (sb) sb.classList.remove('mobile-open');
+      if (ov) ov.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    window.toggleMobileSidebar = function () {
+      const sb = document.getElementById('adminSidebar');
+      if (sb && sb.classList.contains('mobile-open')) {
+        window.closeMobileSidebar();
+      } else {
+        window.openMobileSidebar();
+      }
+    };
+
+    // ==========================================
     // 2. TAB SWITCHING ENGINE
     // ==========================================
     window.switchAdminTab = function (tabId) {
+      // Auto-close mobile drawer upon selecting any navigation tab
+      if (typeof window.closeMobileSidebar === 'function') {
+        window.closeMobileSidebar();
+      }
+
       // Hide all tabs
       document.querySelectorAll('.tab-view').forEach(t => {
         t.classList.remove('active');
