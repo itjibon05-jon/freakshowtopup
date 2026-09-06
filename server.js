@@ -654,6 +654,11 @@ const server = http.createServer(async (req, res) => {
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
       res.setHeader('Pragma', 'no-cache');
       res.setHeader('Expires', '0');
+
+      const activeBanners = (db.banners || []).filter(b => b && b.status === 'ACTIVE');
+      const primaryBanner = activeBanners.length > 0 ? activeBanners[0] : null;
+      const isPopupOn = primaryBanner ? (primaryBanner.isPopupEnabled !== false && primaryBanner.isPopupEnabled !== 'false' && primaryBanner.isPopupEnabled !== 'OFF' && primaryBanner.isPopupEnabled !== 'off') : false;
+
       return sendJson(res, 200, {
         success: true,
         siteName: db.settings.siteName || 'FREAKSHOW',
@@ -702,13 +707,20 @@ const server = http.createServer(async (req, res) => {
         recentOrdersSectionEnabled: db.settings.recentOrdersSectionEnabled !== false,
         vipCodeVersion: Number(db.settings.vipCodeVersion || 1),
         announcement: db.settings.announcement || '',
-        popupDisabled: db.settings.popupDisabled || false,
-        popupOffer: db.settings.popupOffer || {
-          enabled: !db.settings.popupDisabled,
-          title: 'Special Gaming Offer',
-          imageUrl: 'assets/offer_banner.jpg',
-          link: 'sub-ff-bd'
-        },
+        banners: activeBanners,
+        activeBanner: primaryBanner,
+        popupDisabled: !isPopupOn,
+        popupOffer: primaryBanner ? {
+          enabled: isPopupOn,
+          id: primaryBanner.id,
+          title: primaryBanner.title || 'Special Gaming Offer',
+          description: primaryBanner.description || '',
+          imageUrl: primaryBanner.image || 'assets/offer_banner.jpg',
+          buttonText: primaryBanner.buttonText || 'Recharge Now 🚀',
+          link: primaryBanner.destinationUrl || '#freefire-section',
+          isPopupEnabled: isPopupOn,
+          status: 'ACTIVE'
+        } : null,
         howToDeposit: db.settings.howToDeposit || {
           enabled: db.settings.how_to_deposit_enabled !== undefined ? Boolean(db.settings.how_to_deposit_enabled) : true,
           title: db.settings.how_to_deposit_title || 'কীভাবে টাকা Deposit করবেন?',
@@ -721,6 +733,13 @@ const server = http.createServer(async (req, res) => {
         how_to_deposit_image: db.settings.how_to_deposit_image || (db.settings.howToDeposit ? db.settings.howToDeposit.image : 'assets/how_to_deposit.jpg'),
         how_to_deposit_url: db.settings.how_to_deposit_url || (db.settings.howToDeposit ? db.settings.howToDeposit.url : 'https://youtube.com')
       }, req);
+    }
+
+    // Public active banners list
+    if (pathname === '/api/banners' && method === 'GET') {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+      const activeBanners = (db.banners || []).filter(b => b && b.status === 'ACTIVE');
+      return sendJson(res, 200, { success: true, banners: activeBanners }, req);
     }
 
     // -------------------------------------------------------------
@@ -1354,15 +1373,17 @@ const server = http.createServer(async (req, res) => {
       // 6. Banners CRUD
       if (pathname === '/api/admin/banners' && method === 'POST') {
         const body = await parseBody(req);
+        const isPopupOn = body.isPopupEnabled !== false && body.isPopupEnabled !== 'false' && body.isPopupEnabled !== 'OFF' && body.isPopupEnabled !== 'off';
         const newBan = {
           id: `ban_${Date.now().toString(36)}`,
-          title: body.title,
+          title: body.title || '',
           description: body.description || '',
           buttonText: body.buttonText || 'Recharge Now 🚀',
           destinationUrl: body.destinationUrl || '#freefire-section',
           image: body.image || 'assets/freefire_special_offer.jpg',
           displayFrequency: body.displayFrequency || 'ONCE_PER_SESSION',
-          status: body.status || 'ACTIVE',
+          status: (body.status === 'INACTIVE') ? 'INACTIVE' : 'ACTIVE',
+          isPopupEnabled: isPopupOn,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         };
@@ -1377,13 +1398,16 @@ const server = http.createServer(async (req, res) => {
         const ban = db.banners.find(b => b.id === banId);
         if (!ban) return sendJson(res, 404, { success: false, message: 'Banner not found' }, req);
 
-        if (body.title) ban.title = body.title;
+        if (body.title !== undefined) ban.title = body.title;
         if (body.description !== undefined) ban.description = body.description;
-        if (body.buttonText) ban.buttonText = body.buttonText;
-        if (body.destinationUrl) ban.destinationUrl = body.destinationUrl;
-        if (body.image) ban.image = body.image;
-        if (body.displayFrequency) ban.displayFrequency = body.displayFrequency;
-        if (body.status) ban.status = body.status;
+        if (body.buttonText !== undefined) ban.buttonText = body.buttonText;
+        if (body.destinationUrl !== undefined) ban.destinationUrl = body.destinationUrl;
+        if (body.image !== undefined) ban.image = body.image;
+        if (body.displayFrequency !== undefined) ban.displayFrequency = body.displayFrequency;
+        if (body.status !== undefined) ban.status = (body.status === 'INACTIVE') ? 'INACTIVE' : 'ACTIVE';
+        if (body.isPopupEnabled !== undefined) {
+          ban.isPopupEnabled = body.isPopupEnabled !== false && body.isPopupEnabled !== 'false' && body.isPopupEnabled !== 'OFF' && body.isPopupEnabled !== 'off';
+        }
         ban.updatedAt = new Date().toISOString();
         db.saveAll();
         return sendJson(res, 200, { success: true, banner: ban }, req);
