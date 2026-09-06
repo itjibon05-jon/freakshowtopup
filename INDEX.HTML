@@ -311,7 +311,7 @@
         </button>
 
         <!-- Special Offer Trigger (Desktop only) -->
-        <button class="nav-btn btn-ghost desktop-only-btn" onclick="openWelcomeOfferModal()" style="color: var(--brand-gold); border-color: rgba(255,179,0,0.35);">
+        <button class="nav-btn btn-ghost desktop-only-btn" id="btnNavOfferTrigger" onclick="openWelcomeOfferModal()" style="display: none; color: var(--brand-gold); border-color: rgba(255,179,0,0.35);">
           <span style="animation: pulse-glow 1.5s infinite;">🎁 Offers</span>
         </button>
 
@@ -1510,8 +1510,9 @@
       </div>
 
       <!-- Image Banner Body -->
-      <div style="position: relative; background: #000; overflow-y: auto; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;">
-        <img id="welcomeOfferImg" src="assets/offer_banner.jpg" alt="Special Free Fire Offer" style="width: 100%; max-height: 50vh; display: block; object-fit: contain;" onerror="this.src='assets/ff_diamond.jpg'">
+      <div style="position: relative; background: #000; overflow-y: auto; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img id="welcomeOfferImg" src="assets/offer_banner.jpg" alt="Special Gaming Offer" style="width: 100%; max-height: 50vh; display: block; object-fit: contain;" onerror="this.src='assets/ff_diamond.jpg'">
+        <div id="welcomeOfferDesc" style="padding: 10px 16px; font-size: 0.85rem; color: #cbd5e1; text-align: center; display: none;"></div>
       </div>
 
       <!-- Action Footer -->
@@ -1519,7 +1520,7 @@
         <button class="nav-btn btn-ghost" onclick="closeWelcomeOfferModal()" style="padding: 9px 18px; font-weight: 700; border-radius: 8px;">
           Close
         </button>
-        <button class="nav-btn btn-primary" onclick="handleClaimOffer()" style="padding: 9px 22px; font-weight: 800; background: linear-gradient(135deg, #1d4ed8, #2563eb); box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4); border-radius: 8px;">
+        <button class="nav-btn btn-primary" id="welcomeOfferBtn" onclick="handleClaimOffer()" style="padding: 9px 22px; font-weight: 800; background: linear-gradient(135deg, #1d4ed8, #2563eb); box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4); border-radius: 8px;">
           🚀 Order Now
         </button>
       </div>
