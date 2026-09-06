@@ -142,9 +142,18 @@ async function initApp() {
   setTimeout(() => initGoogleAuth(), 400);
 
   setTimeout(() => {
-    const isDismissed = sessionStorage.getItem('fs_offer_dismissed');
-    if (!isDismissed) {
-      openWelcomeOfferModal();
+    const activeBanner = APP.settings && APP.settings.activeBanner;
+    if (!activeBanner || activeBanner.status !== 'ACTIVE') return;
+    const isPopupOn = activeBanner.isPopupEnabled !== false && activeBanner.isPopupEnabled !== 'false' && activeBanner.isPopupEnabled !== 'OFF' && activeBanner.isPopupEnabled !== 'off';
+    if (!isPopupOn) return;
+
+    if (activeBanner.displayFrequency === 'EVERY_VISIT') {
+      openWelcomeOfferModal(false);
+    } else {
+      const isDismissed = sessionStorage.getItem('fs_offer_dismissed');
+      if (!isDismissed) {
+        openWelcomeOfferModal(false);
+      }
     }
   }, 1200);
 }
@@ -155,20 +164,52 @@ if (document.readyState === 'loading') {
   initApp();
 }
 
-function openWelcomeOfferModal() {
-  if (APP.settings && (APP.settings.popupDisabled || (APP.settings.popupOffer && APP.settings.popupOffer.enabled === false))) {
+function openWelcomeOfferModal(fromClick = false) {
+  const activeBanner = (APP.settings && APP.settings.activeBanner) 
+    || (APP.banners && APP.banners.find(b => b.status === 'ACTIVE'))
+    || (APP.settings && APP.settings.popupOffer);
+
+  // If no banner or banner is INACTIVE -> STRICTLY DO NOT SHOW
+  if (!activeBanner || activeBanner.status === 'INACTIVE') {
     return;
   }
+
+  const isPopupEnabled = activeBanner.isPopupEnabled !== false && 
+                         activeBanner.isPopupEnabled !== 'false' && 
+                         activeBanner.isPopupEnabled !== 'OFF' && 
+                         activeBanner.isPopupEnabled !== 'off' && 
+                         (APP.settings ? !APP.settings.popupDisabled : true);
+
+  // If popup is OFF:
+  if (!isPopupEnabled) {
+    // If clicked from a trigger (like navbar offer button), directly navigate without opening modal
+    if (fromClick) {
+      const targetUrl = activeBanner.destinationUrl || activeBanner.link || '#freefire-section';
+      handleNavigateBanner(targetUrl);
+    }
+    return;
+  }
+
   const modal = document.getElementById('welcomeOfferModal');
   if (!modal) return;
 
-  if (APP.settings && APP.settings.popupOffer) {
-    const offer = APP.settings.popupOffer;
-    const imgEl = document.getElementById('welcomeOfferImg');
-    const titleEl = document.getElementById('welcomeOfferTitle');
-    if (imgEl && offer.imageUrl) imgEl.src = offer.imageUrl;
-    if (titleEl && offer.title) titleEl.textContent = offer.title;
+  const imgEl = document.getElementById('welcomeOfferImg');
+  const titleEl = document.getElementById('welcomeOfferTitle');
+  const descEl = document.getElementById('welcomeOfferDesc');
+  const btnEl = document.getElementById('welcomeOfferBtn');
+
+  if (imgEl) imgEl.src = activeBanner.image || activeBanner.imageUrl || 'assets/offer_banner.jpg';
+  if (titleEl) titleEl.textContent = activeBanner.title || 'Special Gaming Offer';
+  if (descEl) {
+    if (activeBanner.description) {
+      descEl.textContent = activeBanner.description;
+      descEl.style.display = 'block';
+    } else {
+      descEl.style.display = 'none';
+    }
   }
+  if (btnEl) btnEl.textContent = activeBanner.buttonText || '🚀 Order Now';
+
   modal.classList.add('active');
 }
 
@@ -180,15 +221,17 @@ function closeWelcomeOfferModal() {
 
 function handleClaimOffer() {
   closeWelcomeOfferModal();
-  const link = (APP.settings && APP.settings.popupOffer && APP.settings.popupOffer.link)
-    ? APP.settings.popupOffer.link.trim()
-    : 'sub-ff-bd';
+  const activeBanner = (APP.settings && APP.settings.activeBanner) || (APP.settings && APP.settings.popupOffer);
+  const link = (activeBanner && (activeBanner.destinationUrl || activeBanner.link))
+    ? (activeBanner.destinationUrl || activeBanner.link).trim()
+    : '#freefire-section';
 
-  if (!link) {
-    openTopUpWizard('sub-ff-bd');
-    return;
-  }
+  handleNavigateBanner(link);
+}
 
+function handleNavigateBanner(link) {
+  if (!link) return;
+  link = link.trim();
   if (link.startsWith('http://') || link.startsWith('https://')) {
     window.open(link, '_blank');
   } else if (link.startsWith('#')) {
@@ -255,12 +298,26 @@ async function loadPublicSettings() {
       const ann = document.getElementById('announcementText');
       if (ann && data.announcement) ann.textContent = data.announcement;
       applyBrandingAndHeroSettings(data);
+      applyBannerSettings(data);
       renderHowToDepositCard();
       applyPaymentMethodVisibility();
       applyRecentOrdersVisibility();
       updateAllRateDisplays(data.usdToBdtRate || data.exchangeRate || 120);
     }
   } catch (e) { }
+}
+
+function applyBannerSettings(data) {
+  if (!data) return;
+  const activeBanner = data.activeBanner || (data.banners && data.banners.length > 0 ? data.banners[0] : null);
+  const navOfferBtn = document.getElementById('btnNavOfferTrigger');
+  if (navOfferBtn) {
+    if (activeBanner && activeBanner.status === 'ACTIVE') {
+      navOfferBtn.style.display = 'inline-flex';
+    } else {
+      navOfferBtn.style.display = 'none';
+    }
+  }
 }
 
 function applyBrandingAndHeroSettings(data) {
