@@ -671,6 +671,7 @@ function populateWebsiteSettings() {
   if (document.getElementById('cfgPopupEnabled')) document.getElementById('cfgPopupEnabled').value = s.popupDisabled ? 'DISABLED' : 'ENABLED';
   if (document.getElementById('cfgRecentOrders')) document.getElementById('cfgRecentOrders').value = (s.recentOrdersSectionEnabled !== false) ? 'ENABLED' : 'DISABLED';
   if (document.getElementById('cfgReferralRate')) document.getElementById('cfgReferralRate').value = s.referralCommissionPercent !== undefined ? s.referralCommissionPercent : 2.5;
+  if (document.getElementById('cfgSupplierAlertThreshold')) document.getElementById('cfgSupplierAlertThreshold').value = s.supplierAlertThreshold !== undefined ? s.supplierAlertThreshold : 50;
   if (document.getElementById('cfgAdminChatId')) document.getElementById('cfgAdminChatId').value = s.telegramAdminChatId || '5339688506';
 }
 
@@ -1368,6 +1369,7 @@ async function savePlatformSettings() {
   const popupDisabled = document.getElementById('cfgPopupEnabled').value === 'DISABLED';
   const recentOrdersSectionEnabled = document.getElementById('cfgRecentOrders') ? document.getElementById('cfgRecentOrders').value === 'ENABLED' : true;
   const referralCommissionPercent = parseFloat(document.getElementById('cfgReferralRate').value) || 2.5;
+  const supplierAlertThreshold = parseFloat(document.getElementById('cfgSupplierAlertThreshold') ? document.getElementById('cfgSupplierAlertThreshold').value : 50) || 50;
   const telegramAdminChatId = document.getElementById('cfgAdminChatId').value;
 
   try {
@@ -1411,6 +1413,7 @@ async function savePlatformSettings() {
         popupDisabled,
         recentOrdersSectionEnabled,
         referralCommissionPercent,
+        supplierAlertThreshold,
         telegramAdminChatId
       })
     });

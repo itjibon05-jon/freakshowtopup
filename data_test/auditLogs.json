@@ -1,65 +1,487 @@
 [
   {
-    "id": "aud_872f8f9168746e03",
-    "actorId": "tg_5339688506",
+    "id": "aud_c75c3021b7ccc26d",
+    "actorId": "admin_super_1",
     "actorEmail": "system@freakshowtopup.shop",
     "role": "ADMIN",
-    "action": "VIP_CODE_ROTATED_TELEGRAM",
-    "targetId": null,
-    "targetType": null,
+    "action": "DEPOSIT_REVERSED",
+    "targetId": "DEP-94538",
+    "targetType": "DEPOSIT",
     "before": {
-      "vipCode": "CUSTOMVIP2026"
+      "balance": 1855,
+      "depositStatus": "APPROVED"
     },
     "after": {
-      "vipCode": "JOY100LVL",
-      "vipCodeVersion": 1788655289003,
-      "revokedSessions": 0
+      "balance": 1230,
+      "depositStatus": "REVERSED"
     },
-    "reason": "VIP Access Code rotated via Telegram by JRJ JIBON. All existing user VIP sessions revoked.",
+    "reason": "Customer disputed charge",
     "ipAddress": "127.0.0.1",
     "userAgent": "Unknown",
-    "createdAt": "2026-09-06T00:41:29.032Z"
+    "createdAt": "2026-09-06T00:52:16.472Z"
   },
   {
-    "id": "aud_eb59a7774d371bff",
-    "actorId": "tg_5339688506",
+    "id": "aud_7880d198480fd13a",
+    "actorId": "admin_super_1",
     "actorEmail": "system@freakshowtopup.shop",
     "role": "ADMIN",
-    "action": "UPDATE_VIP_CODE_TELEGRAM",
-    "targetId": null,
-    "targetType": null,
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-94538",
+    "targetType": "DEPOSIT",
     "before": {
-      "vipCode": "VIP419196"
+      "balance": 1230,
+      "depositStatus": "PENDING"
     },
     "after": {
-      "vipCode": "CUSTOMVIP2026",
-      "vipCodeVersion": 1788655288595,
-      "revokedSessions": 0
+      "balance": 1855,
+      "depositStatus": "APPROVED"
     },
-    "reason": "VIP Access Code updated via Telegram Bot by JRJ JIBON",
+    "reason": "Approved for test",
     "ipAddress": "127.0.0.1",
     "userAgent": "Unknown",
-    "createdAt": "2026-09-06T00:41:28.623Z"
+    "createdAt": "2026-09-06T00:52:16.175Z"
   },
   {
-    "id": "aud_630a7700af207a5b",
+    "id": "aud_460f9c517d8facfc",
+    "actorId": "admin_super_1",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-25245",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 0,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1250,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Binance deposit approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:15.253Z"
+  },
+  {
+    "id": "aud_386beab2f96e304d",
     "actorId": "tg_5339688506",
     "actorEmail": "system@freakshowtopup.shop",
     "role": "ADMIN",
-    "action": "VIP_CODE_AUTORESET_TELEGRAM",
+    "action": "UPDATE_REFERRAL_VALIDITY_TELEGRAM",
     "targetId": null,
     "targetType": null,
     "before": {
-      "vipCode": "JOY100LVL"
+      "referralValidityDays": 30
     },
     "after": {
-      "vipCode": "VIP419196",
-      "vipCodeVersion": 1788655288117,
-      "revokedSessions": 1
+      "referralValidityDays": 90
     },
-    "reason": "VIP Access Code auto-reset via Telegram Bot by JRJ JIBON",
+    "reason": "Validity changed to 90 days by JRJ JIBON",
     "ipAddress": "127.0.0.1",
     "userAgent": "Unknown",
-    "createdAt": "2026-09-06T00:41:28.150Z"
+    "createdAt": "2026-09-06T00:52:06.648Z"
+  },
+  {
+    "id": "aud_0925e6d939325ceb",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "TOGGLE_REFERRAL_STATUS_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": {
+      "referralSystemEnabled": true
+    },
+    "after": {
+      "referralSystemEnabled": false
+    },
+    "reason": "Referral system Disabled via Telegram by JRJ JIBON",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:06.355Z"
+  },
+  {
+    "id": "aud_3297abda43376d6c",
+    "actorId": "system",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "SYSTEM",
+    "action": "REFERRAL_COMMISSION_CREDITED",
+    "targetId": "comm_2af27b3c8c78dd67",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 0
+    },
+    "after": {
+      "referrerBalance": 0.01,
+      "commissionAmount": 0.01
+    },
+    "reason": "Deposit #dep_cust_1788655925987 approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:06.065Z"
+  },
+  {
+    "id": "aud_46684b229642469b",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "UPDATE_REFERRAL_RATE_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": {
+      "referralCommissionPercent": 0.01
+    },
+    "after": {
+      "referralCommissionPercent": 0.75
+    },
+    "reason": "Commission rate changed via wizard by JRJ JIBON",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:04.046Z"
+  },
+  {
+    "id": "aud_481b7aceeaed0e47",
+    "actorId": "tg_5339688506",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "UPDATE_REFERRAL_RATE_TELEGRAM",
+    "targetId": null,
+    "targetType": null,
+    "before": {
+      "referralCommissionPercent": 2.5
+    },
+    "after": {
+      "referralCommissionPercent": 0.01
+    },
+    "reason": "Commission rate changed via /refrate by JRJ JIBON",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.983Z"
+  },
+  {
+    "id": "aud_167793d3c8a1aefa",
+    "actorId": "usr_8029a2f202545040",
+    "actorEmail": "referrer_boss_1788655921610@freakshowtopup.shop",
+    "role": "USER",
+    "action": "FRAUD_FLAGGED_SELF_REFERRAL",
+    "targetId": "dep_self_1788655923816",
+    "targetType": "REFERRAL",
+    "before": {
+      "referrerId": "usr_8029a2f202545040",
+      "userId": "usr_8029a2f202545040"
+    },
+    "after": {
+      "blocked": true
+    },
+    "reason": "Self-referral attempt detected",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.816Z"
+  },
+  {
+    "id": "aud_791d6a55eed92790",
+    "actorId": "admin_reversal",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "REFERRAL_COMMISSION_REVERSED",
+    "targetId": "comm_292b4eafee6fea02",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 525
+    },
+    "after": {
+      "referrerBalance": 500,
+      "reversedAmount": 25
+    },
+    "reason": "Deposit #DEP-82222 refunded/reversed",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.786Z"
+  },
+  {
+    "id": "aud_8923b641aa84eb88",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "SYSTEM",
+    "action": "REFERRAL_COMMISSION_CREDITED",
+    "targetId": "comm_78f1634efa7e5f9b",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 25
+    },
+    "after": {
+      "referrerBalance": 525,
+      "commissionAmount": 500
+    },
+    "reason": "Deposit #DEP-18921 approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.670Z"
+  },
+  {
+    "id": "aud_fe86783c86be87bc",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-18921",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 1050,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 51050,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Large deposit",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.607Z"
+  },
+  {
+    "id": "aud_a0a0273d583fdcbd",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-80617",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 1000,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1050,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Small deposit",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.483Z"
+  },
+  {
+    "id": "aud_6d629f0382911b85",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "SYSTEM",
+    "action": "REFERRAL_COMMISSION_CREDITED",
+    "targetId": "comm_292b4eafee6fea02",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 0
+    },
+    "after": {
+      "referrerBalance": 25,
+      "commissionAmount": 25
+    },
+    "reason": "Deposit #DEP-82222 approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.383Z"
+  },
+  {
+    "id": "aud_78ef32100ca3fd34",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-82222",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 0,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1000,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Test approval",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:52:03.322Z"
+  },
+  {
+    "id": "aud_92cb90424831b3d4",
+    "actorId": "admin_reversal",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "REFERRAL_COMMISSION_REVERSED",
+    "targetId": "comm_c91aac5e91355524",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 12.5
+    },
+    "after": {
+      "referrerBalance": 0,
+      "reversedAmount": 12.5
+    },
+    "reason": "Deposit #DEP-95226 refunded/reversed",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:58.916Z"
+  },
+  {
+    "id": "aud_667ff21de02c4341",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "SYSTEM",
+    "action": "REFERRAL_COMMISSION_CREDITED",
+    "targetId": "comm_c91aac5e91355524",
+    "targetType": "COMMISSION",
+    "before": {
+      "referrerBalance": 0
+    },
+    "after": {
+      "referrerBalance": 12.5,
+      "commissionAmount": 12.5
+    },
+    "reason": "Deposit #DEP-95226 approved",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:58.299Z"
+  },
+  {
+    "id": "aud_5f75088ae42aafce",
+    "actorId": "admin_super",
+    "actorEmail": "admin@freakshow.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-95226",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 500,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1000,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Approved for Test 7",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:58.000Z"
+  },
+  {
+    "id": "aud_63c0b23bbc2d7b49",
+    "actorId": "admin_system",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "SUPER_ADMIN",
+    "action": "WALLET_ADJUSTED",
+    "targetId": "usr_99d758550ed2e912",
+    "targetType": "USER",
+    "before": {
+      "balance": 0
+    },
+    "after": {
+      "balance": 500,
+      "adjustment": 500
+    },
+    "reason": "Initial credits",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:57.310Z"
+  },
+  {
+    "id": "aud_2528bd14b1531a84",
+    "actorId": "system",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "SYSTEM",
+    "action": "ORDER_REFUNDED",
+    "targetId": "FS6714",
+    "targetType": "ORDER",
+    "before": {
+      "status": "FAILED"
+    },
+    "after": {
+      "status": "REFUNDED",
+      "refundedAmount": 20
+    },
+    "reason": "Provider delivery failure",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:55.278Z"
+  },
+  {
+    "id": "aud_a404ed51ab5f3c1c",
+    "actorId": "admin_system",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "SUPER_ADMIN",
+    "action": "WALLET_ADJUSTED",
+    "targetId": "usr_5250c95df8af837a",
+    "targetType": "USER",
+    "before": {
+      "balance": 0
+    },
+    "after": {
+      "balance": 500,
+      "adjustment": 500
+    },
+    "reason": "Test setup",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:55.135Z"
+  },
+  {
+    "id": "aud_fc6a9e66445cc629",
+    "actorId": "admin_system",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "SUPER_ADMIN",
+    "action": "WALLET_ADJUSTED",
+    "targetId": "usr_3136dc55ff0e42d8",
+    "targetType": "USER",
+    "before": {
+      "balance": 0
+    },
+    "after": {
+      "balance": 1000,
+      "adjustment": 1000
+    },
+    "reason": "Test setup",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:53.730Z"
+  },
+  {
+    "id": "aud_74ebd6b1e182042d",
+    "actorId": "admin_1",
+    "actorEmail": "system@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-30249",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 0,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 1200,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Binance verified",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:52.838Z"
+  },
+  {
+    "id": "aud_f5099fe5769f4a10",
+    "actorId": "admin_super_1",
+    "actorEmail": "admin@freakshowtopup.shop",
+    "role": "ADMIN",
+    "action": "DEPOSIT_APPROVED",
+    "targetId": "DEP-89914",
+    "targetType": "DEPOSIT",
+    "before": {
+      "balance": 0,
+      "depositStatus": "PENDING"
+    },
+    "after": {
+      "balance": 500,
+      "depositStatus": "APPROVED"
+    },
+    "reason": "Verified via SMS",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Unknown",
+    "createdAt": "2026-09-06T00:51:51.929Z"
   }
 ]

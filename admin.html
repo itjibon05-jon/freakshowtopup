@@ -3446,12 +3446,60 @@
 
     window.populateWebsiteSettings = function () {
       const s = ADMIN_STATE.data.settings || {};
+
+      // 1. Branding & Logo
+      const logo = s.siteLogo || 'assets/logo.jpg';
+      if (document.getElementById('cfgSiteLogo')) document.getElementById('cfgSiteLogo').value = logo;
+      if (document.getElementById('cfgLogoPreview')) document.getElementById('cfgLogoPreview').src = logo;
+      if (document.getElementById('cfgSiteName')) document.getElementById('cfgSiteName').value = s.siteName || 'FREAKSHOW';
+      if (document.getElementById('cfgSiteTagline')) document.getElementById('cfgSiteTagline').value = s.siteTagline || 'FASTEST GAMING HUB';
+
+      // 2. Social & Support
+      if (document.getElementById('cfgTelegramLink')) document.getElementById('cfgTelegramLink').value = s.telegramLink || 'https://t.me/freakshowtopup';
+      if (document.getElementById('cfgTelegramUsername')) document.getElementById('cfgTelegramUsername').value = s.telegramUsername || 'freakshowtopup';
+      if (document.getElementById('cfgWhatsappNumber')) document.getElementById('cfgWhatsappNumber').value = s.whatsappNumber || '+8801641625723';
+      if (document.getElementById('cfgWhatsappLink')) document.getElementById('cfgWhatsappLink').value = s.whatsappLink || 'https://wa.me/8801641625723';
+      if (document.getElementById('cfgSupportEmail')) document.getElementById('cfgSupportEmail').value = s.supportEmail || s.adminEmail || 'admin.freakshow@gmail.com';
+
+      // 3. Hero Section
+      const heroImg = s.heroBannerImage || 'assets/hero_banner.jpg';
+      if (document.getElementById('cfgHeroBannerImage')) document.getElementById('cfgHeroBannerImage').value = heroImg;
+      if (document.getElementById('cfgHeroBannerPreview')) document.getElementById('cfgHeroBannerPreview').src = heroImg;
+      if (document.getElementById('cfgHeroBadge')) document.getElementById('cfgHeroBadge').value = s.heroBadge || '🔥 #1 Game Top-Up Platform';
+      if (document.getElementById('cfgHeroTitle')) document.getElementById('cfgHeroTitle').value = s.heroTitle || 'Instant <span>Game Diamonds</span> & VIP Passes';
+      if (document.getElementById('cfgHeroDesc')) document.getElementById('cfgHeroDesc').value = s.heroDesc || 'Recharge your Free Fire, PUBG & MLBB accounts in seconds. 100% automated delivery with bKash, Nagad, Rocket, or Wallet Balance.';
+
+      // 4. Hero Side Cards
+      if (document.getElementById('cfgHeroSideCard1Image')) document.getElementById('cfgHeroSideCard1Image').value = s.heroSideCard1Image || 'assets/ff_membership_v2.jpg';
+      if (document.getElementById('cfgHeroSideCard1Title')) document.getElementById('cfgHeroSideCard1Title').value = s.heroSideCard1Title || 'Weekly & Monthly Pass';
+      if (document.getElementById('cfgHeroSideCard1Desc')) document.getElementById('cfgHeroSideCard1Desc').value = s.heroSideCard1Desc || 'Claim up to 2600 Diamonds with maximum savings';
+      if (document.getElementById('cfgHeroSideCard2Image')) document.getElementById('cfgHeroSideCard2Image').value = s.heroSideCard2Image || 'assets/ff_levelup.jpg';
+      if (document.getElementById('cfgHeroSideCard2Title')) document.getElementById('cfgHeroSideCard2Title').value = s.heroSideCard2Title || 'Level Up Pass (802 💎)';
+      if (document.getElementById('cfgHeroSideCard2Desc')) document.getElementById('cfgHeroSideCard2Desc').value = s.heroSideCard2Desc || 'Instant 802 Diamonds upon level progression';
+
+      // 5. Footer Information
+      if (document.getElementById('cfgFooterAbout')) document.getElementById('cfgFooterAbout').value = s.footerAbout || 'The most trusted & fastest automated gaming top-up platform in Bangladesh & Globally. Instant Free Fire Diamonds, VIP Passes, and Gaming Vouchers at wholesale rates.';
+      if (document.getElementById('cfgFooterCopyright')) document.getElementById('cfgFooterCopyright').value = s.footerCopyright || '© 2026 <strong>FREAKSHOWTOPUP</strong> (<a href="https://freakshowtopup.shop" style="color: var(--brand-cyan);">freakshowtopup.shop</a>). All Rights Reserved.';
+
+      // 6. Voucher & Digital Code Redeem Websites
+      if (document.getElementById('cfgVoucherRedeemUrl')) document.getElementById('cfgVoucherRedeemUrl').value = s.voucherRedeemUrl || 'https://shop.garena.my/';
+      if (document.getElementById('cfgVoucherRedeemText')) document.getElementById('cfgVoucherRedeemText').value = s.voucherRedeemText || 'Redeem at shop.garena.my';
+      if (document.getElementById('cfgShellRedeemUrl')) document.getElementById('cfgShellRedeemUrl').value = s.shellRedeemUrl || 'https://bdgamesbazar.com/';
+      if (document.getElementById('cfgShellRedeemText')) document.getElementById('cfgShellRedeemText').value = s.shellRedeemText || 'Redeem at bdgamesbazar.com';
+
+      // 7. Customer Notification & Alert Messages
+      if (document.getElementById('cfgFailedRefundMessage')) document.getElementById('cfgFailedRefundMessage').value = s.failedRefundMessage || 'কোনো সমস্যার কারণে অর্ডারটি সম্পন্ন করা যায়নি। আপনার পরিশোধিত টাকা সম্পূর্ণ ওয়ালেট ব্যালেন্সে ইনস্ট্যান্ট ফেরত (Auto-Refund) দেওয়া হয়েছে।';
+      if (document.getElementById('cfgUidSuccessMessage')) document.getElementById('cfgUidSuccessMessage').value = s.uidSuccessMessage || 'আপনার ফ্রি ফায়ার একাউন্টে সরাসরি টপ-আপ সফলভাবে সম্পন্ন হয়েছে!';
+      if (document.getElementById('cfgOutOfStockMessage')) document.getElementById('cfgOutOfStockMessage').value = s.outOfStockMessage || 'সাময়িকভাবে এই প্যাকেজের স্টক শেষ / সার্ভার আপডেটের কাজ চলছে। খুব দ্রুতই স্টক যোগ করা হবে!';
+
+      // 8. Operational Switches
       if (document.getElementById('cfgSiteStatus')) document.getElementById('cfgSiteStatus').value = s.maintenanceMode ? 'MAINTENANCE' : 'ONLINE';
       if (document.getElementById('cfgAutoTopup')) document.getElementById('cfgAutoTopup').value = s.autoTopupDisabled ? 'DISABLED' : 'ENABLED';
       if (document.getElementById('cfgRegistration')) document.getElementById('cfgRegistration').value = s.registrationDisabled ? 'DISABLED' : 'ENABLED';
       if (document.getElementById('cfgPopupEnabled')) document.getElementById('cfgPopupEnabled').value = s.popupDisabled ? 'DISABLED' : 'ENABLED';
       if (document.getElementById('cfgRecentOrders')) document.getElementById('cfgRecentOrders').value = (s.recentOrdersSectionEnabled !== false) ? 'ENABLED' : 'DISABLED';
-      if (document.getElementById('cfgReferralRate')) document.getElementById('cfgReferralRate').value = s.referralCommissionPercent || 2.5;
+      if (document.getElementById('cfgReferralRate')) document.getElementById('cfgReferralRate').value = s.referralCommissionPercent !== undefined ? s.referralCommissionPercent : 2.5;
+      if (document.getElementById('cfgSupplierAlertThreshold')) document.getElementById('cfgSupplierAlertThreshold').value = s.supplierAlertThreshold !== undefined ? s.supplierAlertThreshold : 50;
       if (document.getElementById('cfgAdminChatId')) document.getElementById('cfgAdminChatId').value = s.telegramAdminChatId || '5339688506';
     };
 
@@ -4421,12 +4469,48 @@
     };
 
     window.savePlatformSettings = async function () {
+      const siteLogo = (document.getElementById('cfgSiteLogo') ? document.getElementById('cfgSiteLogo').value : '').trim() || 'assets/logo.jpg';
+      const siteName = (document.getElementById('cfgSiteName') ? document.getElementById('cfgSiteName').value : '').trim() || 'FREAKSHOW';
+      const siteTagline = (document.getElementById('cfgSiteTagline') ? document.getElementById('cfgSiteTagline').value : '').trim() || 'FASTEST GAMING HUB';
+
+      const telegramLink = (document.getElementById('cfgTelegramLink') ? document.getElementById('cfgTelegramLink').value : '').trim() || 'https://t.me/freakshowtopup';
+      const telegramUsername = (document.getElementById('cfgTelegramUsername') ? document.getElementById('cfgTelegramUsername').value : '').trim() || 'freakshowtopup';
+      const whatsappNumber = (document.getElementById('cfgWhatsappNumber') ? document.getElementById('cfgWhatsappNumber').value : '').trim() || '+8801641625723';
+      const whatsappLink = (document.getElementById('cfgWhatsappLink') ? document.getElementById('cfgWhatsappLink').value : '').trim() || 'https://wa.me/8801641625723';
+      const supportEmail = (document.getElementById('cfgSupportEmail') ? document.getElementById('cfgSupportEmail').value : '').trim() || 'admin.freakshow@gmail.com';
+
+      const heroBannerImage = (document.getElementById('cfgHeroBannerImage') ? document.getElementById('cfgHeroBannerImage').value : '').trim() || 'assets/hero_banner.jpg';
+      const heroBadge = (document.getElementById('cfgHeroBadge') ? document.getElementById('cfgHeroBadge').value : '').trim() || '🔥 #1 Game Top-Up Platform';
+      const heroTitle = (document.getElementById('cfgHeroTitle') ? document.getElementById('cfgHeroTitle').value : '').trim() || 'Instant <span>Game Diamonds</span> & VIP Passes';
+      const heroDesc = (document.getElementById('cfgHeroDesc') ? document.getElementById('cfgHeroDesc').value : '').trim() || 'Recharge your Free Fire, PUBG & MLBB accounts in seconds. 100% automated delivery with bKash, Nagad, Rocket, or Wallet Balance.';
+
+      const heroSideCard1Image = (document.getElementById('cfgHeroSideCard1Image') ? document.getElementById('cfgHeroSideCard1Image').value : '').trim() || 'assets/ff_membership_v2.jpg';
+      const heroSideCard1Title = (document.getElementById('cfgHeroSideCard1Title') ? document.getElementById('cfgHeroSideCard1Title').value : '').trim() || 'Weekly & Monthly Pass';
+      const heroSideCard1Desc = (document.getElementById('cfgHeroSideCard1Desc') ? document.getElementById('cfgHeroSideCard1Desc').value : '').trim() || 'Claim up to 2600 Diamonds with maximum savings';
+
+      const heroSideCard2Image = (document.getElementById('cfgHeroSideCard2Image') ? document.getElementById('cfgHeroSideCard2Image').value : '').trim() || 'assets/ff_levelup.jpg';
+      const heroSideCard2Title = (document.getElementById('cfgHeroSideCard2Title') ? document.getElementById('cfgHeroSideCard2Title').value : '').trim() || 'Level Up Pass (802 💎)';
+      const heroSideCard2Desc = (document.getElementById('cfgHeroSideCard2Desc') ? document.getElementById('cfgHeroSideCard2Desc').value : '').trim() || 'Instant 802 Diamonds upon level progression';
+
+      const footerAbout = (document.getElementById('cfgFooterAbout') ? document.getElementById('cfgFooterAbout').value : '').trim();
+      const footerCopyright = (document.getElementById('cfgFooterCopyright') ? document.getElementById('cfgFooterCopyright').value : '').trim();
+
+      const voucherRedeemUrl = (document.getElementById('cfgVoucherRedeemUrl') ? document.getElementById('cfgVoucherRedeemUrl').value : '').trim() || 'https://shop.garena.my/';
+      const voucherRedeemText = (document.getElementById('cfgVoucherRedeemText') ? document.getElementById('cfgVoucherRedeemText').value : '').trim() || 'Redeem at shop.garena.my';
+      const shellRedeemUrl = (document.getElementById('cfgShellRedeemUrl') ? document.getElementById('cfgShellRedeemUrl').value : '').trim() || 'https://bdgamesbazar.com/';
+      const shellRedeemText = (document.getElementById('cfgShellRedeemText') ? document.getElementById('cfgShellRedeemText').value : '').trim() || 'Redeem at bdgamesbazar.com';
+
+      const failedRefundMessage = (document.getElementById('cfgFailedRefundMessage') ? document.getElementById('cfgFailedRefundMessage').value : '').trim() || 'কোনো সমস্যার কারণে অর্ডারটি সম্পন্ন করা যায়নি। আপনার পরিশোধিত টাকা সম্পূর্ণ ওয়ালেট ব্যালেন্সে ইনস্ট্যান্ট ফেরত (Auto-Refund) দেওয়া হয়েছে।';
+      const uidSuccessMessage = (document.getElementById('cfgUidSuccessMessage') ? document.getElementById('cfgUidSuccessMessage').value : '').trim() || 'আপনার ফ্রি ফায়ার একাউন্টে সরাসরি টপ-আপ সফলভাবে সম্পন্ন হয়েছে!';
+      const outOfStockMessage = (document.getElementById('cfgOutOfStockMessage') ? document.getElementById('cfgOutOfStockMessage').value : '').trim() || 'সাময়িকভাবে এই প্যাকেজের স্টক শেষ / সার্ভার আপডেটের কাজ চলছে। খুব দ্রুতই স্টক যোগ করা হবে!';
+
       const maintenanceMode = document.getElementById('cfgSiteStatus').value === 'MAINTENANCE';
       const autoTopupDisabled = document.getElementById('cfgAutoTopup').value === 'DISABLED';
       const registrationDisabled = document.getElementById('cfgRegistration').value === 'DISABLED';
       const popupDisabled = document.getElementById('cfgPopupEnabled').value === 'DISABLED';
       const recentOrdersSectionEnabled = document.getElementById('cfgRecentOrders') ? document.getElementById('cfgRecentOrders').value === 'ENABLED' : true;
       const referralCommissionPercent = parseFloat(document.getElementById('cfgReferralRate').value) || 2.5;
+      const supplierAlertThreshold = parseFloat(document.getElementById('cfgSupplierAlertThreshold') ? document.getElementById('cfgSupplierAlertThreshold').value : 50) || 50;
       const telegramAdminChatId = document.getElementById('cfgAdminChatId').value;
 
       try {
@@ -4437,22 +4521,116 @@
             'Authorization': `Bearer ${ADMIN_STATE.token}`
           },
           body: JSON.stringify({
+            siteLogo,
+            siteName,
+            siteTagline,
+            telegramLink,
+            telegramUsername,
+            whatsappNumber,
+            whatsappLink,
+            supportEmail,
+            heroBannerImage,
+            heroBadge,
+            heroTitle,
+            heroDesc,
+            heroSideCard1Image,
+            heroSideCard1Title,
+            heroSideCard1Desc,
+            heroSideCard2Image,
+            heroSideCard2Title,
+            heroSideCard2Desc,
+            footerAbout,
+            footerCopyright,
+            voucherRedeemUrl,
+            voucherRedeemText,
+            shellRedeemUrl,
+            shellRedeemText,
+            failedRefundMessage,
+            uidSuccessMessage,
+            outOfStockMessage,
             maintenanceMode,
             autoTopupDisabled,
             registrationDisabled,
             popupDisabled,
             recentOrdersSectionEnabled,
             referralCommissionPercent,
+            supplierAlertThreshold,
             telegramAdminChatId
           })
         });
         const data = await res.json();
         if (data.success) {
-          showToast('💾 System switches updated!');
+          showToast('💾 Website customization & system settings saved!');
           loadAllAdminData();
+        } else {
+          alert(data.message || 'Failed to save settings');
         }
       } catch (e) {
         alert('Server error saving settings.');
+      }
+    };
+
+    window.handleAdminImageUpload = async function (inputEl, targetInputId, previewImgId) {
+      if (!inputEl.files || !inputEl.files[0]) return;
+      const file = inputEl.files[0];
+
+      if (file.size > 5 * 1024 * 1024) {
+        alert('⚠️ Image size exceeds maximum limit (5 MB). Please choose a smaller image.');
+        inputEl.value = '';
+        return;
+      }
+
+      showToast('⏳ Uploading image asset...');
+
+      const reader = new FileReader();
+      reader.onload = async function (e) {
+        const base64Data = e.target.result;
+        try {
+          const res = await fetch('/api/admin/upload', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${ADMIN_STATE.token}`
+            },
+            body: JSON.stringify({
+              imageBase64: base64Data,
+              filename: file.name
+            })
+          });
+
+          const data = await res.json();
+          if (data.success && data.url) {
+            if (document.getElementById(targetInputId)) {
+              document.getElementById(targetInputId).value = data.url;
+            }
+            if (document.getElementById(previewImgId)) {
+              document.getElementById(previewImgId).src = data.url;
+            }
+            showToast('✅ Image uploaded successfully!');
+          } else {
+            alert(data.message || 'Failed to upload image.');
+          }
+        } catch (err) {
+          alert('Network error while uploading image.');
+        }
+      };
+      reader.readAsDataURL(file);
+    };
+
+    window.resetLogoImage = function () {
+      if (document.getElementById('cfgSiteLogo')) document.getElementById('cfgSiteLogo').value = 'assets/logo.jpg';
+      if (document.getElementById('cfgLogoPreview')) document.getElementById('cfgLogoPreview').src = 'assets/logo.jpg';
+    };
+
+    window.resetHeroBannerImage = function () {
+      if (document.getElementById('cfgHeroBannerImage')) document.getElementById('cfgHeroBannerImage').value = 'assets/hero_banner.jpg';
+      if (document.getElementById('cfgHeroBannerPreview')) document.getElementById('cfgHeroBannerPreview').src = 'assets/hero_banner.jpg';
+    };
+
+    window.updateWhatsappLinkFromNumber = function (num) {
+      const cleanDigits = String(num || '').replace(/[^\d]/g, '');
+      if (cleanDigits && document.getElementById('cfgWhatsappLink')) {
+        document.getElementById('cfgWhatsappLink').value = `https://wa.me/${cleanDigits}`;
       }
     };
 

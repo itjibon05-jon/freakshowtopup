@@ -43,7 +43,7 @@
     "directButtonLink": "#products",
     "directButtonActive": false
   },
-  "vipAccessCodeHash": "$2a$10$A7jXWTVlNJn.YfEAHPaiJO6Rt1h3WlO0xem0aK2tv0UK/vC91mSAK",
+  "vipAccessCodeHash": "$2a$10$Ijj3a/YEKqfdgT918Mh8y.Er2mBKh7ayliS.Po0TX8TfOGONjk5ge",
   "maintenanceMode": false,
   "recentOrdersSectionEnabled": false,
   "referralSystemEnabled": true,
@@ -76,6 +76,5 @@
   "popupDisabled": false,
   "newUserBonusEnabled": false,
   "currentVipCode": "JOY100LVL",
-  "vipAccessCode": "JOY100LVL",
   "vipCodeVersion": 1788655289003
 }
