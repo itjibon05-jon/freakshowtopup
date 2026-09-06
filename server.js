@@ -1223,8 +1223,12 @@ const server = http.createServer(async (req, res) => {
         );
         
         const slug = body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        let newProdId = body.id || `p-${slug || 'item'}`;
+        if (!body.id && db.products.some(p => p.id === newProdId)) {
+          newProdId = `p-${slug || 'item'}-${Date.now().toString(36)}-${Math.random().toString(36).substr(2, 4)}`;
+        }
         const newProd = {
-          id: `p-${slug || Date.now().toString(36)}`,
+          id: newProdId,
           categoryId,
           subcategoryId,
           name: body.name.trim(),
