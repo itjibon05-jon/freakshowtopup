@@ -607,28 +607,40 @@ function renderBannersTable() {
     return;
   }
 
-  tbody.innerHTML = banners.map(b => `
+  tbody.innerHTML = banners.map(b => {
+    const isAct = b.status === 'ACTIVE';
+    const isPop = b.isPopupEnabled !== false && b.isPopupEnabled !== 'false' && b.isPopupEnabled !== 'OFF' && b.isPopupEnabled !== 'off';
+    return `
     <tr>
-      <td><img src="${b.image || 'assets/freefire_special_offer.jpg'}" style="width: 48px; height: 32px; border-radius: 6px; object-fit: cover;" onerror="this.src='assets/freefire_special_offer.jpg'"></td>
+      <td><img src="${b.image || 'assets/freefire_special_offer.jpg'}" style="width: 52px; height: 34px; border-radius: 6px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='assets/freefire_special_offer.jpg'"></td>
       <td>
-        <div style="font-weight: 800; color: #fff;">${b.title}</div>
-        <div style="font-size: 0.75rem; color: var(--text-muted);">${b.description || ''}</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.88rem;">${b.title}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">${b.description || 'No description'}</div>
       </td>
       <td>
-        <div><b>${b.buttonText || 'Claim Offer'}</b></div>
+        <div style="font-weight: 700; color: var(--brand-gold);">${b.buttonText || 'Recharge Now 🚀'}</div>
         <code style="font-size: 0.72rem; color: var(--brand-cyan);">${b.destinationUrl || '#'}</code>
       </td>
-      <td><span class="badge badge-info">${b.displayFrequency || 'ONCE_PER_SESSION'}</span></td>
-      <td style="font-size: 0.78rem; color: var(--text-muted);">Active</td>
-      <td><span class="badge ${b.status === 'ACTIVE' ? 'badge-success' : 'badge-failed'}">${b.status}</span></td>
+      <td>
+        <span class="badge ${isAct ? 'badge-success' : 'badge-failed'}" style="font-weight: 800;">
+          ${isAct ? '✅ ACTIVE' : '🚫 INACTIVE'}
+        </span>
+      </td>
+      <td>
+        <span class="badge" style="font-weight: 800; ${isPop ? 'background: rgba(0, 242, 254, 0.15); color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.35);' : 'background: rgba(255, 255, 255, 0.08); color: #94a3b8; border: 1px solid rgba(255, 255, 255, 0.15);'}">
+          ${isPop ? '🔔 POPUP ON' : '🔕 POPUP OFF'}
+        </span>
+      </td>
+      <td><span class="badge badge-info" style="font-size: 0.72rem;">${b.displayFrequency || 'ONCE_PER_SESSION'}</span></td>
       <td>
         <div style="display: flex; gap: 6px;">
-          <button class="btn btn-ghost" style="padding: 4px 8px; font-size: 0.75rem;" onclick="openEditBannerModal('${b.id}')">✏️ Edit</button>
-          <button class="btn btn-danger" style="padding: 4px 8px; font-size: 0.75rem;" onclick="deleteBanner('${b.id}')">🗑</button>
+          <button class="btn btn-ghost" style="padding: 5px 10px; font-size: 0.75rem;" onclick="openEditBannerModal('${b.id}')">✏️ Edit</button>
+          <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.75rem;" onclick="deleteBanner('${b.id}')">🗑</button>
         </div>
       </td>
     </tr>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // ------------------------------------------
@@ -1183,6 +1195,9 @@ function openAddBannerModal() {
   document.getElementById('banBtnText').value = 'Recharge Now 🚀';
   document.getElementById('banUrl').value = '#freefire-section';
   document.getElementById('banImage').value = 'assets/freefire_special_offer.jpg';
+  document.getElementById('banStatus').value = 'ACTIVE';
+  document.getElementById('banPopup').value = 'ON';
+  document.getElementById('banFreq').value = 'ONCE_PER_SESSION';
   openModal('bannerModal');
 }
 
@@ -1191,26 +1206,28 @@ function openEditBannerModal(banId) {
   if (!b) return;
   document.getElementById('bannerModalTitle').textContent = '✏️ Edit Promotional Banner';
   document.getElementById('banEditId').value = b.id;
-  document.getElementById('banTitle').value = b.title;
+  document.getElementById('banTitle').value = b.title || '';
   document.getElementById('banDesc').value = b.description || '';
   document.getElementById('banBtnText').value = b.buttonText || 'Recharge Now 🚀';
   document.getElementById('banUrl').value = b.destinationUrl || '#freefire-section';
   document.getElementById('banImage').value = b.image || 'assets/freefire_special_offer.jpg';
-  document.getElementById('banFreq').value = b.displayFrequency || 'ONCE_PER_SESSION';
   document.getElementById('banStatus').value = b.status || 'ACTIVE';
+  document.getElementById('banPopup').value = (b.isPopupEnabled !== false && b.isPopupEnabled !== 'false' && b.isPopupEnabled !== 'OFF' && b.isPopupEnabled !== 'off') ? 'ON' : 'OFF';
+  document.getElementById('banFreq').value = b.displayFrequency || 'ONCE_PER_SESSION';
   openModal('bannerModal');
 }
 
 async function submitBanner(e) {
   e.preventDefault();
   const id = document.getElementById('banEditId').value;
-  const title = document.getElementById('banTitle').value;
-  const description = document.getElementById('banDesc').value;
-  const buttonText = document.getElementById('banBtnText').value;
-  const destinationUrl = document.getElementById('banUrl').value;
-  const image = document.getElementById('banImage').value;
-  const displayFrequency = document.getElementById('banFreq').value;
+  const title = document.getElementById('banTitle').value.trim();
+  const description = document.getElementById('banDesc').value.trim();
+  const buttonText = document.getElementById('banBtnText').value.trim();
+  const destinationUrl = document.getElementById('banUrl').value.trim();
+  const image = document.getElementById('banImage').value.trim();
   const status = document.getElementById('banStatus').value;
+  const isPopupEnabled = document.getElementById('banPopup').value === 'ON';
+  const displayFrequency = document.getElementById('banFreq').value;
 
   const method = id ? 'PUT' : 'POST';
   const url = id ? `/api/admin/banners/${id}` : '/api/admin/banners';
@@ -1222,7 +1239,7 @@ async function submitBanner(e) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${ADMIN_STATE.token}`
       },
-      body: JSON.stringify({ title, description, buttonText, destinationUrl, image, displayFrequency, status })
+      body: JSON.stringify({ title, description, buttonText, destinationUrl, image, displayFrequency, status, isPopupEnabled })
     });
     const data = await res.json();
     if (data.success) {
