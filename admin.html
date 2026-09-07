@@ -3107,12 +3107,19 @@
       }
     };
 
-    // ==========================================
-    // 1. STATE & AUTHENTICATION
-    // ==========================================
+    // Clear any previous persistent tokens so EVERY page visit demands fresh 2FA authentication
+    try {
+      localStorage.removeItem('fs_admin_token');
+      localStorage.removeItem('fs_admin_user');
+      localStorage.removeItem('fs_token');
+      sessionStorage.removeItem('fs_admin_token');
+      sessionStorage.removeItem('fs_admin_user');
+      sessionStorage.removeItem('fs_token');
+    } catch (e) {}
+
     window.ADMIN_STATE = {
-      token: localStorage.getItem('fs_admin_token') || localStorage.getItem('fs_token') || '',
-      user: JSON.parse(localStorage.getItem('fs_admin_user') || localStorage.getItem('fs_user') || 'null'),
+      token: '',
+      user: null,
       data: {
         stats: {},
         users: [],
@@ -3174,7 +3181,8 @@
         renderAdminHeaderProfile();
         return true;
       } catch (e) {
-        return true;
+        openModal('adminAuthModal');
+        return false;
       }
     };
 
@@ -3253,9 +3261,6 @@
         if (res.ok && data.success && data.token) {
           ADMIN_STATE.token = data.token;
           ADMIN_STATE.user = data.user;
-          localStorage.setItem('fs_admin_token', data.token);
-          localStorage.setItem('fs_admin_user', JSON.stringify(data.user));
-          localStorage.setItem('fs_token', data.token);
           closeModal('adminAuthModal');
           renderAdminHeaderProfile();
           await loadAllAdminData();
