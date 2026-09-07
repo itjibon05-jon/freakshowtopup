@@ -2253,7 +2253,7 @@ function selectDepositMethod(method) {
       binanceDualView.style.display = 'flex';
       const bIdEl = document.getElementById('depBinanceIdDisplay');
       const bTrcEl = document.getElementById('depBinanceTrc20Display');
-      if (bIdEl) bIdEl.textContent = pNums.binanceId || pNums.binance || '5339688506';
+      if (bIdEl) bIdEl.textContent = pNums.binanceId || pNums.binance || '419366700';
       if (bTrcEl) bTrcEl.textContent = pNums.binanceTrc20 || 'TYD6xK4Fqpz28V9kL6M3QzRtY5W8NuP2Xs';
     }
   } else {
