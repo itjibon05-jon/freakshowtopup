@@ -2535,30 +2535,7 @@
        MODALS
        ========================================== -->
 
-  <!-- 0. INLINE ADMIN AUTH MODAL (IF NOT LOGGED IN) -->
-  <div class="modal-backdrop" id="adminAuthModal">
-    <div class="modal-window" style="max-width: 420px; text-align: center;">
-      <div style="font-size: 2.2rem; margin-bottom: 10px;">🛡️</div>
-      <h3 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 4px;">FREAKSHOW ADMIN SIGN IN</h3>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px;">Enter your admin email or telegram ID
-        to authenticate.</p>
 
-      <form id="inlineLoginForm" onsubmit="handleInlineAdminLogin(event)">
-        <div class="form-group" style="text-align: left;">
-          <label class="form-label">Admin Email / Username / Telegram ID</label>
-          <input type="text" id="inlineAdminEmail" class="form-input" value="admin@freakshowtopup.shop" required>
-        </div>
-        <div class="form-group" style="text-align: left;">
-          <label class="form-label">Password</label>
-          <input type="password" id="inlineAdminPassword" class="form-input" value="Admin123456!" required>
-        </div>
-        <button type="submit" id="inlineLoginBtn" class="btn btn-primary"
-          style="width: 100%; justify-content: center; padding: 12px; margin-top: 6px;">
-          Unlock Admin Portal 🚀
-        </button>
-      </form>
-    </div>
-  </div>
 
   <!-- 1. ADJUST USER BALANCE MODAL -->
   <div class="modal-backdrop" id="adjustBalanceModal">
@@ -2988,26 +2965,49 @@
     </div>
   </div>
 
-  <!-- 0. INLINE ADMIN AUTH MODAL (IF NOT LOGGED IN) -->
+  <!-- 0. INLINE ADMIN AUTH MODAL (2FA PROTECTED) -->
   <div class="modal-backdrop" id="adminAuthModal">
-    <div class="modal-window" style="max-width: 420px; text-align: center;">
-      <div style="font-size: 2.2rem; margin-bottom: 10px;">🛡️</div>
-      <h3 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 4px;">FREAKSHOW ADMIN SIGN IN</h3>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px;">Dedicated Administrator Portal</p>
+    <div class="modal-window" style="max-width: 440px; text-align: center;">
+      <div style="font-size: 2.2rem; margin-bottom: 10px;">🔐</div>
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 4px;">FREAKSHOW ADMIN ACCESS</h3>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px;" id="adminAuthSubtitle">
+        Enter your administrative credentials to continue.
+      </p>
 
+      <!-- STEP 1: CREDENTIALS FORM -->
       <form id="inlineLoginForm" onsubmit="handleInlineAdminLogin(event)">
         <div class="form-group" style="text-align: left;">
-          <label class="form-label">Admin Gmail / Username / Telegram ID</label>
-          <input type="text" id="inlineAdminEmail" class="form-input" value="it.jibon05@gmail.com" required>
+          <label class="form-label">Admin Email / Username / Telegram ID</label>
+          <input type="text" id="inlineAdminEmail" class="form-input" placeholder="admin@freakshowtopup.shop" required autocomplete="username">
         </div>
         <div class="form-group" style="text-align: left;">
           <label class="form-label">Password</label>
-          <input type="password" id="inlineAdminPassword" class="form-input" value="Admin123456!" required>
+          <input type="password" id="inlineAdminPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
         </div>
         <button type="submit" id="inlineLoginBtn" class="btn btn-primary"
           style="width: 100%; justify-content: center; padding: 12px; margin-top: 6px;">
-          Unlock Admin Portal 🚀
+          Send 2FA Security Code 🚀
         </button>
+      </form>
+
+      <!-- STEP 2: 2FA TELEGRAM OTP FORM -->
+      <form id="inlineOtpForm" onsubmit="handleInlineAdminOtpVerify(event)" style="display: none;">
+        <div style="margin-bottom: 15px; font-size: 0.8rem; text-align: left; padding: 12px; border-radius: 10px; background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.3); color: #00f0ff;">
+          📲 <b>2FA OTP Dispatched!</b> A 6-digit security code has been sent to your Telegram. Code expires in 3 minutes.
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label">Enter 6-Digit Telegram OTP Code</label>
+          <input type="text" id="inlineAdminOtp" class="form-input" placeholder="123456" maxlength="6" pattern="[0-9]{6}" required style="letter-spacing: 6px; font-size: 1.3rem; text-align: center; font-weight: 800;" autocomplete="one-time-code">
+        </div>
+        <button type="submit" id="inlineOtpVerifyBtn" class="btn btn-primary"
+          style="width: 100%; justify-content: center; padding: 12px; margin-top: 6px;">
+          Verify & Unlock Admin Portal 🛡️
+        </button>
+        <div style="margin-top: 12px;">
+          <button type="button" onclick="backToAdminLoginForm()" class="btn btn-ghost" style="font-size: 0.8rem;">
+            « Back to Login
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -3111,27 +3111,10 @@
       }
     };
 
+    let current2FaSessionKey = '';
+
     window.verifyAdminAuth = async function () {
       if (!ADMIN_STATE.token) {
-        // Try auto-login with Master Admin credentials on local environment
-        try {
-          const autoRes = await fetch('/api/admin/auth/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: 'it.jibon05@gmail.com', password: 'Admin123456!' })
-          });
-          const autoData = await autoRes.json();
-          if (autoRes.ok && autoData.success && autoData.token) {
-            ADMIN_STATE.token = autoData.token;
-            ADMIN_STATE.user = autoData.user;
-            localStorage.setItem('fs_admin_token', autoData.token);
-            localStorage.setItem('fs_admin_user', JSON.stringify(autoData.user));
-            localStorage.setItem('fs_token', autoData.token);
-            renderAdminHeaderProfile();
-            return true;
-          }
-        } catch (e) { }
-
         openModal('adminAuthModal');
         return false;
       }
@@ -3143,26 +3126,11 @@
         const data = await res.json();
 
         if (!res.ok || !data.success || (data.user.role !== 'SUPER_ADMIN' && data.user.role !== 'ADMIN' && data.user.role !== 'SUB_ADMIN')) {
-          // Retry auto-login
-          try {
-            const autoRes = await fetch('/api/admin/auth/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: 'it.jibon05@gmail.com', password: 'Admin123456!' })
-            });
-            const autoData = await autoRes.json();
-            if (autoRes.ok && autoData.success && autoData.token) {
-              ADMIN_STATE.token = autoData.token;
-              ADMIN_STATE.user = autoData.user;
-              localStorage.setItem('fs_admin_token', autoData.token);
-              localStorage.setItem('fs_admin_user', JSON.stringify(autoData.user));
-              localStorage.setItem('fs_token', autoData.token);
-              closeModal('adminAuthModal');
-              renderAdminHeaderProfile();
-              return true;
-            }
-          } catch (e) { }
-
+          localStorage.removeItem('fs_admin_token');
+          localStorage.removeItem('fs_admin_user');
+          localStorage.removeItem('fs_token');
+          ADMIN_STATE.token = '';
+          ADMIN_STATE.user = null;
           openModal('adminAuthModal');
           return false;
         }
@@ -3179,13 +3147,18 @@
 
     window.handleInlineAdminLogin = async function (e) {
       if (e) e.preventDefault();
-      const email = (document.getElementById('inlineAdminEmail').value || 'it.jibon05@gmail.com').trim();
-      const password = document.getElementById('inlineAdminPassword').value || 'Admin123456!';
+      const email = (document.getElementById('inlineAdminEmail').value || '').trim();
+      const password = document.getElementById('inlineAdminPassword').value || '';
       const btn = document.getElementById('inlineLoginBtn');
+
+      if (!email || !password) {
+        alert('Please enter your admin email and password.');
+        return;
+      }
 
       if (btn) {
         btn.disabled = true;
-        btn.innerHTML = 'Verifying Admin... ⏳';
+        btn.innerHTML = 'Sending OTP... ⏳';
       }
 
       try {
@@ -3193,6 +3166,54 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success && data.require2fa) {
+          current2FaSessionKey = data.sessionKey;
+          document.getElementById('inlineLoginForm').style.display = 'none';
+          document.getElementById('inlineOtpForm').style.display = 'block';
+          const subtitle = document.getElementById('adminAuthSubtitle');
+          if (subtitle) subtitle.textContent = 'Enter the 6-digit 2FA OTP code sent to Telegram';
+          const otpInput = document.getElementById('inlineAdminOtp');
+          if (otpInput) {
+            otpInput.value = '';
+            otpInput.focus();
+          }
+          showToast('📲 2FA Code sent to Telegram!');
+        } else {
+          alert(data.message || 'Access Denied: Invalid credentials');
+        }
+      } catch (err) {
+        alert('Network error: ' + err.message);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = 'Send 2FA Security Code 🚀';
+        }
+      }
+    };
+
+    window.handleInlineAdminOtpVerify = async function (e) {
+      if (e) e.preventDefault();
+      const otp = (document.getElementById('inlineAdminOtp').value || '').trim();
+      const btn = document.getElementById('inlineOtpVerifyBtn');
+
+      if (!otp || otp.length !== 6) {
+        alert('Please enter a valid 6-digit OTP code.');
+        return;
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = 'Verifying OTP... ⏳';
+      }
+
+      try {
+        const res = await fetch('/api/admin/auth/verify-otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionKey: current2FaSessionKey, otp })
         });
         const data = await res.json();
 
@@ -3207,23 +3228,30 @@
           await loadAllAdminData();
           showToast('🎉 Admin authenticated successfully!');
         } else {
-          alert(data.message || 'Access Denied: Invalid credentials');
+          alert(data.message || 'Verification failed. Incorrect OTP code.');
         }
       } catch (err) {
-        alert('Server connection error.');
+        alert('Network error: ' + err.message);
       } finally {
         if (btn) {
           btn.disabled = false;
-          btn.innerHTML = 'Unlock Admin Portal 🚀';
+          btn.innerHTML = 'Verify & Unlock Admin Portal 🛡️';
         }
       }
+    };
+
+    window.backToAdminLoginForm = function () {
+      document.getElementById('inlineOtpForm').style.display = 'none';
+      document.getElementById('inlineLoginForm').style.display = 'block';
+      const subtitle = document.getElementById('adminAuthSubtitle');
+      if (subtitle) subtitle.textContent = 'Enter your administrative credentials to continue.';
     };
 
     window.handleAdminLogout = function () {
       localStorage.removeItem('fs_admin_token');
       localStorage.removeItem('fs_admin_user');
       localStorage.removeItem('fs_token');
-      window.location.href = '/Admin-login';
+      window.location.href = '/';
     };
 
     // ==========================================
