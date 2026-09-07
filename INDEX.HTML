@@ -34,13 +34,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- PWA & Mobile Icons -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#06080d">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="FREAK SHOW">
-  <link rel="icon" href="assets/logo.jpg">
-  <link rel="apple-touch-icon" href="assets/logo.jpg">
+  <meta name="application-name" content="FREAK SHOW">
+  <meta name="theme-color" content="#06080d">
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="apple-touch-icon" href="/assets/logo.jpg">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+      });
+    }
+  </script>
 
   <!-- Schema.org JSON-LD Structured Data for SEO -->
   <script type="application/ld+json">
