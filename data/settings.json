@@ -11,6 +11,8 @@
   "exchangeRate": 125,
   "referralCommissionPercent": 2.5,
   "telegramBotToken": "8476447549:AAEy_ypik8gy3yLCaL0CAxiOp9D1a78GVr0",
+  "telegramBotUsername": "freakshowtopupbot",
+  "telegramBotLink": "https://t.me/freakshowtopupbot",
   "telegramAdminChatId": "5339688506",
   "telegramGroupId": "-1004410551940",
   "telegramUsername": "freakshowtopup",
