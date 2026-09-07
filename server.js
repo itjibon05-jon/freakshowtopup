@@ -896,6 +896,153 @@ const server = http.createServer(async (req, res) => {
       }, req);
     }
 
+    // -------------------------------------------------------------
+    // ADMIN FORGOT PASSWORD / TELEGRAM OTP PASSWORD RESET
+    // -------------------------------------------------------------
+    if (pathname === '/api/admin/auth/forgot-password/request-otp' && method === 'POST') {
+      const rl = checkRateLimit(clientIp, 'admin_forgot_pw', 5, 60000);
+      if (!rl.allowed) return sendJson(res, 429, { success: false, message: 'Too many password reset requests. Please wait 1 minute.' }, req);
+
+      const body = await parseBody(req);
+      const identifier = (body.identifier || body.email || '').toLowerCase().trim();
+
+      const targetUser = db.users.find(u => 
+        (u.email && u.email.toLowerCase() === identifier) || 
+        (u.username && u.username.toLowerCase() === identifier) ||
+        (u.telegramId && String(u.telegramId) === identifier)
+      );
+
+      if (!targetUser || !['SUPER_ADMIN', 'ADMIN'].includes(targetUser.role)) {
+        return sendJson(res, 404, { success: false, message: 'Admin account not found.' }, req);
+      }
+
+      // Generate 6-digit OTP code for password reset
+      const otp = String(Math.floor(100000 + Math.random() * 900000));
+      const sessionKey = 'reset_' + crypto.randomBytes(24).toString('hex');
+
+      admin2FaSessions.set(sessionKey, {
+        type: 'FORGOT_PASSWORD',
+        userId: targetUser.id,
+        email: targetUser.email,
+        role: targetUser.role,
+        otp,
+        expiresAt: Date.now() + 5 * 60 * 1000, // 5 minutes validity
+        attempts: 0,
+        clientIp
+      });
+
+      const resetAlert = `
+🚨 <b>ADMIN PASSWORD RESET REQUEST</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 <b>Admin Account:</b> <b>${targetUser.name || targetUser.email}</b>
+🛡️ <b>Role:</b> <b>${targetUser.role}</b>
+🔑 <b>Reset OTP Code:</b> <code>${otp}</code>
+🌐 <b>IP Address:</b> <code>${clientIp}</code>
+⏰ <b>Validity:</b> <b>5 Minutes</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ <i>Enter this code in your browser along with your new password. If you did not request this, your account may be under reconnaissance.</i>
+      `.trim();
+
+      telegram.sendTelegramMessage(resetAlert, '5339688506');
+      if (targetUser.telegramId && String(targetUser.telegramId) !== '5339688506') {
+        telegram.sendTelegramMessage(resetAlert, String(targetUser.telegramId));
+      }
+
+      recordAuditLog({
+        actorId: targetUser.id,
+        action: 'ADMIN_FORGOT_PW_OTP_DISPATCHED',
+        targetId: targetUser.id,
+        reason: `Forgot password OTP sent to Telegram for ${targetUser.email} from IP: ${clientIp}`
+      });
+
+      return sendJson(res, 200, {
+        success: true,
+        sessionKey,
+        email: targetUser.email,
+        message: 'Security Reset OTP has been dispatched to Master Telegram (5339688506)!'
+      }, req);
+    }
+
+    if (pathname === '/api/admin/auth/forgot-password/reset' && method === 'POST') {
+      const rl = checkRateLimit(clientIp, 'admin_pw_reset', 10, 60000);
+      if (!rl.allowed) return sendJson(res, 429, { success: false, message: 'Too many attempts. Please wait.' }, req);
+
+      const body = await parseBody(req);
+      const sessionKey = (body.sessionKey || '').trim();
+      const inputOtp = String(body.otp || '').trim();
+      const newPassword = body.newPassword || '';
+      const confirmPassword = body.confirmPassword || '';
+
+      if (!sessionKey || !admin2FaSessions.has(sessionKey)) {
+        return sendJson(res, 400, { success: false, message: 'Invalid or expired reset session. Please request a new OTP.' }, req);
+      }
+
+      const session = admin2FaSessions.get(sessionKey);
+      if (session.type !== 'FORGOT_PASSWORD' || Date.now() > session.expiresAt) {
+        admin2FaSessions.delete(sessionKey);
+        return sendJson(res, 400, { success: false, message: 'Reset OTP has expired. Please request a new one.' }, req);
+      }
+
+      if (session.attempts >= 5) {
+        admin2FaSessions.delete(sessionKey);
+        return sendJson(res, 429, { success: false, message: 'Too many failed attempts. Session terminated.' }, req);
+      }
+
+      if (session.otp !== inputOtp) {
+        session.attempts++;
+        return sendJson(res, 401, { success: false, message: 'Incorrect 6-digit OTP code.' }, req);
+      }
+
+      if (!newPassword || newPassword.length < 8) {
+        return sendJson(res, 400, { success: false, message: 'New password must be at least 8 characters long.' }, req);
+      }
+
+      if (newPassword !== confirmPassword) {
+        return sendJson(res, 400, { success: false, message: 'New password and confirmation do not match.' }, req);
+      }
+
+      // Valid OTP and passwords match -> Consume session
+      admin2FaSessions.delete(sessionKey);
+
+      const targetUser = db.users.find(u => u.id === session.userId);
+      if (!targetUser) {
+        return sendJson(res, 404, { success: false, message: 'Admin user not found.' }, req);
+      }
+
+      // Update password hash
+      const newHash = await auth.hashPassword(newPassword);
+      targetUser.passwordHash = newHash;
+      targetUser.updatedAt = new Date().toISOString();
+
+      // Revoke all past sessions globally
+      db.settings.adminSessionsRevokedAt = new Date().toISOString();
+      db.saveAll();
+
+      recordAuditLog({
+        actorId: targetUser.id,
+        action: 'ADMIN_PASSWORD_RESET_VIA_TELEGRAM_OTP',
+        targetId: targetUser.id,
+        reason: `Password successfully reset via Telegram OTP for ${targetUser.email} from IP: ${clientIp}`
+      });
+
+      const successAlert = `
+✅ <b>ADMIN PASSWORD RESET SUCCESSFUL</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 <b>Admin:</b> <b>${targetUser.name || targetUser.email}</b>
+🛡️ <b>Role:</b> <b>${targetUser.role}</b>
+🌐 <b>IP Address:</b> <code>${clientIp}</code>
+⏰ <b>Time:</b> ${new Date().toLocaleString()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔒 <i>All old admin sessions have been revoked. You can now log in with your new password.</i>
+      `.trim();
+      telegram.sendTelegramMessage(successAlert, '5339688506');
+
+      return sendJson(res, 200, {
+        success: true,
+        message: 'Password reset successfully! All existing sessions revoked. Please log in with your new password.'
+      }, req);
+    }
+
     if (pathname === '/api/admin/auth/verify' && method === 'GET') {
       const user = auth.authenticateRequest(req);
       if (!user || !['SUPER_ADMIN', 'ADMIN', 'SUB_ADMIN'].includes(user.role)) {
