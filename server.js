@@ -49,9 +49,10 @@ const ALLOWED_ORIGINS = new Set([
 ].filter(Boolean));
 
 // -------------------------------------------------------------
-// IN-MEMORY SLIDING-WINDOW RATE LIMITER (Phase 18)
+// IN-MEMORY SLIDING-WINDOW RATE LIMITER & 2FA SESSIONS
 // -------------------------------------------------------------
 const rateLimits = new Map();
+const admin2FaSessions = new Map();
 
 function checkRateLimit(ip, category = 'general', limit = 100, windowMs = 60000) {
   const now = Date.now();
@@ -496,7 +497,7 @@ const server = http.createServer(async (req, res) => {
 
       try {
         const https = require('https');
-        const apiKey = process.env.FF_NICKNAME_API_KEY || 'tkBAueh5RMhzUgBPvYawX9Eeg1n2gYuh';
+        const apiKey = process.env.FF_NICKNAME_API_KEY || (db.settings && db.settings.ffNicknameApiKey) || '';
         const apiUrl = `https://public.ggwhitehawk.site/nickname?uid=${encodeURIComponent(uid)}&region=${encodeURIComponent(region)}&key=${apiKey}`;
 
         console.log(`[FF NICKNAME] Requesting: https://public.ggwhitehawk.site/nickname?uid=${uid}&region=${region}&key=***`);
@@ -562,7 +563,7 @@ const server = http.createServer(async (req, res) => {
 
       try {
         const https = require('https');
-        const apiKey = process.env.FF_NICKNAME_API_KEY || 'tkBAueh5RMhzUgBPvYawX9Eeg1n2gYuh';
+        const apiKey = process.env.FF_NICKNAME_API_KEY || (db.settings && db.settings.ffNicknameApiKey) || '';
         const apiUrl = `https://public.ggwhitehawk.site/nickname?uid=${encodeURIComponent(uid)}&region=${encodeURIComponent(region)}&key=${apiKey}`;
 
         console.log(`[PLAYER CHECK] Requesting: https://public.ggwhitehawk.site/nickname?uid=${uid}&region=${region}&key=***`);
@@ -743,7 +744,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // -------------------------------------------------------------
-    // ADMIN AUTHENTICATION & LOGIN (No RBAC Required for Login)
+    // ADMIN AUTHENTICATION & 2FA TELEGRAM OTP DISPATCH
     // -------------------------------------------------------------
     if (pathname === '/api/admin/auth/login' && method === 'POST') {
       const rl = checkRateLimit(clientIp, 'admin_auth', 10, 60000);
@@ -772,6 +773,94 @@ const server = http.createServer(async (req, res) => {
         return sendJson(res, 401, { success: false, message: 'Invalid secret password.' }, req);
       }
 
+      // Generate 6-digit random numeric 2FA OTP code
+      const otp = String(Math.floor(100000 + Math.random() * 900000));
+      const sessionKey = crypto.randomBytes(24).toString('hex');
+
+      admin2FaSessions.set(sessionKey, {
+        userId: targetUser.id,
+        email: targetUser.email,
+        role: targetUser.role,
+        otp,
+        expiresAt: Date.now() + 3 * 60 * 1000, // 3 minutes validity
+        attempts: 0,
+        clientIp
+      });
+
+      // Send 2FA OTP to Master Admin Telegram (5339688506) and targetUser Telegram if configured
+      const otpText = `
+🔐 <b>FREAKSHOW ADMIN 2FA OTP</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 <b>Account:</b> <b>${targetUser.name || targetUser.email}</b>
+🛡️ <b>Role:</b> <b>${targetUser.role}</b>
+🔑 <b>Verification OTP:</b> <code>${otp}</code>
+🌐 <b>IP Address:</b> <code>${clientIp}</code>
+⏰ <b>Validity:</b> <b>3 Minutes</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ <i>Do NOT share this code with anyone! Enter this code in your browser to log in.</i>
+      `.trim();
+
+      telegram.sendTelegramMessage(otpText, '5339688506');
+      if (targetUser.telegramId && String(targetUser.telegramId) !== '5339688506') {
+        telegram.sendTelegramMessage(otpText, String(targetUser.telegramId));
+      }
+
+      recordAuditLog({
+        actorId: targetUser.id,
+        action: 'ADMIN_2FA_OTP_GENERATED',
+        targetId: targetUser.id,
+        reason: `2FA OTP generated for ${targetUser.email} from IP: ${clientIp}`
+      });
+
+      return sendJson(res, 200, {
+        success: true,
+        require2fa: true,
+        sessionKey,
+        email: targetUser.email,
+        maskedTelegram: '5339688506 (Master Admin)',
+        message: 'Security OTP has been dispatched to Master Telegram (5339688506). Please enter the 6-digit code to continue.'
+      }, req);
+    }
+
+    // -------------------------------------------------------------
+    // ADMIN 2FA OTP VERIFICATION & TOKEN GENERATION
+    // -------------------------------------------------------------
+    if (pathname === '/api/admin/auth/verify-otp' && method === 'POST') {
+      const rl = checkRateLimit(clientIp, 'admin_otp_verify', 10, 60000);
+      if (!rl.allowed) return sendJson(res, 429, { success: false, message: 'Too many OTP attempts. Please wait 1 minute.' }, req);
+
+      const body = await parseBody(req);
+      const sessionKey = (body.sessionKey || '').trim();
+      const inputOtp = String(body.otp || '').trim();
+
+      if (!sessionKey || !admin2FaSessions.has(sessionKey)) {
+        return sendJson(res, 400, { success: false, message: 'Invalid or expired 2FA session. Please log in again.' }, req);
+      }
+
+      const session = admin2FaSessions.get(sessionKey);
+      if (Date.now() > session.expiresAt) {
+        admin2FaSessions.delete(sessionKey);
+        return sendJson(res, 400, { success: false, message: '2FA OTP code has expired. Please log in again.' }, req);
+      }
+
+      if (session.attempts >= 5) {
+        admin2FaSessions.delete(sessionKey);
+        return sendJson(res, 429, { success: false, message: 'Too many incorrect attempts. Session invalidated.' }, req);
+      }
+
+      if (session.otp !== inputOtp) {
+        session.attempts++;
+        return sendJson(res, 401, { success: false, message: 'Incorrect 2FA OTP code. Please try again.' }, req);
+      }
+
+      // OTP is valid - consume session
+      admin2FaSessions.delete(sessionKey);
+
+      const targetUser = db.users.find(u => u.id === session.userId);
+      if (!targetUser || !['SUPER_ADMIN', 'ADMIN', 'SUB_ADMIN'].includes(targetUser.role)) {
+        return sendJson(res, 403, { success: false, message: 'Admin account not found or suspended.' }, req);
+      }
+
       const token = auth.signToken({
         id: targetUser.id,
         email: targetUser.email,
@@ -779,18 +868,31 @@ const server = http.createServer(async (req, res) => {
         role: targetUser.role,
         currency: targetUser.currency || 'BDT'
       });
+
       recordAuditLog({
         actorId: targetUser.id,
-        action: 'ADMIN_WEB_LOGIN',
+        action: 'ADMIN_WEB_LOGIN_SUCCESS',
         targetId: targetUser.id,
-        reason: `Admin logged in from IP: ${clientIp}`
+        reason: `Admin logged in successfully via 2FA OTP from IP: ${clientIp}`
       });
+
+      const loginAlert = `
+🚨 <b>ADMIN PORTAL LOGIN ALERT</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 <b>Admin:</b> <b>${targetUser.name || targetUser.email}</b>
+🛡️ <b>Role:</b> <b>${targetUser.role}</b>
+📧 <b>Email:</b> <code>${targetUser.email}</code>
+🌐 <b>IP Address:</b> <code>${clientIp}</code>
+⏰ <b>Time:</b> ${new Date().toLocaleString()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+      `.trim();
+      telegram.sendTelegramMessage(loginAlert, '5339688506');
 
       return sendJson(res, 200, {
         success: true,
         token,
         user: auth.sanitizeUser(targetUser),
-        message: 'Admin authentication successful.'
+        message: 'Admin 2FA verification successful!'
       }, req);
     }
 
@@ -1425,6 +1527,9 @@ const server = http.createServer(async (req, res) => {
 
       // 7. Payment Settings & Platform Config
       if (pathname === '/api/admin/payment-settings' && method === 'PUT') {
+        if (user.role !== 'SUPER_ADMIN') {
+          return sendJson(res, 403, { success: false, message: 'Access Denied: Super Admin authority required to modify payment settings.' }, req);
+        }
         const body = await parseBody(req);
         if (body.paymentNumbers) {
           db.settings.paymentNumbers = { ...db.settings.paymentNumbers, ...body.paymentNumbers };
@@ -1535,6 +1640,9 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (pathname === '/api/admin/settings' && method === 'PUT') {
+        if (user.role !== 'SUPER_ADMIN') {
+          return sendJson(res, 403, { success: false, message: 'Access Denied: Super Admin authority required to modify system settings.' }, req);
+        }
         const body = await parseBody(req);
         // Prevent overwriting hashed VIP code through generic settings update
         const { vipAccessCode, vipAccessCodeHash, ...allowedSettings } = body;
@@ -1562,6 +1670,9 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (pathname === '/api/admin/vip-code' && method === 'PUT') {
+        if (user.role !== 'SUPER_ADMIN') {
+          return sendJson(res, 403, { success: false, message: 'Access Denied: Super Admin authority required.' }, req);
+        }
         const body = await parseBody(req);
         const oldCode = String(body.oldCode || '').trim().toUpperCase();
         const newCode = String(body.newCode || '').trim().toUpperCase();
@@ -1626,6 +1737,9 @@ const server = http.createServer(async (req, res) => {
 
       // 8.1 1-Click VIP Access Code Reset & Generation
       if (pathname === '/api/admin/vip-code/reset' && method === 'POST') {
+        if (user.role !== 'SUPER_ADMIN') {
+          return sendJson(res, 403, { success: false, message: 'Access Denied: Super Admin authority required.' }, req);
+        }
         const body = await parseBody(req);
         // Optional custom new code or generate random 8-character alphanumeric code
         let newSecret = String(body.newCode || '').trim().toUpperCase();
@@ -1676,6 +1790,9 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (pathname === '/api/admin/referral/settings' && method === 'PUT') {
+        if (user.role !== 'SUPER_ADMIN') {
+          return sendJson(res, 403, { success: false, message: 'Access Denied: Super Admin authority required.' }, req);
+        }
         const body = await parseBody(req);
         if (body.referralSystemEnabled !== undefined) db.settings.referralSystemEnabled = Boolean(body.referralSystemEnabled);
         if (body.referralCommissionPercent !== undefined && !isNaN(parseFloat(body.referralCommissionPercent))) {
@@ -1828,22 +1945,34 @@ const server = http.createServer(async (req, res) => {
     }
 
     // -------------------------------------------------------------
-    // STATIC FILE SERVING WITH SECURITY HEADERS
+    // STATIC FILE SERVING WITH SECURITY HEADERS & ADMIN CLOAKING
     // -------------------------------------------------------------
     // Strip query string — only the real path matters for file lookup
     const cleanPath = pathname.split('?')[0];
     let filePath;
 
+    // Block all legacy/direct admin routes completely (Hide existence of admin page)
+    if (
+      cleanPath === '/admin' ||
+      cleanPath === '/admin/' ||
+      cleanPath === '/admin.html' ||
+      cleanPath.toLowerCase() === '/admin-login' ||
+      cleanPath.toLowerCase() === '/admin-login.html' ||
+      cleanPath.toLowerCase() === '/admin.js'
+    ) {
+      res.writeHead(302, { 'Location': '/' });
+      res.end();
+      return;
+    }
+
     if (cleanPath === '/' || cleanPath === '/index.html') {
       filePath = path.join(PUBLIC_DIR, 'INDEX.HTML');
     } else if (cleanPath === '/favicon.ico') {
       filePath = path.join(PUBLIC_DIR, 'assets', 'logo.jpg');
-    } else if (cleanPath.toLowerCase() === '/admin-login' || cleanPath.toLowerCase() === '/admin-login.html') {
-      filePath = path.join(PUBLIC_DIR, 'admin-login.html');
-    } else if (cleanPath.startsWith('/admin/assets/')) {
-      filePath = path.join(PUBLIC_DIR, 'assets', cleanPath.replace('/admin/assets/', ''));
-    } else if (cleanPath === '/admin' || cleanPath.startsWith('/admin/')) {
+    } else if (cleanPath === '/loveonut' || cleanPath === '/loveonut/' || cleanPath === '/loveonut.html') {
       filePath = path.join(PUBLIC_DIR, 'admin.html');
+    } else if (cleanPath.startsWith('/loveonut/assets/')) {
+      filePath = path.join(PUBLIC_DIR, 'assets', cleanPath.replace('/loveonut/assets/', ''));
     } else {
       filePath = path.join(PUBLIC_DIR, cleanPath);
     }
