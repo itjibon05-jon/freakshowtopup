@@ -180,8 +180,136 @@ async function handleInlineAdminOtpVerify(e) {
   }
 }
 
+let currentForgotSessionKey = '';
+
+function showAdminForgotPasswordForm() {
+  document.getElementById('inlineLoginForm').style.display = 'none';
+  document.getElementById('inlineOtpForm').style.display = 'none';
+  document.getElementById('inlineForgotResetForm').style.display = 'none';
+  document.getElementById('inlineForgotForm').style.display = 'block';
+  const subtitle = document.getElementById('adminAuthSubtitle');
+  if (subtitle) subtitle.textContent = 'Emergency Password Reset via Telegram 2FA';
+  const identInput = document.getElementById('inlineForgotIdentifier');
+  if (identInput) {
+    identInput.value = 'it.jibon05@gmail.com';
+    identInput.focus();
+  }
+}
+
+async function handleAdminForgotPasswordRequest(e) {
+  if (e) e.preventDefault();
+  const identifier = (document.getElementById('inlineForgotIdentifier').value || '').trim();
+  const btn = document.getElementById('inlineForgotRequestBtn');
+
+  if (!identifier) {
+    alert('Please enter your admin email or Telegram ID.');
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = 'Sending Reset OTP... ⏳';
+  }
+
+  try {
+    const res = await fetch('/api/admin/auth/forgot-password/request-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ identifier })
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      currentForgotSessionKey = data.sessionKey;
+      document.getElementById('inlineForgotForm').style.display = 'none';
+      document.getElementById('inlineForgotResetForm').style.display = 'block';
+      const subtitle = document.getElementById('adminAuthSubtitle');
+      if (subtitle) subtitle.textContent = 'Enter the 6-digit Reset OTP received on Telegram';
+      const otpInput = document.getElementById('inlineForgotOtp');
+      if (otpInput) {
+        otpInput.value = '';
+        otpInput.focus();
+      }
+      showToast('📲 Reset OTP sent to Master Telegram!');
+    } else {
+      alert(data.message || 'Unable to initiate password reset.');
+    }
+  } catch (err) {
+    alert('Network error: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = 'Send Reset OTP to Telegram 🚀';
+    }
+  }
+}
+
+async function handleAdminForgotPasswordSubmit(e) {
+  if (e) e.preventDefault();
+  const otp = (document.getElementById('inlineForgotOtp').value || '').trim();
+  const newPassword = document.getElementById('inlineForgotNewPassword').value || '';
+  const confirmPassword = document.getElementById('inlineForgotConfirmPassword').value || '';
+  const btn = document.getElementById('inlineForgotResetBtn');
+
+  if (!otp || otp.length !== 6) {
+    alert('Please enter a valid 6-digit OTP code.');
+    return;
+  }
+
+  if (newPassword.length < 8) {
+    alert('New password must be at least 8 characters long.');
+    return;
+  }
+
+  if (newPassword !== confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = 'Saving Password... ⏳';
+  }
+
+  try {
+    const res = await fetch('/api/admin/auth/forgot-password/reset', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sessionKey: currentForgotSessionKey,
+        otp,
+        newPassword,
+        confirmPassword
+      })
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      alert('🎉 ' + data.message);
+      backToAdminLoginForm();
+      const pwdInput = document.getElementById('inlineAdminPassword');
+      if (pwdInput) {
+        pwdInput.value = newPassword;
+        pwdInput.focus();
+      }
+      showToast('✅ Password reset successful! Please log in.');
+    } else {
+      alert(data.message || 'Failed to reset password.');
+    }
+  } catch (err) {
+    alert('Network error: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = 'Save New Password & Secure Account 🛡️';
+    }
+  }
+}
+
 function backToAdminLoginForm() {
   document.getElementById('inlineOtpForm').style.display = 'none';
+  document.getElementById('inlineForgotForm').style.display = 'none';
+  document.getElementById('inlineForgotResetForm').style.display = 'none';
   document.getElementById('inlineLoginForm').style.display = 'block';
   const subtitle = document.getElementById('adminAuthSubtitle');
   if (subtitle) subtitle.textContent = 'Enter your administrative credentials to continue.';
