@@ -905,6 +905,59 @@ const server = http.createServer(async (req, res) => {
     }
 
     // -------------------------------------------------------------
+    // ADMIN CHANGE PASSWORD
+    // -------------------------------------------------------------
+    if (pathname === '/api/admin/auth/change-password' && method === 'POST') {
+      const user = auth.authenticateRequest(req);
+      if (!user || !['SUPER_ADMIN', 'ADMIN', 'SUB_ADMIN'].includes(user.role)) {
+        return sendJson(res, 401, { success: false, message: 'Unauthorized session' }, req);
+      }
+
+      const body = await parseBody(req);
+      const currentPassword = body.currentPassword || '';
+      const newPassword = body.newPassword || '';
+      const confirmPassword = body.confirmPassword || '';
+
+      if (!currentPassword || !newPassword) {
+        return sendJson(res, 400, { success: false, message: 'Current and new password are required.' }, req);
+      }
+
+      if (newPassword.length < 8) {
+        return sendJson(res, 400, { success: false, message: 'New password must be at least 8 characters long.' }, req);
+      }
+
+      if (newPassword !== confirmPassword) {
+        return sendJson(res, 400, { success: false, message: 'New password and confirmation do not match.' }, req);
+      }
+
+      const dbUser = db.users.find(u => u.id === user.id);
+      if (!dbUser) {
+        return sendJson(res, 404, { success: false, message: 'Admin user not found.' }, req);
+      }
+
+      const isCurrentValid = await auth.verifyPassword(currentPassword, dbUser.passwordHash);
+      if (!isCurrentValid) {
+        return sendJson(res, 400, { success: false, message: 'Incorrect current password.' }, req);
+      }
+
+      const newHash = await auth.hashPassword(newPassword);
+      dbUser.passwordHash = newHash;
+      dbUser.updatedAt = new Date().toISOString();
+      db.saveAll();
+
+      recordAuditLog({
+        actorId: user.id,
+        action: 'ADMIN_PASSWORD_CHANGED',
+        targetId: user.id,
+        reason: `Password changed by admin: ${user.email} from IP: ${clientIp}`
+      });
+
+      telegram.sendTelegramMessage(`🔐 <b>ADMIN PASSWORD UPDATED</b>\n👤 Admin: <b>${user.name || user.email}</b>\n🌐 IP: <code>${clientIp}</code>\n⏰ Time: ${new Date().toLocaleString()}`, '5339688506');
+
+      return sendJson(res, 200, { success: true, message: 'Password changed successfully! Please use your new password next time.' }, req);
+    }
+
+    // -------------------------------------------------------------
     // ADMIN DASHBOARD & GOVERNANCE ROUTES (RBAC Protected)
     // -------------------------------------------------------------
     if (pathname.startsWith('/api/admin/')) {
