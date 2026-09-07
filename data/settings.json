@@ -100,5 +100,12 @@
   "popupDisabled": false,
   "newUserBonusEnabled": false,
   "vipAccessCode": "JOY100LVL",
-  "supplierAlertThreshold": 50
+  "supplierAlertThreshold": 50,
+  "popupEnabled": true,
+  "offerPopup": {
+    "isActive": true
+  },
+  "heroBanner": {
+    "enabled": true
+  }
 }
