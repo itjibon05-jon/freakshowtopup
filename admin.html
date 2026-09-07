@@ -1123,8 +1123,12 @@
       <div class="menu-item" data-tab="status" onclick="switchAdminTab('status')">
         <span>🖥️</span> <span>System Status</span>
       </div>
+      <div class="menu-item" onclick="openModal('adminChangePasswordModal')"
+        style="color: var(--brand-cyan); border-top: 1px solid var(--border); margin-top: 10px; padding-top: 12px;">
+        <span>🔐</span> <span>Change Password</span>
+      </div>
       <div class="menu-item" onclick="handleAdminLogout()"
-        style="color: #f87171; border-top: 1px solid var(--border); margin-top: 10px; padding-top: 12px;">
+        style="color: #f87171;">
         <span>🚪</span> <span>Logout</span>
       </div>
     </nav>
@@ -1179,6 +1183,7 @@
         <button class="btn btn-primary btn-header-add-user" onclick="openAddUserModal()" title="Add New User"><span class="btn-icon">➕</span><span class="btn-text"> Add User</span></button>
         <button class="btn btn-primary btn-header-add-prod" onclick="openAddProductModal()" title="Add New Product"
           style="background: linear-gradient(135deg, var(--brand-purple), var(--brand-blue));"><span class="btn-icon">➕</span><span class="btn-text"> Add Product</span></button>
+        <button class="btn btn-ghost" onclick="openModal('adminChangePasswordModal')" title="Change Admin Password" style="color: var(--brand-cyan); border-color: rgba(0, 240, 255, 0.3);"><span class="btn-icon">🔐</span><span class="btn-text"> Change Pass</span></button>
         <a href="/" target="_blank" class="btn btn-ghost" title="View Live Website"><span class="btn-icon">🌐</span><span class="btn-text"> Site ↗</span></a>
         <button class="btn btn-danger" onclick="handleAdminLogout()" title="Sign Out"
           style="font-weight: 800; background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); color: #f87171;"><span class="btn-icon">🚪</span><span class="btn-text"> Sign Out</span></button>
@@ -3012,6 +3017,34 @@
     </div>
   </div>
 
+  <!-- CHANGE ADMIN PASSWORD MODAL -->
+  <div class="modal-backdrop" id="adminChangePasswordModal">
+    <div class="modal-window" style="max-width: 440px;">
+      <div class="modal-head">
+        <h3 class="modal-title">🔐 Change Admin Password</h3>
+        <button class="modal-close" onclick="closeModal('adminChangePasswordModal')">×</button>
+      </div>
+      <form id="adminChangePasswordForm" onsubmit="submitAdminChangePassword(event)">
+        <div class="form-group">
+          <label class="form-label">Current Password</label>
+          <input type="password" id="adminCurrentPassword" class="form-input" placeholder="Current password" required autocomplete="current-password">
+        </div>
+        <div class="form-group">
+          <label class="form-label">New Password (Min 8 characters)</label>
+          <input type="password" id="adminNewPassword" class="form-input" placeholder="New strong password" minlength="8" required autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm New Password</label>
+          <input type="password" id="adminConfirmPassword" class="form-input" placeholder="Confirm new password" minlength="8" required autocomplete="new-password">
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn btn-ghost" onclick="closeModal('adminChangePasswordModal')">Cancel</button>
+          <button type="submit" id="adminChangePassBtn" class="btn btn-primary">💾 Update Password</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- PAYMENT INSTRUCTIONS EDIT MODAL -->
   <div class="modal-backdrop" id="paymentInstructionsModal">
     <div class="modal-window" style="max-width: 580px;">
@@ -3252,6 +3285,60 @@
       localStorage.removeItem('fs_admin_user');
       localStorage.removeItem('fs_token');
       window.location.href = '/';
+    };
+
+    window.submitAdminChangePassword = async function (e) {
+      if (e) e.preventDefault();
+      const currentPassword = document.getElementById('adminCurrentPassword').value;
+      const newPassword = document.getElementById('adminNewPassword').value;
+      const confirmPassword = document.getElementById('adminConfirmPassword').value;
+      const btn = document.getElementById('adminChangePassBtn');
+
+      if (!currentPassword || !newPassword) {
+        alert('Please enter current and new password.');
+        return;
+      }
+
+      if (newPassword.length < 8) {
+        alert('New password must be at least 8 characters long.');
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert('New password and confirmation do not match!');
+        return;
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Updating... ⏳';
+      }
+
+      try {
+        const res = await fetch('/api/admin/auth/change-password', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ADMIN_STATE.token}`
+          },
+          body: JSON.stringify({ currentPassword, newPassword, confirmPassword })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showToast('🎉 ' + data.message);
+          closeModal('adminChangePasswordModal');
+          document.getElementById('adminChangePasswordForm').reset();
+        } else {
+          alert(data.message || 'Failed to update password.');
+        }
+      } catch (err) {
+        alert('Network error: ' + err.message);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = '💾 Update Password';
+        }
+      }
     };
 
     // ==========================================
