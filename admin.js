@@ -214,6 +214,60 @@ function handleAdminLogout() {
   window.location.href = '/';
 }
 
+async function submitAdminChangePassword(e) {
+  if (e) e.preventDefault();
+  const currentPassword = document.getElementById('adminCurrentPassword').value;
+  const newPassword = document.getElementById('adminNewPassword').value;
+  const confirmPassword = document.getElementById('adminConfirmPassword').value;
+  const btn = document.getElementById('adminChangePassBtn');
+
+  if (!currentPassword || !newPassword) {
+    alert('Please enter current and new password.');
+    return;
+  }
+
+  if (newPassword.length < 8) {
+    alert('New password must be at least 8 characters long.');
+    return;
+  }
+
+  if (newPassword !== confirmPassword) {
+    alert('New password and confirmation do not match!');
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Updating... ⏳';
+  }
+
+  try {
+    const res = await fetch('/api/admin/auth/change-password', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${ADMIN_STATE.token}`
+      },
+      body: JSON.stringify({ currentPassword, newPassword, confirmPassword })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      showToast('🎉 ' + data.message);
+      closeModal('adminChangePasswordModal');
+      document.getElementById('adminChangePasswordForm').reset();
+    } else {
+      alert(data.message || 'Failed to update password.');
+    }
+  } catch (err) {
+    alert('Network error: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = '💾 Update Password';
+    }
+  }
+}
+
 function openMobileSidebar() {
   const sb = document.getElementById('adminSidebar');
   const ov = document.getElementById('sidebarOverlay');
