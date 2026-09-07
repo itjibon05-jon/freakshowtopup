@@ -83,8 +83,8 @@ async function verifyAdminAuth() {
     renderAdminHeaderProfile();
     return true;
   } catch (e) {
-    showToast('⚠️ Connection error to backend.');
-    return true;
+    openModal('adminAuthModal');
+    return false;
   }
 }
 
@@ -163,9 +163,6 @@ async function handleInlineAdminOtpVerify(e) {
     if (res.ok && data.success && data.token) {
       ADMIN_STATE.token = data.token;
       ADMIN_STATE.user = data.user;
-      localStorage.setItem('fs_admin_token', data.token);
-      localStorage.setItem('fs_admin_user', JSON.stringify(data.user));
-      localStorage.setItem('fs_token', data.token);
       closeModal('adminAuthModal');
       renderAdminHeaderProfile();
       await loadAllAdminData();
