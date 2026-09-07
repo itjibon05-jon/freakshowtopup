@@ -1,35 +1,48 @@
 {
-  "name": "FREAK SHOW TOPUP - Digital Game Top-Up",
+  "id": "/",
+  "name": "FREAK SHOW TOPUP",
   "short_name": "FREAK SHOW",
   "description": "Instant Free Fire Diamonds, PUBG UC & Game Top-Up Platform. 100% automated delivery with bKash, Nagad & Wallet Payments.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#06080d",
-  "theme_color": "#ff2d55",
-  "orientation": "portrait-primary",
-  "categories": ["games", "entertainment", "shopping"],
+  "theme_color": "#06080d",
+  "orientation": "portrait",
+  "categories": ["games", "shopping", "entertainment"],
   "icons": [
     {
-      "src": "assets/logo.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "assets/logo.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "assets/ff_diamond.jpg",
+      "src": "/assets/logo.jpg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "assets/ff_diamond.jpg",
+      "src": "/assets/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/ff_diamond.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/ff_diamond.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any"
@@ -39,14 +52,14 @@
     {
       "name": "Top-Up Free Fire",
       "short_name": "Free Fire",
-      "url": "/index.html#freefire-section",
-      "icons": [{ "src": "assets/ff_diamond.jpg", "sizes": "192x192" }]
+      "url": "/#freefire-section",
+      "icons": [{ "src": "/assets/ff_diamond.jpg", "sizes": "192x192" }]
     },
     {
       "name": "Track Order",
       "short_name": "Track Order",
-      "url": "/index.html?action=track",
-      "icons": [{ "src": "assets/logo.jpg", "sizes": "192x192" }]
+      "url": "/#recent-orders-section",
+      "icons": [{ "src": "/assets/logo.jpg", "sizes": "192x192" }]
     }
   ]
 }
