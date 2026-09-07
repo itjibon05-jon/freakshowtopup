@@ -16,9 +16,11 @@
     "createdAt": "2026-08-28T11:40:07.853Z",
     "updatedAt": "2026-09-07T05:34:33.591Z",
     "lastLoginAt": "2026-08-28T11:40:07.853Z",
-    "isVip": false,
-    "vipUnlocked": false,
-    "telegramChatId": "5339688506"
+    "isVip": true,
+    "vipUnlocked": true,
+    "telegramChatId": "5339688506",
+    "vipUnlockedAt": "2026-09-07T06:25:10.513Z",
+    "vipCodeVersion": 1788762302805
   },
   {
     "id": "usr_leadjibon_admin",
