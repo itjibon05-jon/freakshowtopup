@@ -53,6 +53,8 @@ const ADMIN_STATE = {
   }
 };
 
+let current2FaSessionKey = '';
+
 async function verifyAdminAuth() {
   if (!ADMIN_STATE.token) {
     openModal('adminAuthModal');
@@ -66,6 +68,11 @@ async function verifyAdminAuth() {
     const data = await res.json();
 
     if (!res.ok || !data.success || (data.user.role !== 'SUPER_ADMIN' && data.user.role !== 'ADMIN' && data.user.role !== 'SUB_ADMIN')) {
+      localStorage.removeItem('fs_admin_token');
+      localStorage.removeItem('fs_admin_user');
+      localStorage.removeItem('fs_token');
+      ADMIN_STATE.token = '';
+      ADMIN_STATE.user = null;
       openModal('adminAuthModal');
       return false;
     }
@@ -83,13 +90,18 @@ async function verifyAdminAuth() {
 
 async function handleInlineAdminLogin(e) {
   if (e) e.preventDefault();
-  const email = (document.getElementById('inlineAdminEmail').value || 'it.jibon05@gmail.com').trim();
-  const password = document.getElementById('inlineAdminPassword').value || 'Admin123456!';
+  const email = (document.getElementById('inlineAdminEmail').value || '').trim();
+  const password = document.getElementById('inlineAdminPassword').value || '';
   const btn = document.getElementById('inlineLoginBtn');
+
+  if (!email || !password) {
+    alert('Please enter your admin email and password.');
+    return;
+  }
 
   if (btn) {
     btn.disabled = true;
-    btn.innerHTML = 'Verifying Admin... ⏳';
+    btn.innerHTML = 'Sending OTP... ⏳';
   }
 
   try {
@@ -97,6 +109,54 @@ async function handleInlineAdminLogin(e) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success && data.require2fa) {
+      current2FaSessionKey = data.sessionKey;
+      document.getElementById('inlineLoginForm').style.display = 'none';
+      document.getElementById('inlineOtpForm').style.display = 'block';
+      const subtitle = document.getElementById('adminAuthSubtitle');
+      if (subtitle) subtitle.textContent = 'Enter the 6-digit 2FA OTP code sent to Telegram';
+      const otpInput = document.getElementById('inlineAdminOtp');
+      if (otpInput) {
+        otpInput.value = '';
+        otpInput.focus();
+      }
+      showToast('📲 2FA Code sent to Telegram!');
+    } else {
+      alert(data.message || 'Access Denied: Invalid credentials');
+    }
+  } catch (err) {
+    alert('Server connection error: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = 'Send 2FA Security Code 🚀';
+    }
+  }
+}
+
+async function handleInlineAdminOtpVerify(e) {
+  if (e) e.preventDefault();
+  const otp = (document.getElementById('inlineAdminOtp').value || '').trim();
+  const btn = document.getElementById('inlineOtpVerifyBtn');
+
+  if (!otp || otp.length !== 6) {
+    alert('Please enter a valid 6-digit OTP code.');
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = 'Verifying OTP... ⏳';
+  }
+
+  try {
+    const res = await fetch('/api/admin/auth/verify-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionKey: current2FaSessionKey, otp })
     });
     const data = await res.json();
 
@@ -111,16 +171,23 @@ async function handleInlineAdminLogin(e) {
       await loadAllAdminData();
       showToast('🎉 Admin authenticated successfully!');
     } else {
-      alert(data.message || 'Access Denied: Invalid credentials');
+      alert(data.message || 'Verification failed. Incorrect OTP code.');
     }
   } catch (err) {
-    alert('Server connection error.');
+    alert('Network error: ' + err.message);
   } finally {
     if (btn) {
       btn.disabled = false;
-      btn.innerHTML = 'Unlock Admin Portal 🚀';
+      btn.innerHTML = 'Verify & Unlock Admin Portal 🛡️';
     }
   }
+}
+
+function backToAdminLoginForm() {
+  document.getElementById('inlineOtpForm').style.display = 'none';
+  document.getElementById('inlineLoginForm').style.display = 'block';
+  const subtitle = document.getElementById('adminAuthSubtitle');
+  if (subtitle) subtitle.textContent = 'Enter your administrative credentials to continue.';
 }
 
 function renderAdminHeaderProfile() {
@@ -144,7 +211,7 @@ function handleAdminLogout() {
   localStorage.removeItem('fs_admin_token');
   localStorage.removeItem('fs_admin_user');
   localStorage.removeItem('fs_token');
-  window.location.href = '/Admin-login';
+  window.location.href = '/';
 }
 
 function openMobileSidebar() {
