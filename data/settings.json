@@ -36,7 +36,7 @@
   "heroSideCard1Title": "Special VIP Pass",
   "heroSideCard1Desc": "Claim up to 2600 Diamonds with maximum savings",
   "heroSideCard2Image": "assets/ff_levelup.jpg",
-  "heroSideCard2Title": "Exclusive 802 Pass",
+  "heroSideCard2Title": "LEVEL UP PASS 802",
   "heroSideCard2Desc": "Instant 802 Diamonds upon level progression",
   "telegramAuthorizedUserIds": [
     "5339688506",
@@ -49,8 +49,8 @@
     "cellfin": "01641625723 (Cellfin / Bank Transfer)",
     "bank": "01641625723 (Cellfin / Bank Transfer)",
     "bangla_qr": "assets/bqr.png",
-    "binance": "5339688506",
-    "binanceId": "5339688506",
+    "binance": "419366700",
+    "binanceId": "419366700",
     "binanceTrc20": "TYD6xK4Fqpz28V9kL6M3QzRtY5W8NuP2Xs"
   },
   "paymentInstructions": {
