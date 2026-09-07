@@ -5,7 +5,7 @@
     "username": "jrjjibon",
     "name": "JRJ JIBON",
     "telegramId": "5339688506",
-    "passwordHash": "$2a$12$DvPL3RtlapZq0UioENeNUesMdUFl1Y5FSQ72YITcTuGAezeUboKZ6",
+    "passwordHash": "$2a$12$aFdL.ansbPs6yfcmPLwJPe9AcKVE5OaR22flPMEdsnXR.T/aH90uu",
     "role": "SUPER_ADMIN",
     "country": "BD",
     "currency": "BDT",
@@ -14,10 +14,11 @@
     "referredById": null,
     "status": "ACTIVE",
     "createdAt": "2026-08-28T11:40:07.853Z",
-    "updatedAt": "2026-08-28T11:40:07.853Z",
+    "updatedAt": "2026-09-07T05:34:33.591Z",
     "lastLoginAt": "2026-08-28T11:40:07.853Z",
     "isVip": false,
-    "vipUnlocked": false
+    "vipUnlocked": false,
+    "telegramChatId": "5339688506"
   },
   {
     "id": "usr_leadjibon_admin",
